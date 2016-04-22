@@ -15,6 +15,7 @@
 		6B3670BC1CC77A1400C29629 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3670BA1CC77A1400C29629 /* LaunchScreen.storyboard */; };
 		6B3670C71CC77A1400C29629 /* expeditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670C61CC77A1400C29629 /* expeditionTests.swift */; };
 		6B3670D21CC77A1400C29629 /* expeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670D11CC77A1400C29629 /* expeditionUITests.swift */; };
+		6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6B3670CD1CC77A1400C29629 /* expeditionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = expeditionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3670D11CC77A1400C29629 /* expeditionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expeditionUITests.swift; sourceTree = "<group>"; };
 		6B3670D31CC77A1400C29629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				6B3670B11CC77A1400C29629 /* FirstViewController.swift */,
 				6B3670B31CC77A1400C29629 /* SecondViewController.swift */,
 				6B3670B51CC77A1400C29629 /* Main.storyboard */,
+				6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */,
 				6B3670B81CC77A1400C29629 /* Assets.xcassets */,
 				6B3670BA1CC77A1400C29629 /* LaunchScreen.storyboard */,
 				6B3670BD1CC77A1400C29629 /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				6B3670B41CC77A1400C29629 /* SecondViewController.swift in Sources */,
 				6B3670B01CC77A1400C29629 /* AppDelegate.swift in Sources */,
+				6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */,
 				6B3670B21CC77A1400C29629 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
