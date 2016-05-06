@@ -19,10 +19,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Sample Messages
         
-        let message = Message(id: "5667-977", idSituation: "57756-68-98", name: "Arrivé à Dumont", idChild: "365-8654-34", messageType: 0)
+        let message = Message(id: "5667-977", idSituation: "57756-68-98", name: "Arrivée à Dumont", idChild: "365-8654-34", messageType: 0)
         let messageDeux = Message(id: "5667-'477", idSituation: "5286-68-98", name: "Début de mission", idChild: "36-7314-34", messageType: 2)
         
-        self.messagesArray = [message.name, messageDeux.name]
+        message.content = "Nous arrivons à la base"
+        messageDeux.content = "Nous partons en mission"
+        
+        self.messagesArray = [message.content, messageDeux.content]
         
         print(message.name)
         

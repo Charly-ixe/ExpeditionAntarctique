@@ -24,6 +24,12 @@ class Message {
         self.messageType = messageType
     }
     
+//    func getContent(idChild) -> String {
+//        // Get text/Media/Question attached to the Message/Sub Situation
+//        
+//        return "Ok";
+//    }
+    
     
     
 }
