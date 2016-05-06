@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+
+class Situation {
+    var name: String;
+    
+    init() {
+        name = "Situation 1";
+    }
+    
+}
