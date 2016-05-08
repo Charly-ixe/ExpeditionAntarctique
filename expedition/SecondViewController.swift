@@ -13,9 +13,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var messageTableView: UITableView!
     
     var messagesArray = []
+    var conversation = Conversation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Sample Messages
         
@@ -25,11 +27,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         message.content = "Nous arrivons à la base"
         messageDeux.content = "Nous partons en mission"
         
-        self.messagesArray = [message.content, messageDeux.content]
-        
-        print(message.name)
-        
-        
+        conversation.currentMessage = message.id
+        conversation.conversationHistory = [message]
         
         
         self.messageTableView.delegate = self
@@ -52,7 +51,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Customize the cell
         
-        cell.textLabel?.text = self.messagesArray[indexPath.row] as? String
+        let messageForDisplay = conversation.conversationHistory.objectAtIndex(indexPath.row) as! Message
+        print(messageForDisplay.content)
+        
+        cell.textLabel?.text = messageForDisplay.content
         
         // Return the cell
         
@@ -61,7 +63,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.messagesArray.count
+        return self.conversation.conversationHistory.count
     }
 
 
