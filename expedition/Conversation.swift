@@ -10,7 +10,7 @@ import Foundation
 
 
 class Conversation {
-    var conversationHistory = []
+    var conversationHistory : [Message] = []
     var currentMessage : String
     var currentPlace : String
     
@@ -18,5 +18,13 @@ class Conversation {
         currentMessage = ""
         currentPlace = ""
     }
+    
+    func setCurrentMessage() -> String {
+        let last = conversationHistory.last
+        currentMessage = last!.id
+        
+        return currentMessage
+    }
+    
     
 }

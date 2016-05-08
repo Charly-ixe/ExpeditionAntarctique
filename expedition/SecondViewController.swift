@@ -22,13 +22,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Sample Messages
         
         let message = Message(id: "5667-977", idSituation: "57756-68-98", name: "Arrivée à Dumont", idChild: "365-8654-34", messageType: 0)
-        let messageDeux = Message(id: "5667-'477", idSituation: "5286-68-98", name: "Début de mission", idChild: "36-7314-34", messageType: 2)
+        let messageDeux = Message(id: "fehe-5667-477", idSituation: "5286-68-98", name: "Début de mission", idChild: "36-7314-34", messageType: 2)
         
         message.content = "Nous arrivons à la base"
         messageDeux.content = "Nous partons en mission"
         
-        conversation.currentMessage = message.id
-        conversation.conversationHistory = [message]
+        conversation.conversationHistory = [message, messageDeux]
+        conversation.currentMessage = conversation.setCurrentMessage()
+        print(conversation.currentMessage)
         
         
         self.messageTableView.delegate = self
@@ -51,9 +52,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Customize the cell
         
-        let messageForDisplay = conversation.conversationHistory.objectAtIndex(indexPath.row) as! Message
-        print(messageForDisplay.content)
-        
+        let messageForDisplay = (conversation.conversationHistory as NSArray).objectAtIndex(indexPath.row) as! Message
         cell.textLabel?.text = messageForDisplay.content
         
         // Return the cell
