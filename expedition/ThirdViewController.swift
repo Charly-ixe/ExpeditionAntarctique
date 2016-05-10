@@ -24,6 +24,12 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var dataWindLabel: UILabel!
     @IBOutlet weak var dataWindDirectionLabel: UILabel!
     @IBOutlet weak var currentWeatherImageView: UIImageView!
+    @IBOutlet weak var dataTabsContainer: UIView!
+    @IBOutlet weak var weatherTabButton: UIButton!
+    @IBOutlet weak var moralTabButton: UIButton!
+    @IBOutlet weak var stuffTabButton: UIButton!
+    
+    weak var currentViewController: UIViewController?
     
     
     override func viewDidLoad() {
@@ -31,11 +37,8 @@ class ThirdViewController: UIViewController {
         
         //Customize the currentWeatherView
         
-        currentWeatherView.layer.cornerRadius = 6.0
         currentWeatherView.layer.shadowColor = brashWhite.CGColor
-        currentWeatherView.layer.shadowOpacity = 0.2
         currentWeatherView.layer.shadowOffset = CGSizeZero
-        currentWeatherView.layer.shadowRadius = 6.0
         
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: currentWeatherImageView.bounds, byRoundingCorners: UIRectCorner.TopLeft.union(.BottomLeft), cornerRadii: CGSizeMake(6, 6)).CGPath
@@ -49,6 +52,11 @@ class ThirdViewController: UIViewController {
         dataWindLabel.textColor = nunatakBlack
         dataWindDirectionLabel.textColor = nunatakBlack
         
+        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,5 +64,37 @@ class ThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func addSubview(subView:UIView, toView parentView:UIView) {
+        parentView.addSubview(subView)
+        
+        var viewBindingsDict = [String: AnyObject]()
+        viewBindingsDict["subView"] = subView
+        parentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[subView]|",
+            options: [], metrics: nil, views: viewBindingsDict))
+        parentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subView]|",
+            options: [], metrics: nil, views: viewBindingsDict))
+    }
+    
+    @IBAction func showWeatherTab(sender: UIButton) {
+        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+    }
+    
+    @IBAction func showMoralTab(sender: UIButton) {
+        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+    }
+    
+    @IBAction func showStuffTab(sender: UIButton) {
+        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
+        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+        self.addChildViewController(self.currentViewController!)
+        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+    }
     
 }
