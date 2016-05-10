@@ -3,7 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Carte-->
@@ -58,12 +60,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYk-f5-6CE">
+                            <view contentMode="scaleToFill" restorationIdentifier="currentWeather" translatesAutoresizingMaskIntoConstraints="NO" id="ZYk-f5-6CE">
                                 <rect key="frame" x="14" y="32" width="572" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMPERATURE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGJ-Mp-0mQ">
+                                        <rect key="frame" x="294" y="8" width="85.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbY-Ky-ORC">
+                                        <rect key="frame" x="294" y="81.5" width="32" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGj-Um-qt9">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="130"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIR." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ps-t1-MK5">
+                                        <rect key="frame" x="365" y="81.5" width="23.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-24°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxg-iI-Gor">
+                                        <rect key="frame" x="294" y="26.5" width="98" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="7GB-VN-Kqh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeD-2g-Ikb">
+                                        <rect key="frame" x="394" y="42" width="14.5" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-pT-cNw">
+                                        <rect key="frame" x="294" y="99.5" width="29.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgM-Ej-lIk">
+                                        <rect key="frame" x="363" y="99.5" width="33" height="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5A-cv-XZd">
+                                        <rect key="frame" x="325" y="107.5" width="19.5" height="11"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="8"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="pGj-Um-qt9" firstAttribute="leading" secondItem="ZYk-f5-6CE" secondAttribute="leading" id="0jL-Qo-v9b"/>
+                                    <constraint firstItem="5Ik-pT-cNw" firstAttribute="top" secondItem="PbY-Ky-ORC" secondAttribute="bottom" constant="1.5" id="2Cf-aQ-0pI"/>
+                                    <constraint firstItem="PeD-2g-Ikb" firstAttribute="top" secondItem="ZYk-f5-6CE" secondAttribute="top" constant="42" id="2YP-GA-qjH"/>
+                                    <constraint firstAttribute="trailing" secondItem="PbY-Ky-ORC" secondAttribute="trailing" constant="110" id="2qr-kC-STl"/>
+                                    <constraint firstItem="y5A-cv-XZd" firstAttribute="top" secondItem="PbY-Ky-ORC" secondAttribute="bottom" constant="10" id="2tb-2T-EzC"/>
+                                    <constraint firstItem="y5A-cv-XZd" firstAttribute="top" secondItem="PbY-Ky-ORC" secondAttribute="bottom" constant="7.5" id="3Y7-NZ-2OO"/>
+                                    <constraint firstItem="y5A-cv-XZd" firstAttribute="leading" secondItem="pGj-Um-qt9" secondAttribute="trailing" constant="39" id="5yG-DV-OiF"/>
+                                    <constraint firstItem="y5A-cv-XZd" firstAttribute="leading" secondItem="5Ik-pT-cNw" secondAttribute="trailing" constant="1" id="EPt-Ee-PUm"/>
+                                    <constraint firstItem="lgM-Ej-lIk" firstAttribute="leading" secondItem="pGj-Um-qt9" secondAttribute="trailing" constant="77.5" id="GlO-rd-gqT"/>
+                                    <constraint firstItem="eGJ-Mp-0mQ" firstAttribute="top" secondItem="ZYk-f5-6CE" secondAttribute="top" constant="8" id="KGi-u8-YlO"/>
+                                    <constraint firstItem="PeD-2g-Ikb" firstAttribute="leading" secondItem="Pxg-iI-Gor" secondAttribute="trailing" constant="2" id="KPu-vr-h2W"/>
+                                    <constraint firstItem="PbY-Ky-ORC" firstAttribute="leading" secondItem="pGj-Um-qt9" secondAttribute="trailing" constant="8" id="MOk-hz-1bZ"/>
+                                    <constraint firstItem="pGj-Um-qt9" firstAttribute="top" secondItem="ZYk-f5-6CE" secondAttribute="top" id="P2g-24-atQ"/>
+                                    <constraint firstItem="pGj-Um-qt9" firstAttribute="width" secondItem="ZYk-f5-6CE" secondAttribute="width" multiplier="0.5" id="PfM-8a-xRe"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Ps-t1-MK5" secondAttribute="bottom" constant="32" id="Q3z-OK-CYG"/>
+                                    <constraint firstItem="Pxg-iI-Gor" firstAttribute="leading" secondItem="pGj-Um-qt9" secondAttribute="trailing" constant="8" id="TZj-Od-kSM"/>
+                                    <constraint firstAttribute="bottom" secondItem="PbY-Ky-ORC" secondAttribute="bottom" constant="32" id="ThQ-4P-ycH"/>
+                                    <constraint firstItem="eGJ-Mp-0mQ" firstAttribute="leading" secondItem="pGj-Um-qt9" secondAttribute="trailing" constant="8" id="W01-uB-Whf"/>
+                                    <constraint firstAttribute="bottom" secondItem="PbY-Ky-ORC" secondAttribute="bottom" constant="35" id="W6B-qJ-cIl"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Ps-t1-MK5" secondAttribute="trailing" constant="45" id="Yw1-Zd-rZg"/>
+                                    <constraint firstItem="pGj-Um-qt9" firstAttribute="width" secondItem="ZYk-f5-6CE" secondAttribute="height" multiplier="11:5" id="ZhT-k6-TuN"/>
                                     <constraint firstAttribute="height" constant="130" id="bwI-O5-fKZ"/>
+                                    <constraint firstItem="5Ik-pT-cNw" firstAttribute="leading" secondItem="pGj-Um-qt9" secondAttribute="trailing" constant="8" id="cmw-i7-EE1"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Ps-t1-MK5" secondAttribute="bottom" constant="35" id="dqd-BF-pM1"/>
+                                    <constraint firstItem="lgM-Ej-lIk" firstAttribute="top" secondItem="3Ps-t1-MK5" secondAttribute="bottom" constant="1.5" id="hnk-ma-NEh"/>
+                                    <constraint firstItem="pGj-Um-qt9" firstAttribute="height" secondItem="ZYk-f5-6CE" secondAttribute="height" id="jOZ-oG-waQ"/>
+                                    <constraint firstItem="3Ps-t1-MK5" firstAttribute="leading" secondItem="PbY-Ky-ORC" secondAttribute="trailing" constant="39" id="kD6-15-xfp"/>
+                                    <constraint firstAttribute="trailing" secondItem="eGJ-Mp-0mQ" secondAttribute="trailing" constant="231" id="lhT-Mb-yOL"/>
+                                    <constraint firstAttribute="trailing" secondItem="eGJ-Mp-0mQ" secondAttribute="trailing" constant="55" id="luv-cp-6c5"/>
+                                    <constraint firstItem="eGJ-Mp-0mQ" firstAttribute="top" secondItem="ZYk-f5-6CE" secondAttribute="top" constant="8" id="pIg-bH-wOx"/>
+                                    <constraint firstItem="Pxg-iI-Gor" firstAttribute="top" secondItem="eGJ-Mp-0mQ" secondAttribute="bottom" constant="2" id="ul3-cV-0bM"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZhT-k6-TuN"/>
+                                        <exclude reference="KGi-u8-YlO"/>
+                                        <exclude reference="lhT-Mb-yOL"/>
+                                        <exclude reference="luv-cp-6c5"/>
+                                        <exclude reference="2qr-kC-STl"/>
+                                        <exclude reference="W6B-qJ-cIl"/>
+                                        <exclude reference="3Y7-NZ-2OO"/>
+                                        <exclude reference="EPt-Ee-PUm"/>
+                                        <exclude reference="Yw1-Zd-rZg"/>
+                                        <exclude reference="dqd-BF-pM1"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +177,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Données" id="mDO-Ad-F1q"/>
                     <connections>
-                        <outlet property="currentWeatherSubview" destination="ZYk-f5-6CE" id="ZGW-u5-yJz"/>
+                        <outlet property="celciusLabel" destination="PeD-2g-Ikb" id="2V0-aK-lUS"/>
+                        <outlet property="currentWeatherImageView" destination="pGj-Um-qt9" id="oa6-0d-msU"/>
+                        <outlet property="currentWeatherView" destination="ZYk-f5-6CE" id="Mvu-4X-EwJ"/>
+                        <outlet property="dataTemperatureLabel" destination="Pxg-iI-Gor" id="hYU-ZV-dJk"/>
+                        <outlet property="dataWindDirectionLabel" destination="lgM-Ej-lIk" id="6SB-TH-0ce"/>
+                        <outlet property="dataWindLabel" destination="5Ik-pT-cNw" id="AT5-Y7-Oao"/>
+                        <outlet property="temperatureLabel" destination="eGJ-Mp-0mQ" id="vQC-Tq-Vea"/>
+                        <outlet property="windDirectionLabel" destination="3Ps-t1-MK5" id="quy-0s-luu"/>
+                        <outlet property="windLabel" destination="PbY-Ky-ORC" id="jaN-6O-aZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKY-yv-8lq" userLabel="First Responder" sceneMemberID="firstResponder"/>
