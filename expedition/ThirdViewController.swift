@@ -65,6 +65,8 @@ class ThirdViewController: UIViewController {
     }
     
     
+    // Functions for tabs container
+    
     func addSubview(subView:UIView, toView parentView:UIView) {
         parentView.addSubview(subView)
         
@@ -76,25 +78,42 @@ class ThirdViewController: UIViewController {
             options: [], metrics: nil, views: viewBindingsDict))
     }
     
-    @IBAction func showWeatherTab(sender: UIButton) {
-        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
-        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        self.addChildViewController(self.currentViewController!)
-        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
+        oldViewController.willMoveToParentViewController(nil)
+        self.addChildViewController(newViewController)
+        self.addSubview(newViewController.view, toView:self.dataTabsContainer!)
+        newViewController.view.alpha = 0
+        newViewController.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            newViewController.view.alpha = 1
+            oldViewController.view.alpha = 0
+            },
+                                   completion: { finished in
+                                    oldViewController.view.removeFromSuperview()
+                                    oldViewController.removeFromParentViewController()
+                                    newViewController.didMoveToParentViewController(self)
+        })
     }
     
-    @IBAction func showMoralTab(sender: UIButton) {
-        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
-        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        self.addChildViewController(self.currentViewController!)
-        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
-    }
-    
-    @IBAction func showStuffTab(sender: UIButton) {
-        self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
-        self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-        self.addChildViewController(self.currentViewController!)
-        self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+    @IBAction func showTabContent(sender: UIButton) {
+        if sender.restorationIdentifier == "weatherTabButton" {
+            let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController
+        }
+        else if sender.restorationIdentifier == "moralTabButton" {
+            let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController
+        }
+        else if sender.restorationIdentifier == "stuffTabButton" {
+            let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
+            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+            self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
+            self.currentViewController = newViewController
+        }
     }
     
 }

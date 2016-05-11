@@ -183,21 +183,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="191" height="60"/>
                                         <state key="normal" title="MÉTÉO"/>
                                         <connections>
-                                            <action selector="showWeatherTab:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="Mrf-7x-Bnu"/>
+                                            <action selector="showTabContent:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="sw9-dn-dKF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="moralTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-Oc-sJY">
                                         <rect key="frame" x="191" y="0.0" width="191" height="60"/>
                                         <state key="normal" title="MORAL"/>
                                         <connections>
-                                            <action selector="showMoralTab:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="uur-H3-1pH"/>
+                                            <action selector="showTabContent:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="elI-6Q-TA3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="stuffTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KJ-cB-B4k">
                                         <rect key="frame" x="382" y="0.0" width="190" height="60"/>
                                         <state key="normal" title="MATÉRIEL"/>
                                         <connections>
-                                            <action selector="showStuffTab:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="bzq-aI-Lqz"/>
+                                            <action selector="showTabContent:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="q23-0v-oc0"/>
                                         </connections>
                                     </button>
                                 </subviews>
