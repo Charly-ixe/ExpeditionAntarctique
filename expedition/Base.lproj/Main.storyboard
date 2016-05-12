@@ -176,9 +176,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAG-mU-FBf">
-                                <rect key="frame" x="0.0" y="222" width="600" height="329"/>
-                            </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMn-5t-qcq">
                                 <rect key="frame" x="0.0" y="162" width="600" height="60"/>
                                 <subviews>
@@ -223,12 +220,15 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-ws-AXs">
-                                <rect key="frame" x="0.0" y="222" width="200" height="2"/>
+                                <rect key="frame" x="0.0" y="220" width="200" height="2"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="MIQ-rE-Rjg"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAG-mU-FBf">
+                                <rect key="frame" x="0.0" y="222" width="600" height="329"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -242,7 +242,7 @@
                             <constraint firstItem="D5r-ws-AXs" firstAttribute="centerX" secondItem="krf-XE-xrR" secondAttribute="centerX" id="VkO-xx-rwv"/>
                             <constraint firstItem="YMn-5t-qcq" firstAttribute="width" secondItem="cIR-MN-TVV" secondAttribute="width" id="VsO-VK-Fdy"/>
                             <constraint firstItem="D5r-ws-AXs" firstAttribute="width" secondItem="krf-XE-xrR" secondAttribute="width" id="gGC-cI-iEC"/>
-                            <constraint firstItem="D5r-ws-AXs" firstAttribute="top" secondItem="YMn-5t-qcq" secondAttribute="bottom" id="kLP-WK-fLj"/>
+                            <constraint firstItem="D5r-ws-AXs" firstAttribute="top" secondItem="YMn-5t-qcq" secondAttribute="bottom" constant="-2" id="kLP-WK-fLj"/>
                             <constraint firstItem="cAG-mU-FBf" firstAttribute="top" secondItem="krf-XE-xrR" secondAttribute="bottom" constant="20" id="pt6-x3-osI"/>
                             <constraint firstItem="YMn-5t-qcq" firstAttribute="leading" secondItem="cIR-MN-TVV" secondAttribute="leadingMargin" constant="-20" id="saw-Eh-1hM"/>
                             <constraint firstItem="ZYk-f5-6CE" firstAttribute="top" secondItem="6nV-6E-Daa" secondAttribute="bottom" constant="12" id="se3-7C-3lJ"/>
@@ -301,10 +301,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="901"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather Tab View Controller-->
         <scene sceneID="OVa-if-WQR">
             <objects>
-                <viewController storyboardIdentifier="weatherTab" id="64Q-UZ-TUC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="weatherTab" id="64Q-UZ-TUC" customClass="WeatherTabViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ftu-Ce-8gs"/>
                         <viewControllerLayoutGuide type="bottom" id="kLf-nI-Peh"/>
@@ -322,15 +322,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="weatherLabel" destination="Ta0-K1-1To" id="mgY-1s-rrU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRO-yF-vqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="1699"/>
         </scene>
-        <!--View Controller-->
+        <!--Moral Tab View Controller-->
         <scene sceneID="bhM-zm-tR8">
             <objects>
-                <viewController storyboardIdentifier="moralTab" id="EbX-cE-UQ5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="moralTab" id="EbX-cE-UQ5" customClass="MoralTabViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nyl-k6-5Wm"/>
                         <viewControllerLayoutGuide type="bottom" id="ZnK-Cz-XYe"/>
@@ -353,10 +356,10 @@
             </objects>
             <point key="canvasLocation" x="686" y="1699"/>
         </scene>
-        <!--View Controller-->
+        <!--Stuff Tab View Controller-->
         <scene sceneID="wdu-is-UGz">
             <objects>
-                <viewController storyboardIdentifier="stuffTab" id="uBm-Du-wzC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stuffTab" id="uBm-Du-wzC" customClass="StuffTabViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="naT-yz-KTb"/>
                         <viewControllerLayoutGuide type="bottom" id="aeu-ph-psI"/>
