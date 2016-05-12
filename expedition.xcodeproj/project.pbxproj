@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B233BD81CE32AFF00986EA9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B233BD71CE32AFF00986EA9 /* Colors.swift */; };
 		6B3670B01CC77A1400C29629 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670AF1CC77A1400C29629 /* AppDelegate.swift */; };
 		6B3670B21CC77A1400C29629 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670B11CC77A1400C29629 /* FirstViewController.swift */; };
 		6B3670B41CC77A1400C29629 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670B31CC77A1400C29629 /* SecondViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B233BD71CE32AFF00986EA9 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6B3670AC1CC77A1400C29629 /* expedition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = expedition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3670AF1CC77A1400C29629 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B3670B11CC77A1400C29629 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			name = Subviews;
 			sourceTree = "<group>";
 		};
+		6B233BD41CE323A300986EA9 /* Variables */ = {
+			isa = PBXGroup;
+			children = (
+				6B233BD71CE32AFF00986EA9 /* Colors.swift */,
+			);
+			name = Variables;
+			sourceTree = "<group>";
+		};
 		6B3670A31CC77A1400C29629 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		6B3670AE1CC77A1400C29629 /* expedition */ = {
 			isa = PBXGroup;
 			children = (
+				6B233BD41CE323A300986EA9 /* Variables */,
 				6B233BCD1CE0B18300986EA9 /* Subviews */,
 				6B3670AF1CC77A1400C29629 /* AppDelegate.swift */,
 				6B3670B11CC77A1400C29629 /* FirstViewController.swift */,
@@ -275,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3670B41CC77A1400C29629 /* SecondViewController.swift in Sources */,
+				6B233BD81CE32AFF00986EA9 /* Colors.swift in Sources */,
 				6B3670B01CC77A1400C29629 /* AppDelegate.swift in Sources */,
 				6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */,
 				6B3670B21CC77A1400C29629 /* FirstViewController.swift in Sources */,

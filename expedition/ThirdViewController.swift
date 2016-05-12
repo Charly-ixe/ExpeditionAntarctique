@@ -7,10 +7,6 @@
 //
 
 import UIKit
-let brashWhite = UIColor(red:36/255, green:90/255, blue:185/255, alpha:1.0)
-let nunatakBlack = UIColor(red:10/255, green:35/255, blue:80/255, alpha:1.0)
-let nunatakBlackAlpha = UIColor(red:10/255, green:35/255, blue:80/255, alpha:0.2)
-
 
 class ThirdViewController: UIViewController {
     
@@ -28,14 +24,17 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var weatherTabButton: UIButton!
     @IBOutlet weak var moralTabButton: UIButton!
     @IBOutlet weak var stuffTabButton: UIButton!
+    @IBOutlet weak var selectedTabCursor: UIView!
+    @IBOutlet weak var centerConstraintTabCursor: NSLayoutConstraint!
+    
     
     weak var currentViewController: UIViewController?
-    
+    var isSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Customize the currentWeatherView
+        // Customize the currentWeatherView
         
         currentWeatherView.layer.shadowColor = brashWhite.CGColor
         currentWeatherView.layer.shadowOffset = CGSizeZero
@@ -52,10 +51,26 @@ class ThirdViewController: UIViewController {
         dataWindLabel.textColor = nunatakBlack
         dataWindDirectionLabel.textColor = nunatakBlack
         
+        // Customize the tabs
+        
+        weatherTabButton.tintColor = nunatakBlack
+        moralTabButton.tintColor = nunatakBlack
+        stuffTabButton.tintColor = nunatakBlack
+        
+                
+        
+//        weatherTabButton.setImage(UIImage().createSelectionIndicator(nunatakBlack, size: CGSizeMake(weatherTabButton.frame.width, weatherTabButton.frame.height), lineWidth: 2.0), forState:.Selected)
+//        moralTabButton.setImage(UIImage().createSelectionIndicator(nunatakBlack, size: CGSizeMake(weatherTabButton.frame.width, weatherTabButton.frame.height), lineWidth: 2.0), forState:.Selected)
+//        stuffTabButton.setImage(UIImage().createSelectionIndicator(nunatakBlack, size: CGSizeMake(weatherTabButton.frame.width, weatherTabButton.frame.height), lineWidth: 2.0), forState:.Selected)
+        
+        
+        
         self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
         self.addChildViewController(self.currentViewController!)
         self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
+        weatherTabButton.selected = true
+        
         
     }
     
@@ -95,25 +110,55 @@ class ThirdViewController: UIViewController {
         })
     }
     
+    // Actions
+    
     @IBAction func showTabContent(sender: UIButton) {
         if sender.restorationIdentifier == "weatherTabButton" {
             let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
             newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
             self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
             self.currentViewController = newViewController
+//            sender.selected = true
+            UIView.animateWithDuration(0.3, animations: {
+                self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
+                self.view.layoutIfNeeded()
+            })
+            
         }
         else if sender.restorationIdentifier == "moralTabButton" {
             let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
             newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
             self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
             self.currentViewController = newViewController
+//            sender.selected = true
+            UIView.animateWithDuration(0.3, animations: {
+                self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
+                self.view.layoutIfNeeded()
+            })
         }
         else if sender.restorationIdentifier == "stuffTabButton" {
             let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
             newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
             self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
             self.currentViewController = newViewController
+//            sender.selected = true
+            UIView.animateWithDuration(0.3, animations: {
+                self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
+                self.view.layoutIfNeeded()
+                
+            })
         }
     }
     
+}
+
+extension UIImage {
+    func createSelectionIndicator(color: UIColor, size: CGSize, lineWidth: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(CGRectMake(0, size.height - lineWidth, size.width, lineWidth))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
