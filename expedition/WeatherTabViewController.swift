@@ -11,12 +11,14 @@ import UIKit
 class WeatherTabViewController: UIViewController {
     
     @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var temperatureView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        weatherLabel.textColor = nunatakBlack
+        temperatureView.layer.shadowColor = brashWhite.CGColor
+        temperatureView.layer.shadowOffset = CGSizeZero
     }
     
     override func didReceiveMemoryWarning() {
