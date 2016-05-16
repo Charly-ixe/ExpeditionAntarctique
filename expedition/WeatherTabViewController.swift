@@ -15,11 +15,8 @@ class WeatherTabViewController: UIViewController {
     @IBOutlet weak var windView: UIView!
     @IBOutlet weak var pressureView: UIView!
     @IBOutlet weak var humidityView: UIView!
-    @IBOutlet var viewsTapRecognizerCollection: [UITapGestureRecognizer]!
     
     override func viewDidLoad() {
-        
-        
         
         
         super.viewDidLoad()
@@ -33,6 +30,9 @@ class WeatherTabViewController: UIViewController {
         pressureView.layer.shadowOffset = CGSizeZero
         humidityView.layer.shadowColor = brashWhite.CGColor
         humidityView.layer.shadowOffset = CGSizeZero
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class WeatherTabViewController: UIViewController {
     }
     
     @IBAction func showTemperature(sender: UITapGestureRecognizer) {
-        print(viewsTapRecognizerCollection)
+        print()
         
     }
 
