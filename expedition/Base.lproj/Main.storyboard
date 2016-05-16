@@ -316,6 +316,7 @@
                             <view contentMode="scaleToFill" restorationIdentifier="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="BuH-bV-sDq">
                                 <rect key="frame" x="24" y="32" width="552" height="130"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="0YO-JN-ntB"/>
                                 </constraints>
@@ -328,9 +329,39 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6gG-Ul-DQU" appends="YES" id="hmJ-rc-y5P"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="wind" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-5q-tTk">
-                                <rect key="frame" x="300" y="170" width="276" height="418"/>
+                                <rect key="frame" x="304" y="170" width="272" height="418"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="okl-US-O6t">
+                                <rect key="frame" x="24" y="383" width="272" height="205"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="dy2-jW-2SJ">
+                                <rect key="frame" x="24" y="170" width="272" height="205"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -345,29 +376,51 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dy2-jW-2SJ" firstAttribute="top" secondItem="BuH-bV-sDq" secondAttribute="bottom" constant="8" id="1Zl-ew-C8o"/>
+                            <constraint firstItem="dy2-jW-2SJ" firstAttribute="width" secondItem="m0C-5q-tTk" secondAttribute="width" id="22r-yh-WN9"/>
+                            <constraint firstItem="m0C-5q-tTk" firstAttribute="width" secondItem="dy2-jW-2SJ" secondAttribute="width" id="6zp-FG-Znk"/>
+                            <constraint firstItem="okl-US-O6t" firstAttribute="width" secondItem="dy2-jW-2SJ" secondAttribute="width" id="7ze-bi-5ml"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BuH-bV-sDq" secondAttribute="trailing" constant="4" id="B5Y-UA-vhl"/>
+                            <constraint firstItem="kLf-nI-Peh" firstAttribute="top" secondItem="okl-US-O6t" secondAttribute="bottom" constant="12" id="C9T-Q8-Cmz"/>
                             <constraint firstItem="m0C-5q-tTk" firstAttribute="top" secondItem="BuH-bV-sDq" secondAttribute="bottom" constant="8" id="CAx-PL-Z0w"/>
+                            <constraint firstItem="okl-US-O6t" firstAttribute="top" secondItem="dy2-jW-2SJ" secondAttribute="bottom" constant="8" id="Its-mo-ht7"/>
+                            <constraint firstItem="okl-US-O6t" firstAttribute="height" secondItem="dy2-jW-2SJ" secondAttribute="height" id="Ltf-0s-V5n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m0C-5q-tTk" secondAttribute="trailing" constant="4" id="NmN-y9-aTP"/>
                             <constraint firstItem="BuH-bV-sDq" firstAttribute="leading" secondItem="TPJ-AD-Ajj" secondAttribute="leadingMargin" constant="4" id="QLQ-Df-ce9"/>
+                            <constraint firstItem="dy2-jW-2SJ" firstAttribute="height" secondItem="m0C-5q-tTk" secondAttribute="height" multiplier="1:2" id="Qwi-KX-s0O"/>
                             <constraint firstItem="m0C-5q-tTk" firstAttribute="width" secondItem="BuH-bV-sDq" secondAttribute="width" multiplier="1:2" id="UHJ-2z-fKU"/>
                             <constraint firstItem="m0C-5q-tTk" firstAttribute="leading" secondItem="BuH-bV-sDq" secondAttribute="trailing" constant="-240" id="YeQ-OX-KLY"/>
+                            <constraint firstItem="dy2-jW-2SJ" firstAttribute="leading" secondItem="TPJ-AD-Ajj" secondAttribute="leadingMargin" constant="4" id="dd5-vU-a6l"/>
                             <constraint firstItem="kLf-nI-Peh" firstAttribute="top" secondItem="m0C-5q-tTk" secondAttribute="bottom" constant="12" id="eHl-mO-fRx"/>
                             <constraint firstItem="BuH-bV-sDq" firstAttribute="top" secondItem="Ftu-Ce-8gs" secondAttribute="bottom" constant="12" id="f6L-Gp-91Z"/>
+                            <constraint firstItem="okl-US-O6t" firstAttribute="leading" secondItem="TPJ-AD-Ajj" secondAttribute="leadingMargin" constant="4" id="fFc-oz-gRc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BuH-bV-sDq" secondAttribute="leading" constant="-20" id="iy1-6n-qNH"/>
+                            <constraint firstItem="m0C-5q-tTk" firstAttribute="leading" secondItem="dy2-jW-2SJ" secondAttribute="trailing" constant="8" id="n9S-Fg-8Ja"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="iy1-6n-qNH"/>
+                                <exclude reference="22r-yh-WN9"/>
+                                <exclude reference="Qwi-KX-s0O"/>
+                                <exclude reference="UHJ-2z-fKU"/>
                                 <exclude reference="YeQ-OX-KLY"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="humidityView" destination="okl-US-O6t" id="qK4-qn-NOr"/>
+                        <outlet property="pressureView" destination="dy2-jW-2SJ" id="eh3-ZD-9uJ"/>
                         <outlet property="temperatureView" destination="BuH-bV-sDq" id="M3H-FU-bN7"/>
                         <outlet property="windView" destination="m0C-5q-tTk" id="FpT-50-GgV"/>
+                        <outletCollection property="viewsTapRecognizerCollection" destination="6gG-Ul-DQU" collectionClass="NSMutableArray" id="bWI-ed-Tjp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRO-yF-vqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6gG-Ul-DQU">
+                    <connections>
+                        <action selector="showTemperature:" destination="64Q-UZ-TUC" id="fbZ-es-Awu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="30" y="1699"/>
         </scene>
