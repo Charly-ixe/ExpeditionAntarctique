@@ -329,22 +329,42 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="wind" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-5q-tTk">
+                                <rect key="frame" x="300" y="170" width="276" height="418"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="BuH-bV-sDq" secondAttribute="trailing" constant="4" id="B5Y-UA-vhl"/>
+                            <constraint firstItem="m0C-5q-tTk" firstAttribute="top" secondItem="BuH-bV-sDq" secondAttribute="bottom" constant="8" id="CAx-PL-Z0w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="m0C-5q-tTk" secondAttribute="trailing" constant="4" id="NmN-y9-aTP"/>
                             <constraint firstItem="BuH-bV-sDq" firstAttribute="leading" secondItem="TPJ-AD-Ajj" secondAttribute="leadingMargin" constant="4" id="QLQ-Df-ce9"/>
+                            <constraint firstItem="m0C-5q-tTk" firstAttribute="width" secondItem="BuH-bV-sDq" secondAttribute="width" multiplier="1:2" id="UHJ-2z-fKU"/>
+                            <constraint firstItem="m0C-5q-tTk" firstAttribute="leading" secondItem="BuH-bV-sDq" secondAttribute="trailing" constant="-240" id="YeQ-OX-KLY"/>
+                            <constraint firstItem="kLf-nI-Peh" firstAttribute="top" secondItem="m0C-5q-tTk" secondAttribute="bottom" constant="12" id="eHl-mO-fRx"/>
                             <constraint firstItem="BuH-bV-sDq" firstAttribute="top" secondItem="Ftu-Ce-8gs" secondAttribute="bottom" constant="12" id="f6L-Gp-91Z"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BuH-bV-sDq" secondAttribute="leading" constant="-20" id="iy1-6n-qNH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="iy1-6n-qNH"/>
+                                <exclude reference="YeQ-OX-KLY"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="temperatureView" destination="BuH-bV-sDq" id="M3H-FU-bN7"/>
+                        <outlet property="windView" destination="m0C-5q-tTk" id="FpT-50-GgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRO-yF-vqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
