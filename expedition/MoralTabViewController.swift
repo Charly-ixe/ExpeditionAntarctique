@@ -13,6 +13,12 @@ class MoralTabViewController: UIViewController {
     @IBOutlet weak var centerProfilePictureImageView: UIImageView!
     @IBOutlet weak var leftProfilePictureImageView: UIImageView!
     @IBOutlet weak var rightProfilePictureImageView: UIImageView!
+    @IBOutlet weak var hungerLabel: UILabel!
+    @IBOutlet weak var droughtLabel: UILabel!
+    @IBOutlet weak var moralLabel: UILabel!
+    @IBOutlet weak var teamSpiritLabel: UILabel!
+    
+    var isSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,12 @@ class MoralTabViewController: UIViewController {
         rightProfilePictureImageView.clipsToBounds = true
         rightProfilePictureImageView.layer.borderWidth = 2.0
         rightProfilePictureImageView.layer.borderColor = nunatakBlack.CGColor
+        
+        hungerLabel.textColor = nunatakBlackAlpha
+        droughtLabel.textColor = nunatakBlackAlpha
+        moralLabel.textColor = nunatakBlackAlpha
+        teamSpiritLabel.textColor = nunatakBlackAlpha
+        
     }
     
     override func didReceiveMemoryWarning() {
