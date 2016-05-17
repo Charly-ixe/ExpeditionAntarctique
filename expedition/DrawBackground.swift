@@ -15,26 +15,15 @@ class DrawBackground: UIView {
         let bounds = UIScreen.mainScreen().bounds
         let screenWidth = bounds.width
         let context = UIGraphicsGetCurrentContext()
-//        CGContextSetLineWidth(context, 2.0)
-        let color = waterSkyBlue.CGColor
+        let color = waterSkyBlue3.CGColor
         
-//        CGContextMoveToPoint(context, 0, 0)
-//        CGContextAddLineToPoint(context, screenWidth + 8, 0)
-//        CGContextAddLineToPoint(context, screenWidth + 8, 100)
-//        CGContextAddQuadCurveToPoint(context, screenWidth/2, 25, 0, 100)
-//        CGContextAddLineToPoint(context, 0, 0)
-//        
-//        CGContextSetFillColorWithColor(context, color)
-//        CGContextFillPath(context)
-        
-        let firstCurvePath = UIBezierPath()
-        firstCurvePath.moveToPoint(CGPointMake(0, 0))
-        firstCurvePath.addLineToPoint(CGPointMake(screenWidth + 8, 0))
-        firstCurvePath.addLineToPoint(CGPointMake(screenWidth + 8, 90))
-        firstCurvePath.addQuadCurveToPoint(CGPointMake(0, 90), controlPoint: CGPointMake(screenWidth/2, 25))
-        firstCurvePath.closePath()
-        waterSkyBlue2.setFill()
-        firstCurvePath.fill()
+        CGContextMoveToPoint(context, 0, 0)
+        CGContextAddLineToPoint(context, screenWidth + 8, 0)
+        CGContextAddLineToPoint(context, screenWidth + 8, 90)
+        CGContextAddQuadCurveToPoint(context, screenWidth/2, 25, 0, 90)
+        CGContextAddLineToPoint(context, 0, 0)
+        CGContextSetFillColorWithColor(context, color)
+        CGContextFillPath(context)
         
         let secondCurvePath = UIBezierPath()
         secondCurvePath.moveToPoint(CGPointMake(0, 0))
@@ -42,7 +31,7 @@ class DrawBackground: UIView {
         secondCurvePath.addLineToPoint(CGPointMake(screenWidth + 8, 80))
         secondCurvePath.addQuadCurveToPoint(CGPointMake(0, 80), controlPoint: CGPointMake(screenWidth/2, 25))
         secondCurvePath.closePath()
-        waterSkyBlue3.setFill()
+        waterSkyBlue2.setFill()
         secondCurvePath.fill()
         
         let thirdCurvePath = UIBezierPath()
