@@ -23,6 +23,8 @@ class MoralTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         centerProfilePictureImageView.layer.cornerRadius = centerProfilePictureImageView.frame.size.width / 2
         centerProfilePictureImageView.clipsToBounds = true
         centerProfilePictureImageView.layer.borderWidth = 4.0

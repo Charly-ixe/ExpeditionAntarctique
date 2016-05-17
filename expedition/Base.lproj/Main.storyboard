@@ -74,7 +74,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGj-Um-qt9">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icones-meteo2-50" translatesAutoresizingMaskIntoConstraints="NO" id="pGj-Um-qt9">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="130"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
@@ -424,12 +424,13 @@
                         <viewControllerLayoutGuide type="top" id="Nyl-k6-5Wm"/>
                         <viewControllerLayoutGuide type="bottom" id="ZnK-Cz-XYe"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3rE-kh-aU6">
+                    <view key="view" contentMode="scaleToFill" id="3rE-kh-aU6" customClass="DrawBackground" customModule="expedition" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-Ma-W94">
                                 <rect key="frame" x="256" y="32" width="88" height="88"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="cBj-Zh-KhS"/>
                                     <constraint firstAttribute="height" constant="88" id="dPq-fT-eOL"/>
@@ -437,6 +438,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-58-hFn">
                                 <rect key="frame" x="128" y="58" width="44" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nnm-vC-aXb"/>
                                     <constraint firstAttribute="width" constant="44" id="tml-M3-FPD"/>
@@ -444,6 +446,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JRG-Iu-t3y">
                                 <rect key="frame" x="428" y="58" width="44" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="8Q5-CF-WvA"/>
                                     <constraint firstAttribute="height" constant="44" id="Mdi-WU-Wdg"/>
@@ -578,6 +581,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="icones-meteo2-50" width="788" height="788"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
