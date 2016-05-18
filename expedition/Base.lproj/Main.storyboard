@@ -329,6 +329,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="V3y-9j-S6z" appends="YES" id="Gh4-ue-DvU"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="wind" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-5q-tTk">
                                 <rect key="frame" x="304" y="170" width="272" height="418"/>
@@ -343,10 +346,14 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1j8-H0-plM" appends="YES" id="Lzw-ee-kEJ"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="okl-US-O6t">
+                            <view contentMode="scaleToFill" restorationIdentifier="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="okl-US-O6t">
                                 <rect key="frame" x="24" y="383" width="272" height="205"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
@@ -356,10 +363,14 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Sfx-Ie-EbT" appends="YES" id="rpC-pL-NlU"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="dy2-jW-2SJ">
+                            <view contentMode="scaleToFill" restorationIdentifier="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="dy2-jW-2SJ">
                                 <rect key="frame" x="24" y="170" width="272" height="205"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
@@ -369,9 +380,13 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1es-Rt-7f7" appends="YES" id="chx-SZ-QjT"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="dy2-jW-2SJ" firstAttribute="top" secondItem="BuH-bV-sDq" secondAttribute="bottom" constant="8" id="1Zl-ew-C8o"/>
                             <constraint firstItem="dy2-jW-2SJ" firstAttribute="width" secondItem="m0C-5q-tTk" secondAttribute="width" id="22r-yh-WN9"/>
@@ -405,14 +420,37 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="humidityTapGesture" destination="Sfx-Ie-EbT" id="Zpd-CI-Xsq"/>
                         <outlet property="humidityView" destination="okl-US-O6t" id="qK4-qn-NOr"/>
+                        <outlet property="pressureTapGesture" destination="1es-Rt-7f7" id="3Yz-pi-OAx"/>
                         <outlet property="pressureView" destination="dy2-jW-2SJ" id="eh3-ZD-9uJ"/>
+                        <outlet property="temperatureTapGesture" destination="V3y-9j-S6z" id="x4r-LC-p02"/>
                         <outlet property="temperatureView" destination="BuH-bV-sDq" id="M3H-FU-bN7"/>
+                        <outlet property="windTapGesture" destination="1j8-H0-plM" id="D0D-0T-F7N"/>
                         <outlet property="windView" destination="m0C-5q-tTk" id="FpT-50-GgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRO-yF-vqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="6gG-Ul-DQU"/>
+                <tapGestureRecognizer id="V3y-9j-S6z">
+                    <connections>
+                        <action selector="showTappedView:" destination="64Q-UZ-TUC" id="r3H-85-dw8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1j8-H0-plM">
+                    <connections>
+                        <action selector="showTappedView:" destination="64Q-UZ-TUC" id="Rmx-PE-d05"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1es-Rt-7f7">
+                    <connections>
+                        <action selector="showTappedView:" destination="64Q-UZ-TUC" id="CXU-Ai-bVQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Sfx-Ie-EbT">
+                    <connections>
+                        <action selector="showTappedView:" destination="64Q-UZ-TUC" id="I3f-r8-7Ry"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="30" y="1699"/>
         </scene>
