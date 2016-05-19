@@ -96,8 +96,8 @@
 				6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */,
 				6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */,
 				6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */,
-				6BF827A01CEB1C770085C68B /* DrawBackground.swift */,
 				6BF827A21CEDB38E0085C68B /* DrawGauge.swift */,
+				6BF827A01CEB1C770085C68B /* DrawBackground.swift */,
 			);
 			name = Subviews;
 			sourceTree = "<group>";

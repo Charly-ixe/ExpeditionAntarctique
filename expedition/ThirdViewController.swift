@@ -34,6 +34,10 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var cursorRect = self.selectedTabCursor.frame
+        cursorRect.size.width = self.view.bounds.size.width / 3.0
+        self.selectedTabCursor.frame = cursorRect
+        
         // Customize the currentWeatherView
         
         currentWeatherView.layer.shadowColor = brashWhite.CGColor
@@ -93,15 +97,18 @@ class ThirdViewController: UIViewController {
             options: [], metrics: nil, views: viewBindingsDict))
     }
     
-    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
+    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController, newIndex: CGFloat) {
         oldViewController.willMoveToParentViewController(nil)
         self.addChildViewController(newViewController)
         self.addSubview(newViewController.view, toView:self.dataTabsContainer!)
         newViewController.view.alpha = 0
         newViewController.view.layoutIfNeeded()
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animateWithDuration(0.3, animations: {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0
+            var cursorRect = self.selectedTabCursor.frame
+            cursorRect.origin.x = newIndex * cursorRect.size.width
+            self.selectedTabCursor.frame = cursorRect
             },
                                    completion: { finished in
                                     oldViewController.view.removeFromSuperview()
@@ -113,43 +120,40 @@ class ThirdViewController: UIViewController {
     // Actions
     
     @IBAction func showTabContent(sender: UIButton) {
-        if sender.restorationIdentifier == "weatherTabButton" {
-            let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
-            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-            self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
-            self.currentViewController = newViewController
-//            sender.selected = true
-            UIView.animateWithDuration(0.3, animations: {
-                self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
-                self.view.layoutIfNeeded()
-            })
+        let index = sender.tag - 100
+        
+        let currentIndex = self.selectedTabCursor.tag
+        if currentIndex != index {
+            self.selectedTabCursor.tag = index
             
-        }
-        else if sender.restorationIdentifier == "moralTabButton" {
-            let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
-            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-            self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
-            self.currentViewController = newViewController
-//            sender.selected = true
-            UIView.animateWithDuration(0.3, animations: {
-                self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
-                self.view.layoutIfNeeded()
-            })
-        }
-        else if sender.restorationIdentifier == "stuffTabButton" {
-            let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
-            newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-            self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
-            self.currentViewController = newViewController
-//            sender.selected = true
-            UIView.animateWithDuration(0.3, animations: {
-                print(self.centerConstraintTabCursor.secondItem?.restorationIdentifier)
+            if sender.restorationIdentifier == "weatherTabButton" {
+                let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
+                newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!, newIndex: CGFloat(index))
+                self.currentViewController = newViewController
+                //            sender.selected = true
                 
-                self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
-                self.view.layoutIfNeeded()
                 
-            })
+            }
+            else if sender.restorationIdentifier == "moralTabButton" {
+                let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
+                newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!, newIndex: CGFloat(index))
+                self.currentViewController = newViewController
+                //            sender.selected = true
+            }
+            else if sender.restorationIdentifier == "stuffTabButton" {
+                let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
+                newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
+                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!, newIndex: CGFloat(index))
+                self.currentViewController = newViewController
+                //            sender.selected = true
+            }
+
         }
+        
+        
+        
     }
     
 }

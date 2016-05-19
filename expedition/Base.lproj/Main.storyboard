@@ -60,6 +60,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y41-cm-Y5Q" userLabel="Tab Cursor">
+                                <rect key="frame" x="0.0" y="220" width="120" height="2"/>
+                                <color key="backgroundColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" restorationIdentifier="currentWeather" translatesAutoresizingMaskIntoConstraints="NO" id="ZYk-f5-6CE">
                                 <rect key="frame" x="14" y="32" width="572" height="130"/>
                                 <subviews>
@@ -179,7 +183,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YMn-5t-qcq">
                                 <rect key="frame" x="0.0" y="162" width="600" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="weatherTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krf-XE-xrR">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" restorationIdentifier="weatherTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krf-XE-xrR">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                         <state key="normal" title="MÉTÉO">
@@ -189,7 +193,7 @@
                                             <action selector="showTabContent:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="GmE-07-yXh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="moralTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7E-4D-cbM">
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" restorationIdentifier="moralTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7E-4D-cbM">
                                         <rect key="frame" x="200" y="0.0" width="200" height="60"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                         <state key="normal" title="MORAL">
@@ -199,7 +203,7 @@
                                             <action selector="showTabContent:" destination="GUS-3Z-WbD" eventType="touchUpInside" id="Pwe-HI-lhB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="stuffTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpf-aN-egq">
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" restorationIdentifier="stuffTabButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpf-aN-egq">
                                         <rect key="frame" x="400" y="0.0" width="200" height="60"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                         <state key="normal" title="MATÉRIEL">
@@ -219,42 +223,28 @@
                                     <constraint firstItem="Tpf-aN-egq" firstAttribute="leading" secondItem="j7E-4D-cbM" secondAttribute="trailing" id="lin-jb-56s"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" restorationIdentifier="tabCursor" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-ws-AXs">
-                                <rect key="frame" x="0.0" y="220" width="200" height="2"/>
-                                <color key="backgroundColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="MIQ-rE-Rjg"/>
-                                </constraints>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAG-mU-FBf">
                                 <rect key="frame" x="0.0" y="222" width="600" height="329"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="D5r-ws-AXs" firstAttribute="centerY" secondItem="krf-XE-xrR" secondAttribute="centerY" id="5zf-go-lXI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZYk-f5-6CE" secondAttribute="trailing" constant="-6" id="CZN-mX-kIz"/>
                             <constraint firstItem="YMn-5t-qcq" firstAttribute="top" secondItem="ZYk-f5-6CE" secondAttribute="bottom" id="CeD-sL-CFd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cAG-mU-FBf" secondAttribute="trailing" constant="-20" id="Efg-MU-ke3"/>
                             <constraint firstItem="ZYk-f5-6CE" firstAttribute="leading" secondItem="cIR-MN-TVV" secondAttribute="leadingMargin" constant="-6" id="JSk-eJ-E1M"/>
                             <constraint firstItem="cAG-mU-FBf" firstAttribute="top" secondItem="YMn-5t-qcq" secondAttribute="bottom" id="OdY-LW-5qB"/>
                             <constraint firstItem="krf-XE-xrR" firstAttribute="top" secondItem="ZYk-f5-6CE" secondAttribute="bottom" constant="8" id="UoD-Xx-sBI"/>
-                            <constraint firstItem="D5r-ws-AXs" firstAttribute="centerX" secondItem="krf-XE-xrR" secondAttribute="centerX" id="VkO-xx-rwv"/>
                             <constraint firstItem="YMn-5t-qcq" firstAttribute="width" secondItem="cIR-MN-TVV" secondAttribute="width" id="VsO-VK-Fdy"/>
-                            <constraint firstItem="D5r-ws-AXs" firstAttribute="width" secondItem="krf-XE-xrR" secondAttribute="width" id="gGC-cI-iEC"/>
-                            <constraint firstItem="D5r-ws-AXs" firstAttribute="top" secondItem="YMn-5t-qcq" secondAttribute="bottom" constant="-2" id="kLP-WK-fLj"/>
                             <constraint firstItem="cAG-mU-FBf" firstAttribute="top" secondItem="krf-XE-xrR" secondAttribute="bottom" constant="20" id="pt6-x3-osI"/>
                             <constraint firstItem="YMn-5t-qcq" firstAttribute="leading" secondItem="cIR-MN-TVV" secondAttribute="leadingMargin" constant="-20" id="saw-Eh-1hM"/>
                             <constraint firstItem="ZYk-f5-6CE" firstAttribute="top" secondItem="6nV-6E-Daa" secondAttribute="bottom" constant="12" id="se3-7C-3lJ"/>
                             <constraint firstItem="cAG-mU-FBf" firstAttribute="leading" secondItem="cIR-MN-TVV" secondAttribute="leadingMargin" constant="-20" id="xE4-q0-B1O"/>
-                            <constraint firstItem="D5r-ws-AXs" firstAttribute="leading" secondItem="cIR-MN-TVV" secondAttribute="leadingMargin" constant="-20" id="z9j-je-AZe"/>
                             <constraint firstItem="vLY-Rf-FtK" firstAttribute="top" secondItem="cAG-mU-FBf" secondAttribute="bottom" id="zuv-xg-h6R"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="UoD-Xx-sBI"/>
-                                <exclude reference="5zf-go-lXI"/>
-                                <exclude reference="z9j-je-AZe"/>
                                 <exclude reference="pt6-x3-osI"/>
                             </mask>
                         </variation>
@@ -262,7 +252,6 @@
                     <tabBarItem key="tabBarItem" title="Données" id="mDO-Ad-F1q"/>
                     <connections>
                         <outlet property="celciusLabel" destination="PeD-2g-Ikb" id="2V0-aK-lUS"/>
-                        <outlet property="centerConstraintTabCursor" destination="VkO-xx-rwv" id="Gho-Ng-w38"/>
                         <outlet property="currentWeatherImageView" destination="pGj-Um-qt9" id="oa6-0d-msU"/>
                         <outlet property="currentWeatherView" destination="ZYk-f5-6CE" id="Mvu-4X-EwJ"/>
                         <outlet property="dataTabsContainer" destination="cAG-mU-FBf" id="l71-zl-SCk"/>
@@ -270,7 +259,7 @@
                         <outlet property="dataWindDirectionLabel" destination="lgM-Ej-lIk" id="6SB-TH-0ce"/>
                         <outlet property="dataWindLabel" destination="5Ik-pT-cNw" id="AT5-Y7-Oao"/>
                         <outlet property="moralTabButton" destination="j7E-4D-cbM" id="ClO-IE-EGZ"/>
-                        <outlet property="selectedTabCursor" destination="D5r-ws-AXs" id="Qr7-xq-C80"/>
+                        <outlet property="selectedTabCursor" destination="y41-cm-Y5Q" id="lq4-JO-cDM"/>
                         <outlet property="stuffTabButton" destination="Tpf-aN-egq" id="rf2-DR-ZCZ"/>
                         <outlet property="temperatureLabel" destination="eGJ-Mp-0mQ" id="vQC-Tq-Vea"/>
                         <outlet property="weatherTabButton" destination="krf-XE-xrR" id="YcY-q7-Hai"/>
@@ -622,11 +611,15 @@
                     </view>
                     <connections>
                         <outlet property="centerProfilePictureImageView" destination="zJH-Ma-W94" id="Csw-x6-YVu"/>
+                        <outlet property="droughtGauge" destination="FcB-KN-Lpg" id="Pxe-zs-tba"/>
                         <outlet property="droughtLabel" destination="04P-nT-g7e" id="9QC-Vi-EcY"/>
+                        <outlet property="hungerGauge" destination="F1r-5n-rXy" id="Ifg-Af-52X"/>
                         <outlet property="hungerLabel" destination="Mfy-wS-zgg" id="wwM-Sr-53L"/>
                         <outlet property="leftProfilePictureImageView" destination="fjW-58-hFn" id="2dB-FO-iIG"/>
+                        <outlet property="moralGauge" destination="g2J-5z-5y6" id="nGz-g0-t61"/>
                         <outlet property="moralLabel" destination="Plk-8X-Nsq" id="L3u-ks-AQ4"/>
                         <outlet property="rightProfilePictureImageView" destination="JRG-Iu-t3y" id="P94-Ne-ppa"/>
+                        <outlet property="teamSpiritGauge" destination="tRO-2C-kN0" id="qBa-R1-hO2"/>
                         <outlet property="teamSpiritLabel" destination="jjg-UD-uYl" id="wV6-4c-Iib"/>
                     </connections>
                 </viewController>

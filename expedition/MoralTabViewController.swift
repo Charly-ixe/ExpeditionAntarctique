@@ -17,13 +17,20 @@ class MoralTabViewController: UIViewController {
     @IBOutlet weak var droughtLabel: UILabel!
     @IBOutlet weak var moralLabel: UILabel!
     @IBOutlet weak var teamSpiritLabel: UILabel!
+    @IBOutlet weak var hungerGauge: DrawGauge!
+    @IBOutlet weak var droughtGauge: DrawGauge!
+    @IBOutlet weak var moralGauge: DrawGauge!
+    @IBOutlet weak var teamSpiritGauge: DrawGauge!
     
     var isSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        hungerGauge.gaugeValue = 80.0
+        droughtGauge.gaugeValue = 10.0
+        moralGauge.gaugeValue = 50.0
+        teamSpiritGauge.gaugeValue = 100.0
         
         centerProfilePictureImageView.layer.cornerRadius = centerProfilePictureImageView.frame.size.width / 2
         centerProfilePictureImageView.clipsToBounds = true
