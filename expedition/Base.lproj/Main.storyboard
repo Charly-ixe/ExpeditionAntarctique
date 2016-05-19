@@ -219,7 +219,7 @@
                                     <constraint firstItem="Tpf-aN-egq" firstAttribute="leading" secondItem="j7E-4D-cbM" secondAttribute="trailing" id="lin-jb-56s"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-ws-AXs">
+                            <view contentMode="scaleToFill" restorationIdentifier="tabCursor" translatesAutoresizingMaskIntoConstraints="NO" id="D5r-ws-AXs">
                                 <rect key="frame" x="0.0" y="220" width="200" height="2"/>
                                 <color key="backgroundColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -497,54 +497,119 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAIM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-wS-zgg">
-                                <rect key="frame" x="34" y="174.5" width="29" height="16.5"/>
+                                <rect key="frame" x="34" y="174" width="29" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04P-nT-g7e">
-                                <rect key="frame" x="34" y="226" width="27.5" height="16.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
-                                <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESPRIT D'ÉQUIPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-UD-uYl">
-                                <rect key="frame" x="34" y="329" width="98" height="16.5"/>
+                                <rect key="frame" x="34" y="228.5" width="27.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-8X-Nsq">
-                                <rect key="frame" x="34" y="277.5" width="44" height="16.5"/>
+                                <rect key="frame" x="34" y="283" width="44" height="16.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESPRIT D'ÉQUIPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-UD-uYl">
+                                <rect key="frame" x="34" y="337.5" width="98" height="16.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" restorationIdentifier="hungerGauge" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-5n-rXy" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="194.5" width="532" height="4"/>
+                                <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="N0b-YQ-SyT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="droughtGauge" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-KN-Lpg" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="249" width="532" height="4"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="Wfs-VR-Ilk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="moralGauge" translatesAutoresizingMaskIntoConstraints="NO" id="g2J-5z-5y6" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="304" width="532" height="4"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="dvL-4M-Jb2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="teamSpiritGauge" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-2C-kN0" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="358" width="532" height="4"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="anV-Dy-mTP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="tRO-2C-kN0" secondAttribute="trailing" constant="14" id="0X0-KT-xhb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F1r-5n-rXy" secondAttribute="trailing" constant="14" id="0Z9-xQ-n1X"/>
                             <constraint firstItem="04P-nT-g7e" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="31Z-5n-m2R"/>
-                            <constraint firstItem="Plk-8X-Nsq" firstAttribute="top" secondItem="04P-nT-g7e" secondAttribute="bottom" constant="35" id="4E2-sA-gNw"/>
+                            <constraint firstItem="Plk-8X-Nsq" firstAttribute="top" secondItem="04P-nT-g7e" secondAttribute="bottom" constant="38" id="4E2-sA-gNw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Plk-8X-Nsq" secondAttribute="leading" id="6Tp-sm-bef"/>
                             <constraint firstItem="jjg-UD-uYl" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="8he-ZG-7Pw"/>
                             <constraint firstItem="Plk-8X-Nsq" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="Ao4-O7-cI1"/>
-                            <constraint firstItem="04P-nT-g7e" firstAttribute="top" secondItem="Mfy-wS-zgg" secondAttribute="bottom" constant="35" id="Aro-Sg-wBA"/>
+                            <constraint firstItem="04P-nT-g7e" firstAttribute="top" secondItem="Mfy-wS-zgg" secondAttribute="bottom" constant="38" id="Aro-Sg-wBA"/>
                             <constraint firstItem="Mfy-wS-zgg" firstAttribute="top" secondItem="BhA-7j-Hz0" secondAttribute="bottom" constant="30" id="C3d-l0-vKq"/>
+                            <constraint firstItem="F1r-5n-rXy" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="EEL-aF-pas"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Plk-8X-Nsq" secondAttribute="leading" constant="14" id="Est-g4-nVe"/>
+                            <constraint firstItem="FcB-KN-Lpg" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="Etf-eW-tLJ"/>
                             <constraint firstItem="fjW-58-hFn" firstAttribute="top" secondItem="Nyl-k6-5Wm" secondAttribute="bottom" constant="38" id="Ewz-PN-fAA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jjg-UD-uYl" secondAttribute="leading" id="Fl1-iF-Csf"/>
                             <constraint firstItem="zJH-Ma-W94" firstAttribute="centerX" secondItem="3rE-kh-aU6" secondAttribute="centerX" id="Gw9-Wb-32I"/>
+                            <constraint firstItem="tRO-2C-kN0" firstAttribute="top" secondItem="jjg-UD-uYl" secondAttribute="bottom" constant="4" id="Hep-Tb-kob"/>
                             <constraint firstItem="BhA-7j-Hz0" firstAttribute="centerX" secondItem="zJH-Ma-W94" secondAttribute="centerX" id="J5F-bV-sLz"/>
                             <constraint firstItem="BhA-7j-Hz0" firstAttribute="top" secondItem="zJH-Ma-W94" secondAttribute="bottom" constant="5" id="LOd-mk-YPt"/>
+                            <constraint firstItem="g2J-5z-5y6" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="Q9M-T7-3dW"/>
                             <constraint firstItem="zJH-Ma-W94" firstAttribute="top" secondItem="Nyl-k6-5Wm" secondAttribute="bottom" constant="12" id="X4x-3c-4rj"/>
                             <constraint firstItem="JRG-Iu-t3y" firstAttribute="centerX" secondItem="3rE-kh-aU6" secondAttribute="centerX" multiplier="1.5" id="XVG-st-bUe"/>
+                            <constraint firstItem="FcB-KN-Lpg" firstAttribute="top" secondItem="04P-nT-g7e" secondAttribute="bottom" constant="4" id="Xea-Xc-AeU"/>
+                            <constraint firstItem="tRO-2C-kN0" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="Y4x-8a-LHy"/>
                             <constraint firstItem="fjW-58-hFn" firstAttribute="centerX" secondItem="3rE-kh-aU6" secondAttribute="centerX" multiplier="1:2" id="ZRC-QQ-Bud"/>
-                            <constraint firstItem="jjg-UD-uYl" firstAttribute="top" secondItem="Plk-8X-Nsq" secondAttribute="bottom" constant="35" id="cbp-y4-XPI"/>
+                            <constraint firstItem="jjg-UD-uYl" firstAttribute="top" secondItem="Plk-8X-Nsq" secondAttribute="bottom" constant="38" id="cbp-y4-XPI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2J-5z-5y6" secondAttribute="trailing" constant="14" id="eg8-XM-vPI"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Mfy-wS-zgg" secondAttribute="leading" constant="14" id="jCI-KZ-L2M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FcB-KN-Lpg" secondAttribute="trailing" constant="14" id="mU1-1V-QFB"/>
                             <constraint firstItem="Mfy-wS-zgg" firstAttribute="leading" secondItem="3rE-kh-aU6" secondAttribute="leadingMargin" constant="14" id="rnW-80-rKl"/>
+                            <constraint firstItem="F1r-5n-rXy" firstAttribute="top" secondItem="Mfy-wS-zgg" secondAttribute="bottom" constant="4" id="sJ0-C6-Kwp"/>
                             <constraint firstItem="JRG-Iu-t3y" firstAttribute="top" secondItem="Nyl-k6-5Wm" secondAttribute="bottom" constant="38" id="tg5-xl-sCQ"/>
+                            <constraint firstItem="g2J-5z-5y6" firstAttribute="top" secondItem="Plk-8X-Nsq" secondAttribute="bottom" constant="4" id="tgY-rK-gzG"/>
                             <constraint firstAttribute="leadingMargin" secondItem="04P-nT-g7e" secondAttribute="leading" constant="14" id="y5c-Ir-xQx"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="jCI-KZ-L2M"/>

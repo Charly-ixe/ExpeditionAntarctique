@@ -143,6 +143,8 @@ class ThirdViewController: UIViewController {
             self.currentViewController = newViewController
 //            sender.selected = true
             UIView.animateWithDuration(0.3, animations: {
+                print(self.centerConstraintTabCursor.secondItem?.restorationIdentifier)
+                
                 self.centerConstraintTabCursor.constant += self.weatherTabButton.bounds.width
                 self.view.layoutIfNeeded()
                 
