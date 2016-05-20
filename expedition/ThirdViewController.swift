@@ -25,7 +25,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var moralTabButton: UIButton!
     @IBOutlet weak var stuffTabButton: UIButton!
     @IBOutlet weak var selectedTabCursor: UIView!
-    @IBOutlet weak var centerConstraintTabCursor: NSLayoutConstraint!
+    @IBOutlet weak var tabCursorLeadingConstraint: NSLayoutConstraint!
     
     
     weak var currentViewController: UIViewController?
@@ -34,9 +34,9 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var cursorRect = self.selectedTabCursor.frame
-        cursorRect.size.width = self.view.bounds.size.width / 3.0
-        self.selectedTabCursor.frame = cursorRect
+//        var cursorRect = self.selectedTabCursor.frame
+//        cursorRect.size.width = self.view.bounds.size.width / 3.0
+//        self.selectedTabCursor.frame = cursorRect
         
         // Customize the currentWeatherView
         
@@ -97,7 +97,7 @@ class ThirdViewController: UIViewController {
             options: [], metrics: nil, views: viewBindingsDict))
     }
     
-    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController, newIndex: CGFloat) {
+    func cycleFromViewController(oldViewController: UIViewController, toViewController newViewController: UIViewController) {
         oldViewController.willMoveToParentViewController(nil)
         self.addChildViewController(newViewController)
         self.addSubview(newViewController.view, toView:self.dataTabsContainer!)
@@ -106,9 +106,6 @@ class ThirdViewController: UIViewController {
         UIView.animateWithDuration(0.3, animations: {
             newViewController.view.alpha = 1
             oldViewController.view.alpha = 0
-            var cursorRect = self.selectedTabCursor.frame
-            cursorRect.origin.x = newIndex * cursorRect.size.width
-            self.selectedTabCursor.frame = cursorRect
             },
                                    completion: { finished in
                                     oldViewController.view.removeFromSuperview()
@@ -126,10 +123,18 @@ class ThirdViewController: UIViewController {
         if currentIndex != index {
             self.selectedTabCursor.tag = index
             
+            UIView.animateWithDuration(0.3, animations: {
+                self.tabCursorLeadingConstraint.constant = (CGFloat(index) * self.selectedTabCursor.frame.width) - 20
+                self.view.layoutIfNeeded()
+//                var cursorRect = self.selectedTabCursor.frame
+//                cursorRect.origin.x = CGFloat(index) * cursorRect.size.width
+//                self.selectedTabCursor.frame = cursorRect
+            })
+            
             if sender.restorationIdentifier == "weatherTabButton" {
                 let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
                 newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!, newIndex: CGFloat(index))
+                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
                 self.currentViewController = newViewController
                 //            sender.selected = true
                 
@@ -138,14 +143,14 @@ class ThirdViewController: UIViewController {
             else if sender.restorationIdentifier == "moralTabButton" {
                 let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("moralTab")
                 newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!, newIndex: CGFloat(index))
+                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
                 self.currentViewController = newViewController
                 //            sender.selected = true
             }
             else if sender.restorationIdentifier == "stuffTabButton" {
                 let newViewController = self.storyboard?.instantiateViewControllerWithIdentifier("stuffTab")
                 newViewController!.view.translatesAutoresizingMaskIntoConstraints = false
-                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!, newIndex: CGFloat(index))
+                self.cycleFromViewController(self.currentViewController!, toViewController: newViewController!)
                 self.currentViewController = newViewController
                 //            sender.selected = true
             }
