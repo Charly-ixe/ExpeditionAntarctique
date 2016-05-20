@@ -28,9 +28,13 @@ class MoralTabViewController: UIViewController {
         super.viewDidLoad()
         
         hungerGauge.gaugeValue = 80.0
-        droughtGauge.gaugeValue = 10.0
-        moralGauge.gaugeValue = 50.0
+        hungerGauge.color = hungerGauge.setNewColor(CGFloat(hungerGauge.gaugeValue))
+        droughtGauge.gaugeValue = 12.0
+        droughtGauge.color = droughtGauge.setNewColor(CGFloat(droughtGauge.gaugeValue))
+        moralGauge.gaugeValue = 35.0
+        moralGauge.color = moralGauge.setNewColor(CGFloat(moralGauge.gaugeValue))
         teamSpiritGauge.gaugeValue = 100.0
+        teamSpiritGauge.color = teamSpiritGauge.setNewColor(CGFloat(teamSpiritGauge.gaugeValue))
         
         centerProfilePictureImageView.layer.cornerRadius = centerProfilePictureImageView.frame.size.width / 2
         centerProfilePictureImageView.clipsToBounds = true

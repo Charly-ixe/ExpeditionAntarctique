@@ -10,23 +10,46 @@ import UIKit
 
 class DrawGauge: UIView {
     var gaugeValue = 100.0
+    var color = UIColor.greenColor().CGColor
     override func drawRect(rect: CGRect) {
         
         let gaugeWidth = self.bounds.width
         let context = UIGraphicsGetCurrentContext()
-        let color = UIColor.redColor().CGColor
+//        var color = UIColor.greenColor().CGColor
+//        if gaugeValue < 10.0 {
+//            color = UIColor.redColor().CGColor
+//        }
+//        else if gaugeValue > 10 && gaugeValue < 25 {
+//            color = UIColor.yellowColor().CGColor
+//        }
+//        else {
+//            color = UIColor.greenColor().CGColor
+//        }
         
         
         CGContextSetLineWidth(context, 4.0)
         CGContextMoveToPoint(context, 0, 0)
-        CGContextAddLineToPoint(context, CGFloat(gaugeValue), 0)
-        CGContextAddLineToPoint(context, CGFloat(gaugeValue), 4)
+        CGContextAddLineToPoint(context, (CGFloat(gaugeValue)/100) * gaugeWidth, 0)
+        CGContextAddLineToPoint(context, (CGFloat(gaugeValue)/100) * gaugeWidth, 4)
         CGContextAddLineToPoint(context, 0, 4)
         CGContextSetFillColorWithColor(context, color)
         CGContextFillPath(context)
         
         
         
+    }
+    func setNewColor(gaugeValue : CGFloat) -> CGColor {
+        if gaugeValue <= 25.0 {
+            color = UIColor.redColor().CGColor
+        }
+        else if gaugeValue > 25.0 && gaugeValue <= 50.0 {
+            color = UIColor.yellowColor().CGColor
+            print("drought")
+        }
+        else {
+            color = UIColor.greenColor().CGColor
+        }
+        return color
     }
 
 }
