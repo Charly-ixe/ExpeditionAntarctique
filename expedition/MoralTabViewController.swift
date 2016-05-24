@@ -21,27 +21,29 @@ class MoralTabViewController: UIViewController {
     @IBOutlet weak var droughtGauge: DrawGauge!
     @IBOutlet weak var moralGauge: DrawGauge!
     @IBOutlet weak var teamSpiritGauge: DrawGauge!
+    @IBOutlet var leftImageViewTapGesture: UITapGestureRecognizer!
+    let guillaume = Character(name: "Guillaume")
+    let camille = Character(name: "Camille")
+    weak var currentCharacter: Character?
     
     var isSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var currentCharacter: Character
-        var guillaume = Character(name: "Guillaume")
         guillaume.hunger = 20.0
         guillaume.moral = 40.0
         
-        currentCharacter = guillaume
+        camille.hunger = 80.0
+        camille.moral = 35.0
+        camille.teamSpirit = 5.0
         
-        hungerGauge.gaugeValue = currentCharacter.hunger
-        hungerGauge.color = hungerGauge.setNewColor(CGFloat(hungerGauge.gaugeValue))
-        droughtGauge.gaugeValue = currentCharacter.drought
-        droughtGauge.color = droughtGauge.setNewColor(CGFloat(droughtGauge.gaugeValue))
-        moralGauge.gaugeValue = currentCharacter.moral
-        moralGauge.color = moralGauge.setNewColor(CGFloat(moralGauge.gaugeValue))
-        teamSpiritGauge.gaugeValue = currentCharacter.teamSpirit
-        teamSpiritGauge.color = teamSpiritGauge.setNewColor(CGFloat(teamSpiritGauge.gaugeValue))
+        currentCharacter = guillaume
+        print(currentCharacter?.name)
+        
+        setGaugesValues(currentCharacter!)
+        
+        print(hungerGauge.gaugeValue)
         
         centerProfilePictureImageView.layer.cornerRadius = centerProfilePictureImageView.frame.size.width / 2
         centerProfilePictureImageView.clipsToBounds = true
@@ -68,4 +70,23 @@ class MoralTabViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func leftImageViewTap(sender: UITapGestureRecognizer) {
+        currentCharacter = camille
+        print(currentCharacter?.name)
+        setGaugesValues(currentCharacter!)
+        print(hungerGauge.gaugeValue)
+    }
+    
+    func setGaugesValues(currentCharacter : Character) {
+        hungerGauge.gaugeValue = currentCharacter.hunger
+        hungerGauge.color = hungerGauge.setNewColor(CGFloat(hungerGauge.gaugeValue))
+        droughtGauge.gaugeValue = currentCharacter.drought
+        droughtGauge.color = droughtGauge.setNewColor(CGFloat(droughtGauge.gaugeValue))
+        moralGauge.gaugeValue = currentCharacter.moral
+        moralGauge.color = moralGauge.setNewColor(CGFloat(moralGauge.gaugeValue))
+        teamSpiritGauge.gaugeValue = currentCharacter.teamSpirit
+        teamSpiritGauge.color = teamSpiritGauge.setNewColor(CGFloat(teamSpiritGauge.gaugeValue))
+    }
+    
+    
 }

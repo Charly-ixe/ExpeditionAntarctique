@@ -15,17 +15,6 @@ class DrawGauge: UIView {
         
         let gaugeWidth = self.bounds.width
         let context = UIGraphicsGetCurrentContext()
-//        var color = UIColor.greenColor().CGColor
-//        if gaugeValue < 10.0 {
-//            color = UIColor.redColor().CGColor
-//        }
-//        else if gaugeValue > 10 && gaugeValue < 25 {
-//            color = UIColor.yellowColor().CGColor
-//        }
-//        else {
-//            color = UIColor.greenColor().CGColor
-//        }
-        
         
         CGContextSetLineWidth(context, 4.0)
         CGContextMoveToPoint(context, 0, 0)
@@ -44,7 +33,6 @@ class DrawGauge: UIView {
         }
         else if gaugeValue > 25.0 && gaugeValue <= 50.0 {
             color = UIColor.yellowColor().CGColor
-            print("drought")
         }
         else {
             color = UIColor.greenColor().CGColor

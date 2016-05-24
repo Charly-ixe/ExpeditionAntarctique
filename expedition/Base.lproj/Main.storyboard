@@ -560,9 +560,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-58-hFn" customClass="CharacterView" customModule="expedition" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-58-hFn">
                                 <rect key="frame" x="128" y="58" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nnm-vC-aXb"/>
                                     <constraint firstAttribute="width" constant="44" id="tml-M3-FPD"/>
@@ -570,6 +571,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="tRO-2C-kN0" secondAttribute="trailing" constant="14" id="0X0-KT-xhb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="F1r-5n-rXy" secondAttribute="trailing" constant="14" id="0Z9-xQ-n1X"/>
@@ -619,6 +621,9 @@
                                 <exclude reference="Fl1-iF-Csf"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eGW-Qa-6Nr" appends="YES" id="lsC-Ds-wE4"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="centerProfilePictureImageView" destination="zJH-Ma-W94" id="Csw-x6-YVu"/>
@@ -626,6 +631,7 @@
                         <outlet property="droughtLabel" destination="04P-nT-g7e" id="9QC-Vi-EcY"/>
                         <outlet property="hungerGauge" destination="F1r-5n-rXy" id="Ifg-Af-52X"/>
                         <outlet property="hungerLabel" destination="Mfy-wS-zgg" id="wwM-Sr-53L"/>
+                        <outlet property="leftImageViewTapGesture" destination="eGW-Qa-6Nr" id="vkA-69-I4L"/>
                         <outlet property="leftProfilePictureImageView" destination="fjW-58-hFn" id="2dB-FO-iIG"/>
                         <outlet property="moralGauge" destination="g2J-5z-5y6" id="nGz-g0-t61"/>
                         <outlet property="moralLabel" destination="Plk-8X-Nsq" id="L3u-ks-AQ4"/>
@@ -635,6 +641,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNs-o4-9IN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eGW-Qa-6Nr">
+                    <connections>
+                        <action selector="leftImageViewTap:" destination="EbX-cE-UQ5" id="qQx-qs-CWO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="686" y="1699"/>
         </scene>
