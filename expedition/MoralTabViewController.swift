@@ -27,13 +27,20 @@ class MoralTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hungerGauge.gaugeValue = 80.0
+        var currentCharacter: Character
+        var guillaume = Character(name: "Guillaume")
+        guillaume.hunger = 20.0
+        guillaume.moral = 40.0
+        
+        currentCharacter = guillaume
+        
+        hungerGauge.gaugeValue = currentCharacter.hunger
         hungerGauge.color = hungerGauge.setNewColor(CGFloat(hungerGauge.gaugeValue))
-        droughtGauge.gaugeValue = 12.0
+        droughtGauge.gaugeValue = currentCharacter.drought
         droughtGauge.color = droughtGauge.setNewColor(CGFloat(droughtGauge.gaugeValue))
-        moralGauge.gaugeValue = 35.0
+        moralGauge.gaugeValue = currentCharacter.moral
         moralGauge.color = moralGauge.setNewColor(CGFloat(moralGauge.gaugeValue))
-        teamSpiritGauge.gaugeValue = 100.0
+        teamSpiritGauge.gaugeValue = currentCharacter.teamSpirit
         teamSpiritGauge.color = teamSpiritGauge.setNewColor(CGFloat(teamSpiritGauge.gaugeValue))
         
         centerProfilePictureImageView.layer.cornerRadius = centerProfilePictureImageView.frame.size.width / 2
