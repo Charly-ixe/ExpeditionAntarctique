@@ -39,5 +39,13 @@ class DrawGauge: UIView {
         }
         return color
     }
+    
+    func animateView(newSize : CGFloat) {
+        UIView.animateWithDuration(0.3, animations: {
+            var newFrame = self.frame
+            newFrame.size.width = newSize
+            self.frame = newFrame
+        })
+    }
 
 }

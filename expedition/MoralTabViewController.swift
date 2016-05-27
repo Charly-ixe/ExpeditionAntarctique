@@ -22,8 +22,11 @@ class MoralTabViewController: UIViewController {
     @IBOutlet weak var moralGauge: DrawGauge!
     @IBOutlet weak var teamSpiritGauge: DrawGauge!
     @IBOutlet var leftImageViewTapGesture: UITapGestureRecognizer!
+    @IBOutlet var centerImageViewTapGesture: UITapGestureRecognizer!
+    @IBOutlet var rightImageViewTapGesture: UITapGestureRecognizer!
     let guillaume = Character(name: "Guillaume")
-    let camille = Character(name: "Camille")
+    let valentine = Character(name: "Valentine")
+    let stephane = Character(name: "Stéphane")
     weak var currentCharacter: Character?
     
     var isSelected: Bool = false
@@ -34,9 +37,14 @@ class MoralTabViewController: UIViewController {
         guillaume.hunger = 20.0
         guillaume.moral = 40.0
         
-        camille.hunger = 80.0
-        camille.moral = 35.0
-        camille.teamSpirit = 5.0
+        valentine.hunger = 80.0
+        valentine.moral = 35.0
+        valentine.teamSpirit = 5.0
+        
+        stephane.hunger = 0.0
+        stephane.drought = 25.0
+        stephane.moral = 10.0
+        stephane.teamSpirit = 90.0
         
         currentCharacter = guillaume
         print(currentCharacter?.name)
@@ -71,7 +79,23 @@ class MoralTabViewController: UIViewController {
     }
 
     @IBAction func leftImageViewTap(sender: UITapGestureRecognizer) {
-        currentCharacter = camille
+        currentCharacter = valentine
+        print(currentCharacter?.name)
+        setGaugesValues(currentCharacter!)
+        print(hungerGauge.gaugeValue)
+//        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
+    }
+    
+    @IBAction func centerImageViewTap(sender: UITapGestureRecognizer) {
+        currentCharacter = guillaume
+        print(currentCharacter?.name)
+        setGaugesValues(currentCharacter!)
+        print(hungerGauge.gaugeValue)
+//        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
+    }
+    
+    @IBAction func rightImageViewTap(sender: UITapGestureRecognizer) {
+        currentCharacter = stephane
         print(currentCharacter?.name)
         setGaugesValues(currentCharacter!)
         print(hungerGauge.gaugeValue)

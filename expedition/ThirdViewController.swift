@@ -61,13 +61,6 @@ class ThirdViewController: UIViewController {
         moralTabButton.tintColor = nunatakBlack
         stuffTabButton.tintColor = nunatakBlack
         
-                
-        
-//        weatherTabButton.setImage(UIImage().createSelectionIndicator(nunatakBlack, size: CGSizeMake(weatherTabButton.frame.width, weatherTabButton.frame.height), lineWidth: 2.0), forState:.Selected)
-//        moralTabButton.setImage(UIImage().createSelectionIndicator(nunatakBlack, size: CGSizeMake(weatherTabButton.frame.width, weatherTabButton.frame.height), lineWidth: 2.0), forState:.Selected)
-//        stuffTabButton.setImage(UIImage().createSelectionIndicator(nunatakBlack, size: CGSizeMake(weatherTabButton.frame.width, weatherTabButton.frame.height), lineWidth: 2.0), forState:.Selected)
-        
-        
         
         self.currentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("weatherTab")
         self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
