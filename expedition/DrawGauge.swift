@@ -24,8 +24,6 @@ class DrawGauge: UIView {
         CGContextSetFillColorWithColor(context, color)
         CGContextFillPath(context)
         
-        
-        
     }
     func setNewColor(gaugeValue : CGFloat) -> CGColor {
         if gaugeValue <= 25.0 {
@@ -42,9 +40,10 @@ class DrawGauge: UIView {
     
     func animateView(newSize : CGFloat) {
         UIView.animateWithDuration(0.3, animations: {
-            var newFrame = self.frame
-            newFrame.size.width = newSize
-            self.frame = newFrame
+//            var newFrame = self.frame
+//            newFrame.size.width = newSize
+//            self.frame = newFrame
+            
         })
     }
 

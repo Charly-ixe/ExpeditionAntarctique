@@ -80,9 +80,13 @@ class MoralTabViewController: UIViewController {
 
     @IBAction func leftImageViewTap(sender: UITapGestureRecognizer) {
         currentCharacter = valentine
-        print(currentCharacter?.name)
         setGaugesValues(currentCharacter!)
-        print(hungerGauge.gaugeValue)
+//        var newFrame = sender.view?.frame
+//        newFrame?.size.width = 88
+//        newFrame?.size.height = 88
+//        sender.view?.frame = newFrame!
+//        sender.view?.setNeedsLayout()
+        
 //        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
     }
     
@@ -90,15 +94,14 @@ class MoralTabViewController: UIViewController {
         currentCharacter = guillaume
         print(currentCharacter?.name)
         setGaugesValues(currentCharacter!)
-        print(hungerGauge.gaugeValue)
 //        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
+        
     }
     
     @IBAction func rightImageViewTap(sender: UITapGestureRecognizer) {
         currentCharacter = stephane
         print(currentCharacter?.name)
         setGaugesValues(currentCharacter!)
-        print(hungerGauge.gaugeValue)
     }
     
     func setGaugesValues(currentCharacter : Character) {
@@ -110,6 +113,10 @@ class MoralTabViewController: UIViewController {
         moralGauge.color = moralGauge.setNewColor(CGFloat(moralGauge.gaugeValue))
         teamSpiritGauge.gaugeValue = currentCharacter.teamSpirit
         teamSpiritGauge.color = teamSpiritGauge.setNewColor(CGFloat(teamSpiritGauge.gaugeValue))
+        self.hungerGauge.setNeedsDisplay()
+        self.droughtGauge.setNeedsDisplay()
+        self.moralGauge.setNeedsDisplay()
+        self.teamSpiritGauge.setNeedsDisplay()
     }
     
     
