@@ -27,13 +27,13 @@ class DrawGauge: UIView {
     }
     func setNewColor(gaugeValue : CGFloat) -> CGColor {
         if gaugeValue <= 25.0 {
-            color = UIColor.redColor().CGColor
+            color = gaugeRed.CGColor
         }
         else if gaugeValue > 25.0 && gaugeValue <= 50.0 {
-            color = UIColor.yellowColor().CGColor
+            color = gaugeYellow.CGColor
         }
         else {
-            color = UIColor.greenColor().CGColor
+            color = gaugeGreen.CGColor
         }
         return color
     }

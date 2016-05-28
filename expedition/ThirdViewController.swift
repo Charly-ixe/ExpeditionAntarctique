@@ -117,7 +117,7 @@ class ThirdViewController: UIViewController {
             self.selectedTabCursor.tag = index
             
             UIView.animateWithDuration(0.3, animations: {
-                self.tabCursorLeadingConstraint.constant = (CGFloat(index) * self.selectedTabCursor.frame.width) - 20
+                self.tabCursorLeadingConstraint.constant = (CGFloat(index) * self.selectedTabCursor.frame.width) - 18
                 self.view.layoutIfNeeded()
 //                var cursorRect = self.selectedTabCursor.frame
 //                cursorRect.origin.x = CGFloat(index) * cursorRect.size.width

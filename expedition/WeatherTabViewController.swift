@@ -45,11 +45,7 @@ class WeatherTabViewController: UIViewController {
     }
     
     @IBAction func showTappedView(sender: UITapGestureRecognizer){
-        print("tap")
-//        let constraint = NSLayoutConstraint(item: sender.view!, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1, constant: -12)
-//        constraint.active = true
-//        sender.view?.updateConstraints()
-//        self.view.layoutIfNeeded()
+        
         
     }
     
