@@ -18,6 +18,10 @@ class WeatherTabViewController: UIViewController {
     @IBOutlet var windTapGesture: UITapGestureRecognizer!
     @IBOutlet var pressureTapGesture: UITapGestureRecognizer!
     @IBOutlet var humidityTapGesture: UITapGestureRecognizer!
+    let transition = PopAnimator()
+    var selectedView : UIView?
+    var container : UIView?
+    
     
     override func viewDidLoad() {
         
@@ -36,7 +40,6 @@ class WeatherTabViewController: UIViewController {
         
         // Tap Gestures
         
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,8 +49,34 @@ class WeatherTabViewController: UIViewController {
     
     @IBAction func showTappedView(sender: UITapGestureRecognizer){
         
+        selectedView = sender.view
+        let name = selectedView?.restorationIdentifier
+        let weatherDetails = storyboard?.instantiateViewControllerWithIdentifier("WeatherDetailsViewController") as! WeatherDetailsViewController
+        weatherDetails.transitioningDelegate = self
+        print(name)
+        weatherDetails.text = name!
+        presentViewController(weatherDetails, animated: true, completion: nil)
         
     }
     
 
+}
+
+extension WeatherTabViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForPresentedController(
+        presented: UIViewController,
+        presentingController presenting: UIViewController,
+                             sourceController source: UIViewController) ->
+        UIViewControllerAnimatedTransitioning? {
+            
+            transition.originFrame = selectedView!.superview!.convertRect(selectedView!.frame, toView: nil)
+            transition.presenting = true
+            return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
+    }
 }

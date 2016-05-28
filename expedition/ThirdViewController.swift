@@ -27,6 +27,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var selectedTabCursor: UIView!
     @IBOutlet weak var tabCursorLeadingConstraint: NSLayoutConstraint!
     
+//    @IBOutlet weak var container: UIView?
     
     weak var currentViewController: UIViewController?
     var isSelected: Bool = false
@@ -106,6 +107,11 @@ class ThirdViewController: UIViewController {
                                     newViewController.didMoveToParentViewController(self)
         })
     }
+    
+//    func getContainer() -> UIView {
+//        let container = self.container
+//        return container!
+//    }
     
     // Actions
     

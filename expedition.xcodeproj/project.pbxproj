@@ -21,6 +21,8 @@
 		6B3670C71CC77A1400C29629 /* expeditionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670C61CC77A1400C29629 /* expeditionTests.swift */; };
 		6B3670D21CC77A1400C29629 /* expeditionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670D11CC77A1400C29629 /* expeditionUITests.swift */; };
 		6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */; };
+		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
+		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
 		6BF827A11CEB1C770085C68B /* DrawBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF827A01CEB1C770085C68B /* DrawBackground.swift */; };
 		6BF827A31CEDB38E0085C68B /* DrawGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF827A21CEDB38E0085C68B /* DrawGauge.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		6B3670D11CC77A1400C29629 /* expeditionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = expeditionUITests.swift; sourceTree = "<group>"; };
 		6B3670D31CC77A1400C29629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		6BF827A01CEB1C770085C68B /* DrawBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawBackground.swift; sourceTree = "<group>"; };
 		6BF827A21CEDB38E0085C68B /* DrawGauge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawGauge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +105,8 @@
 				6BF827A21CEDB38E0085C68B /* DrawGauge.swift */,
 				6BF827A01CEB1C770085C68B /* DrawBackground.swift */,
 				6B276B811CF4A7CB00F6BF23 /* Character.swift */,
+				6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */,
+				6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */,
 			);
 			name = Subviews;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */,
 				6B102A7F1CE4EBAB004EB942 /* StuffTabViewController.swift in Sources */,
 				6B3670B41CC77A1400C29629 /* SecondViewController.swift in Sources */,
 				6B276B821CF4A7CB00F6BF23 /* Character.swift in Sources */,
@@ -313,6 +320,7 @@
 				6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */,
 				6B102A7E1CE4EBAB004EB942 /* MoralTabViewController.swift in Sources */,
 				6B3670B21CC77A1400C29629 /* FirstViewController.swift in Sources */,
+				6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */,
 				6B102A801CE4EBAB004EB942 /* WeatherTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
