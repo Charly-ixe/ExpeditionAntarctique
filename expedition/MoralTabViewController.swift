@@ -81,11 +81,6 @@ class MoralTabViewController: UIViewController {
     @IBAction func leftImageViewTap(sender: UITapGestureRecognizer) {
         currentCharacter = valentine
         setGaugesValues(currentCharacter!)
-//        var newFrame = sender.view?.frame
-//        newFrame?.size.width = 88
-//        newFrame?.size.height = 88
-//        sender.view?.frame = newFrame!
-//        sender.view?.setNeedsLayout()
         
 //        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
     }
@@ -102,6 +97,7 @@ class MoralTabViewController: UIViewController {
         currentCharacter = stephane
         print(currentCharacter?.name)
         setGaugesValues(currentCharacter!)
+        
     }
     
     func setGaugesValues(currentCharacter : Character) {

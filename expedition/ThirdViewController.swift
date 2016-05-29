@@ -27,7 +27,6 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var selectedTabCursor: UIView!
     @IBOutlet weak var tabCursorLeadingConstraint: NSLayoutConstraint!
     
-//    @IBOutlet weak var container: UIView?
     
     weak var currentViewController: UIViewController?
     var isSelected: Bool = false
@@ -68,6 +67,8 @@ class ThirdViewController: UIViewController {
         self.addChildViewController(self.currentViewController!)
         self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
         weatherTabButton.selected = true
+        
+        print(self.dataTabsContainer.frame)
         
         
     }

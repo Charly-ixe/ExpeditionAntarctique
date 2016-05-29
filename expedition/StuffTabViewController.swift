@@ -10,9 +10,21 @@ import UIKit
 
 class StuffTabViewController: UIViewController {
     
+    @IBOutlet weak var stuffToResupplyView: UIView!
+    @IBOutlet weak var stuffBottomLeftView: UIView!
+    @IBOutlet weak var stuffBottomRightView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Customize Views
+        
+        stuffToResupplyView.layer.shadowColor = brashWhite.CGColor
+        stuffToResupplyView.layer.shadowOffset = CGSizeZero
+        stuffBottomLeftView.layer.shadowColor = brashWhite.CGColor
+        stuffBottomLeftView.layer.shadowOffset = CGSizeZero
+        stuffBottomRightView.layer.shadowColor = brashWhite.CGColor
+        stuffBottomRightView.layer.shadowOffset = CGSizeZero
     }
     
     override func didReceiveMemoryWarning() {

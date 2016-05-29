@@ -40,7 +40,8 @@ class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             weatherDetailsView.center = CGPoint(
                 x: CGRectGetMidX(initialFrame),
                 y: CGRectGetMidY(initialFrame))
-            weatherDetailsView.clipsToBounds = true
+//            weatherDetailsView.clipsToBounds = true
+            
         }
         
         containerView.addSubview(toView)

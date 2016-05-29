@@ -23,6 +23,10 @@ class DrawGauge: UIView {
         CGContextAddLineToPoint(context, 0, 4)
         CGContextSetFillColorWithColor(context, color)
         CGContextFillPath(context)
+//        let gauge = UIView()
+//        gauge.frame = CGRectMake(0, 0, (CGFloat(gaugeValue)/100) * gaugeWidth, 4)
+//        gauge.backgroundColor = UIColor(CGColor: color)
+//        self.addSubview(gauge)
         
     }
     func setNewColor(gaugeValue : CGFloat) -> CGColor {
