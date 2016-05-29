@@ -467,16 +467,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCK-u2-76J">
-                                <rect key="frame" x="20" y="28" width="145" height="21"/>
+                                <rect key="frame" x="20" y="77" width="145" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VI-QB-OSh">
+                                <rect key="frame" x="20" y="20" width="91" height="30"/>
+                                <state key="normal" title="RETOUR"/>
+                                <connections>
+                                    <action selector="backToWeatherViewController:" destination="J0f-Dg-JHl" eventType="touchUpInside" id="mno-To-d0b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="WeatherDetailsLabel" destination="oCK-u2-76J" id="pjI-Ia-4I2"/>
+                        <outlet property="backButton" destination="5VI-QB-OSh" id="VpP-m0-2P3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ti-hD-79P" userLabel="First Responder" sceneMemberID="firstResponder"/>

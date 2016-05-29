@@ -53,7 +53,6 @@ class WeatherTabViewController: UIViewController {
         let name = selectedView?.restorationIdentifier
         let weatherDetails = storyboard?.instantiateViewControllerWithIdentifier("WeatherDetailsViewController") as! WeatherDetailsViewController
         weatherDetails.transitioningDelegate = self
-        print(name)
         weatherDetails.text = name!
         presentViewController(weatherDetails, animated: true, completion: nil)
         
