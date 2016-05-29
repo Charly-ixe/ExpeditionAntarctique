@@ -10,6 +10,9 @@ import UIKit
 
 class MoralTabViewController: UIViewController {
     
+    @IBOutlet weak var centerView: UIView!
+    @IBOutlet weak var leftView: UIView!
+    @IBOutlet weak var rightView: UIView!
     @IBOutlet weak var centerProfilePictureImageView: UIImageView!
     @IBOutlet weak var leftProfilePictureImageView: UIImageView!
     @IBOutlet weak var rightProfilePictureImageView: UIImageView!
@@ -24,10 +27,15 @@ class MoralTabViewController: UIViewController {
     @IBOutlet var leftImageViewTapGesture: UITapGestureRecognizer!
     @IBOutlet var centerImageViewTapGesture: UITapGestureRecognizer!
     @IBOutlet var rightImageViewTapGesture: UITapGestureRecognizer!
+    @IBOutlet weak var centerCharacterLabel: UILabel!
+    @IBOutlet weak var leftCharacterLabel: UILabel!
+    @IBOutlet weak var rightCharacterLabel: UILabel!
     let guillaume = Character(name: "Guillaume")
     let valentine = Character(name: "Valentine")
     let stephane = Character(name: "Stéphane")
     weak var currentCharacter: Character?
+    weak var currentCharacterView : UIView?
+    weak var newCharacterView : UIView?
     
     var isSelected: Bool = false
     
@@ -47,15 +55,14 @@ class MoralTabViewController: UIViewController {
         stephane.teamSpirit = 90.0
         
         currentCharacter = guillaume
-        print(currentCharacter?.name)
+        currentCharacterView = centerView
+        currentCharacterView?.transform = CGAffineTransformMakeScale(2, 2)
         
         setGaugesValues(currentCharacter!)
         
-        print(hungerGauge.gaugeValue)
-        
         centerProfilePictureImageView.layer.cornerRadius = centerProfilePictureImageView.frame.size.width / 2
         centerProfilePictureImageView.clipsToBounds = true
-        centerProfilePictureImageView.layer.borderWidth = 4.0
+        centerProfilePictureImageView.layer.borderWidth = 2.0
         centerProfilePictureImageView.layer.borderColor = nunatakBlack.CGColor
         leftProfilePictureImageView.layer.cornerRadius = leftProfilePictureImageView.frame.size.width / 2
         leftProfilePictureImageView.clipsToBounds = true
@@ -80,6 +87,15 @@ class MoralTabViewController: UIViewController {
 
     @IBAction func leftImageViewTap(sender: UITapGestureRecognizer) {
         currentCharacter = valentine
+        self.newCharacterView = leftView
+        UIView.animateWithDuration(0.3, animations: {
+            self.leftCharacterLabel.alpha = 1.0
+            self.centerCharacterLabel.alpha = 0.0
+            self.rightCharacterLabel.alpha = 0.0
+            self.currentCharacterView?.transform = CGAffineTransformMakeScale(1, 1)
+            self.newCharacterView?.transform = CGAffineTransformMakeScale(2, 2)
+        })
+        currentCharacterView = newCharacterView
         setGaugesValues(currentCharacter!)
         
 //        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
@@ -87,7 +103,15 @@ class MoralTabViewController: UIViewController {
     
     @IBAction func centerImageViewTap(sender: UITapGestureRecognizer) {
         currentCharacter = guillaume
-        print(currentCharacter?.name)
+        self.newCharacterView = centerView
+        UIView.animateWithDuration(0.3, animations: {
+            self.leftCharacterLabel.alpha = 0.0
+            self.centerCharacterLabel.alpha = 1.0
+            self.rightCharacterLabel.alpha = 0.0
+            self.currentCharacterView?.transform = CGAffineTransformMakeScale(1, 1)
+            self.newCharacterView?.transform = CGAffineTransformMakeScale(2, 2)
+        })
+        currentCharacterView = newCharacterView
         setGaugesValues(currentCharacter!)
 //        hungerGauge.animateView(CGFloat((currentCharacter?.hunger)!))
         
@@ -95,7 +119,15 @@ class MoralTabViewController: UIViewController {
     
     @IBAction func rightImageViewTap(sender: UITapGestureRecognizer) {
         currentCharacter = stephane
-        print(currentCharacter?.name)
+        self.newCharacterView = rightView
+        UIView.animateWithDuration(0.3, animations: {
+            self.leftCharacterLabel.alpha = 0.0
+            self.centerCharacterLabel.alpha = 0.0
+            self.rightCharacterLabel.alpha = 1.0
+            self.currentCharacterView?.transform = CGAffineTransformMakeScale(1, 1)
+            self.newCharacterView?.transform = CGAffineTransformMakeScale(2, 2)
+        })
+        currentCharacterView = newCharacterView
         setGaugesValues(currentCharacter!)
         
     }
