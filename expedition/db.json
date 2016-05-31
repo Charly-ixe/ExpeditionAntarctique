@@ -1,0 +1,420 @@
+{
+    "places": [
+               {
+               "name": "Palaiseau",
+               "coord": "123 654996",
+               "id": "00ebab8d-2d49-47ac-857e-eea40f3b0d9c"
+               },
+               {
+               "name": "Crevasse 1",
+               "coord": "67°21'26.3″S 139°48'56.5",
+               "id": "df1d615d-5df0-4a5d-837a-ab6e82fca272"
+               },
+               {
+               "name": "Dumont d'Urville",
+               "coord": "66°39′47″ 140°00′10″",
+               "id": "97215f3a-59f7-41cd-a4a2-96d408a0e233"
+               }
+               ],
+    "scenarios": [
+                  {
+                  "id": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
+                  "name": "Antarctique",
+                  "place": "1"
+                  }
+                  ],
+    "situations": [
+                   {
+                   "name": "Intro blizzard",
+                   "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
+                   "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
+                   "id": "90e72b80-5349-409d-b962-25bc25752440"
+                   },
+                   {
+                   "name": "Situation test",
+                   "place": "df1d615d-5df0-4a5d-837a-ab6e82fca272",
+                   "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
+                   "id": "c65e6c86-8a15-42f2-98b5-081d352712c1"
+                   },
+                   {
+                   "name": "Da new day",
+                   "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
+                   "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
+                   "id": "0a2f9269-8a3f-46cd-bc11-e54f42487516"
+                   }
+                   ],
+    "subsituations": [
+                      {
+                      "name": "EST-CE QUE TU ME REÇOIS ?",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "cbf4939b-ae8e-4b48-92c7-4e82b6bd496b",
+                      "id": "f2d560d3-7a1c-4766-873e-923dbc4af87a"
+                      },
+                      {
+                      "name": "T’ES LÀ ?1",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "ee9efdfd-095f-4c54-aeb3-22e631a0ec77",
+                      "id": "af7e41a7-7432-4400-a795-7a97a2d89ddc"
+                      },
+                      {
+                      "name": "C’EST GUILLAUME",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "2d93ae49-5635-4470-a7cc-781b5c5a6b53",
+                      "id": "9468d53d-3511-4e41-befe-7ef4534e0eff"
+                      },
+                      {
+                      "name": "T’ES LÀ ?2",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "aa49e8bf-145b-455f-a1f0-9448eab85ca0",
+                      "id": "cc84e861-0185-48ee-b9ac-3cd3dded891a"
+                      },
+                      {
+                      "name": "T’ES LÀ ?3",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "639c1a80-6145-4a63-a832-3e1a6e8cbb6e",
+                      "id": "700084de-ac98-4a2f-8812-5d382d54549a"
+                      },
+                      {
+                      "name": "Ah! ENFIN une réponse ! Improbable, mais j’ai réussi à te contacter",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "254535db-e095-40d1-b780-4ee46e41266e",
+                      "id": "f7c8456b-4895-4b44-942e-efb8704dd3be"
+                      },
+                      {
+                      "name": "Bon dommage que tu sois à l’autre bout de la terre..! ",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "b87b0293-d37c-4dbb-9828-290dcb3e4a70",
+                      "id": "bb16ec55-9c9f-470a-9609-2bc947f52132"
+                      },
+                      {
+                      "name": "Personne à la base Dumont D’Urville ne me répond depuis 15 minutes...",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "353b63c9-fa57-4984-a6b6-b612659e736c",
+                      "id": "bdb122a9-4231-47ef-9a4b-02df8f62620b"
+                      },
+                      {
+                      "name": "Salut Guillaume, je vais très bien et toi ?OUI 🙋🏻",
+                      "type": "choice",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "fb509872-59b9-4cd0-a846-1ea3430f1b99",
+                      "id": "a69836bc-ea6f-4e42-8b8f-535fb503467d"
+                      },
+                      {
+                      "name": "Pfiouuuu, on s'en est sorti!!",
+                      "type": "txt",
+                      "parent_id": "2015929c-c754-464f-9c5f-775212effaca",
+                      "child_id": "02fafcc9-00e3-44d8-92a9-4ba9d431df42",
+                      "id": "f2ab0402-9650-4f5b-bcff-d9a201dbfc2a"
+                      },
+                      {
+                      "name": "Comment ça va toi?",
+                      "type": "txt",
+                      "parent_id": "2015929c-c754-464f-9c5f-775212effaca",
+                      "child_id": "2018943b-8109-4345-a9db-3ae19b9a8b71",
+                      "id": "4ab378a2-2670-4fa1-86e3-2d34cb76952d"
+                      },
+                      {
+                      "name": "Alorsonsentseul?",
+                      "type": "choice",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "8df36a2e-fc9f-41de-8105-ff26d138e2cf",
+                      "id": "18537451-127a-49af-8889-1089d9ccba4f"
+                      },
+                      {
+                      "name": "PasVraiment",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "b56ded76-16c5-4bbf-8e18-e2397ffdc1c6",
+                      "id": "1a220f04-b0de-4d18-89f6-ff51d71861e0"
+                      },
+                      {
+                      "name": "PasDutout",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "a761351a-ccd3-43c6-866c-fbdc8421143b",
+                      "id": "065023ab-7570-4488-a75e-a30a6cdf1b87"
+                      },
+                      {
+                      "name": "TuMeRépondPlus?",
+                      "type": "txt",
+                      "parent_id": "c65e6c86-8a15-42f2-98b5-081d352712c1",
+                      "child_id": "3653e930-0f49-4a6a-94d7-af6ea2653aad",
+                      "id": "f66f679f-844f-4da9-bd9e-c304b95dad66"
+                      },
+                      {
+                      "name": "😪",
+                      "type": "txt",
+                      "parent_id": "c65e6c86-8a15-42f2-98b5-081d352712c1",
+                      "child_id": "18ceb67c-15b3-4248-b27c-51305b54fcb6",
+                      "id": "7cb23c36-642a-4b9a-a830-d1e880f34b2c"
+                      },
+                      {
+                      "name": "TumeSaoules/Jtmpas",
+                      "type": "choice",
+                      "parent_id": "c65e6c86-8a15-42f2-98b5-081d352712c1",
+                      "child_id": "73dee59d-c938-4911-9235-7507f1c5a89c",
+                      "id": "12b3eb3e-6548-4f85-a4d4-00e42671009b"
+                      },
+                      {
+                      "name": "Bon, je vais me suicides",
+                      "type": "txt",
+                      "parent_id": "0a2f9269-8a3f-46cd-bc11-e54f42487516",
+                      "child_id": "37418747-f343-4cac-9ad8-af47fc8ad900",
+                      "id": "8254eeef-3d43-4482-81a8-18b20b5cff95"
+                      },
+                      {
+                      "name": "Rip",
+                      "type": "txt",
+                      "parent_id": "90e72b80-5349-409d-b962-25bc25752440",
+                      "child_id": "a650880d-d7d3-41ab-857b-ce96ec621323",
+                      "id": "3e9e13a5-26aa-4440-95b3-19044cd1da77"
+                      },
+                      {
+                      "name": "Haha non je suis encore là 😂😂😂😂",
+                      "type": "txt",
+                      "parent_id": "0a2f9269-8a3f-46cd-bc11-e54f42487516",
+                      "child_id": "67730722-3870-42b0-b0a9-32e5dd3e555a",
+                      "id": "97f55f93-3164-4193-b586-5c6cdddfa676"
+                      }
+                      ],
+    "text": [
+             {
+             "content": "EST-CE QUE TU ME REÇOIS ?",
+             "received": "true",
+             "id": "cbf4939b-ae8e-4b48-92c7-4e82b6bd496b"
+             },
+             {
+             "content": "T’ES LÀ ?",
+             "received": "true",
+             "id": "ee9efdfd-095f-4c54-aeb3-22e631a0ec77"
+             },
+             {
+             "content": "C’EST GUILLAUME",
+             "received": "true",
+             "id": "2d93ae49-5635-4470-a7cc-781b5c5a6b53"
+             },
+             {
+             "content": "T’ES LÀ ?",
+             "received": "true",
+             "id": "aa49e8bf-145b-455f-a1f0-9448eab85ca0"
+             },
+             {
+             "content": "T’ES LÀ ?",
+             "received": "true",
+             "id": "639c1a80-6145-4a63-a832-3e1a6e8cbb6e"
+             },
+             {
+             "content": "Ah! ENFIN une réponse ! Improbable, mais j’ai réussi à te contacter",
+             "received": "true",
+             "id": "254535db-e095-40d1-b780-4ee46e41266e"
+             },
+             {
+             "content": "Bon dommage que tu sois à l’autre bout de la terre..! ",
+             "received": "true",
+             "id": "b87b0293-d37c-4dbb-9828-290dcb3e4a70"
+             },
+             {
+             "content": "Personne à la base Dumont D’Urville ne me répond depuis 15 minutes...",
+             "received": "true",
+             "id": "353b63c9-fa57-4984-a6b6-b612659e736c"
+             },
+             {
+             "content": "Pfiouuuu, on s'en est sorti!!",
+             "received": "true",
+             "id": "02fafcc9-00e3-44d8-92a9-4ba9d431df42"
+             },
+             {
+             "content": "Comment ça va toi?",
+             "received": "true",
+             "id": "2018943b-8109-4345-a9db-3ae19b9a8b71"
+             },
+             {
+             "content": "Pas vraiment.",
+             "received": "true",
+             "id": "b56ded76-16c5-4bbf-8e18-e2397ffdc1c6"
+             },
+             {
+             "content": "Pas du tout.",
+             "received": "true",
+             "id": "a761351a-ccd3-43c6-866c-fbdc8421143b"
+             },
+             {
+             "content": "Tu me réponds plus ?",
+             "received": "true",
+             "id": "3653e930-0f49-4a6a-94d7-af6ea2653aad"
+             },
+             {
+             "content": "😪",
+             "received": "true",
+             "id": "18ceb67c-15b3-4248-b27c-51305b54fcb6"
+             },
+             {
+             "content": "Bon, je vais me suicider",
+             "received": "true",
+             "id": "37418747-f343-4cac-9ad8-af47fc8ad900"
+             },
+             {
+             "content": "KIM, j'avais l'autre réponse!!!!",
+             "received": "true",
+             "id": "a650880d-d7d3-41ab-857b-ce96ec621323"
+             },
+             {
+             "content": "Haha non je suis encore là 😂😂😂😂",
+             "received": "true",
+             "id": "67730722-3870-42b0-b0a9-32e5dd3e555a"
+             }
+             ],
+    "choice": [
+               {
+               "id": "fb509872-59b9-4cd0-a846-1ea3430f1b99"
+               },
+               {
+               "id": "8df36a2e-fc9f-41de-8105-ff26d138e2cf"
+               },
+               {
+               "id": "73dee59d-c938-4911-9235-7507f1c5a89c"
+               }
+               ],
+    "answer": [
+               {
+               "content": "Salut Guillaume, je vais très bien et toi ?",
+               "parent_id": "fb509872-59b9-4cd0-a846-1ea3430f1b99",
+               "id": "928052f6-feda-40fe-ab8a-e8c04e49fb50"
+               },
+               {
+               "content": "OUI 🙋🏻",
+               "parent_id": "fb509872-59b9-4cd0-a846-1ea3430f1b99",
+               "id": "38e1cbc5-d200-486f-a28a-ff45edebf9be"
+               },
+               {
+               "content": "Alors on se sent seul ?",
+               "parent_id": "8df36a2e-fc9f-41de-8105-ff26d138e2cf",
+               "id": "1f6f2220-74ec-487c-9bd8-9d40b15499f3"
+               },
+               {
+               "content": "Tout va bien ?",
+               "parent_id": "8df36a2e-fc9f-41de-8105-ff26d138e2cf",
+               "id": "6dd567a0-e90d-4f0f-8faf-2648b24ac36d"
+               },
+               {
+               "content": "Tu me saoules",
+               "parent_id": "73dee59d-c938-4911-9235-7507f1c5a89c",
+               "id": "0fb3db80-2b4e-4b34-8edf-3831c7a0f113"
+               },
+               {
+               "content": "Jtm pas",
+               "parent_id": "73dee59d-c938-4911-9235-7507f1c5a89c",
+               "id": "4d612c48-83a8-4a71-9e55-ba3825a6f032"
+               }
+               ],
+    "media": [],
+    "trigger_answer": [
+                       {
+                       "situation_id": "2015929c-c754-464f-9c5f-775212effaca",
+                       "answer_id": "38e1cbc5-d200-486f-a28a-ff45edebf9be",
+                       "id": "01c0f13a-1e5d-4859-9ad7-ac9f2f9dd6c5"
+                       },
+                       {
+                       "situation_id": "c65e6c86-8a15-42f2-98b5-081d352712c1",
+                       "answer_id": "6dd567a0-e90d-4f0f-8faf-2648b24ac36d",
+                       "id": "0d7d3259-d63c-4a59-8dc9-fa5e1bb3e094"
+                       },
+                       {
+                       "situation_id": "0a2f9269-8a3f-46cd-bc11-e54f42487516",
+                       "answer_id": "0fb3db80-2b4e-4b34-8edf-3831c7a0f113",
+                       "id": "c33dd55e-8c92-41ab-b9db-29b80d0d3a17"
+                       }
+                       ],
+    "trigger_sub_sub": [
+                        {
+                        "triggered_id": "af7e41a7-7432-4400-a795-7a97a2d89ddc",
+                        "trigger_id": "f2d560d3-7a1c-4766-873e-923dbc4af87a",
+                        "id": "dd5944ed-5044-487e-aba9-1c7d58673296"
+                        },
+                        {
+                        "triggered_id": "9468d53d-3511-4e41-befe-7ef4534e0eff",
+                        "trigger_id": "af7e41a7-7432-4400-a795-7a97a2d89ddc",
+                        "id": "995801a9-02e1-4e28-951b-ab196be5223e"
+                        },
+                        {
+                        "triggered_id": "cc84e861-0185-48ee-b9ac-3cd3dded891a",
+                        "trigger_id": "9468d53d-3511-4e41-befe-7ef4534e0eff",
+                        "id": "3f55dc46-1610-43ff-b19e-0d6470c60a0e"
+                        },
+                        {
+                        "triggered_id": "700084de-ac98-4a2f-8812-5d382d54549a",
+                        "trigger_id": "cc84e861-0185-48ee-b9ac-3cd3dded891a",
+                        "id": "62493ec3-c989-40fb-a8a8-5b1b9d126115"
+                        },
+                        {
+                        "triggered_id": "a69836bc-ea6f-4e42-8b8f-535fb503467d",
+                        "trigger_id": "700084de-ac98-4a2f-8812-5d382d54549a",
+                        "id": "14211732-b544-454a-a29d-3c946a709216"
+                        },
+                        {
+                        "triggered_id": "4ab378a2-2670-4fa1-86e3-2d34cb76952d",
+                        "trigger_id": "f2ab0402-9650-4f5b-bcff-d9a201dbfc2a",
+                        "id": "1b2d1f81-1d55-4169-83d8-0d5d7a2dcbd9"
+                        },
+                        {
+                        "triggered_id": "bb16ec55-9c9f-470a-9609-2bc947f52132",
+                        "trigger_id": "f7c8456b-4895-4b44-942e-efb8704dd3be",
+                        "id": "804c1f4f-83d7-41f2-8b6b-7cc1b60d6c92"
+                        },
+                        {
+                        "triggered_id": "bdb122a9-4231-47ef-9a4b-02df8f62620b",
+                        "trigger_id": "bb16ec55-9c9f-470a-9609-2bc947f52132",
+                        "id": "2aa7d353-afbc-45ba-ab5a-fa0ede428abf"
+                        },
+                        {
+                        "triggered_id": "18537451-127a-49af-8889-1089d9ccba4f",
+                        "trigger_id": "bdb122a9-4231-47ef-9a4b-02df8f62620b",
+                        "id": "2791eedc-f2d3-45f4-8c7e-bc8c710f6570"
+                        },
+                        {
+                        "triggered_id": "065023ab-7570-4488-a75e-a30a6cdf1b87",
+                        "trigger_id": "1a220f04-b0de-4d18-89f6-ff51d71861e0",
+                        "id": "d94e1877-6044-4aa9-bc92-f36d3da9e79a"
+                        },
+                        {
+                        "triggered_id": "7cb23c36-642a-4b9a-a830-d1e880f34b2c",
+                        "trigger_id": "f66f679f-844f-4da9-bd9e-c304b95dad66",
+                        "id": "f7be6519-778b-49fb-89c7-b1820f5d6881"
+                        },
+                        {
+                        "triggered_id": "12b3eb3e-6548-4f85-a4d4-00e42671009b",
+                        "trigger_id": "7cb23c36-642a-4b9a-a830-d1e880f34b2c",
+                        "id": "23404e86-9ae0-47a9-b6bd-64416bdccbe7"
+                        },
+                        {
+                        "triggered_id": "97f55f93-3164-4193-b586-5c6cdddfa676",
+                        "trigger_id": "8254eeef-3d43-4482-81a8-18b20b5cff95",
+                        "id": "4e812cad-cd1c-4009-af8c-3630c87f3a2e"
+                        }
+                        ],
+    "trigger_sub_answer": [
+                           {
+                           "sub_id": "f7c8456b-4895-4b44-942e-efb8704dd3be",
+                           "answer_id": "38e1cbc5-d200-486f-a28a-ff45edebf9be",
+                           "id": "adddbc56-c4b3-4e08-960d-56588a2273be"
+                           },
+                           {
+                           "sub_id": "1a220f04-b0de-4d18-89f6-ff51d71861e0",
+                           "answer_id": "6dd567a0-e90d-4f0f-8faf-2648b24ac36d",
+                           "id": "285424df-151e-4c25-88fc-a70810a5b1de"
+                           },
+                           {
+                           "sub_id": "3e9e13a5-26aa-4440-95b3-19044cd1da77",
+                           "answer_id": "928052f6-feda-40fe-ab8a-e8c04e49fb50",
+                           "id": "c6cdb90b-8470-4848-b537-7aa0e0a79277"
+                           }
+                           ]
+}
