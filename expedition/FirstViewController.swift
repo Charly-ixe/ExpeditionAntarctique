@@ -24,18 +24,13 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentOffset = imageView.center
         scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 1
+//        scrollView.delaysContentTouches = false
+        scrollView.userInteractionEnabled = true;
+        scrollView.exclusiveTouch = true;
         
-//        var elt = MapElementUIView(frame: CGRectMake(1000, 850, 80, 80), name: "Dumont", eltDescription: "Base Française")
-//        elt.backgroundColor = nunatakBlack
-//        imageView.addSubview(elt)
-//        print(elt.elementDescription)
-        
-        
-//        let point = CGPointMake(1000, 1000)
-//        let frame = CGRectMake(point.x, point.y, 20, 20)
-//        let viewtest = UIView(frame: frame)
-//        viewtest.backgroundColor = UIColor.redColor()
-//        imageView.addSubview(viewtest)
+        var elt = MapElementUIView(frame: CGRectMake(1240, 690, 50, 50), name: "Dumont", eltDescription: "Base Française", img: "avantposte")
+//        elt.layer.cornerRadius = elt.frame.size.width / 2
+        imageView.addSubview(elt)
         
         scrollView.delegate = self
     }
@@ -52,7 +47,8 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
         
     }
-
+    
+    
 
 }
 

@@ -157,7 +157,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 toDisplay["id"] = newMessage["id"] as? String
                 
-                var t: Double = 0
+                var t : Double = 2
                 
                 if newMessage["answers"] != nil
                 {
@@ -181,7 +181,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     let content = toDisplay["content"] as! String
                     t = Double(content.characters.count) / 9
-                    t = 1
+                    
                     
                     let State = UIApplication.sharedApplication().applicationState
                     
