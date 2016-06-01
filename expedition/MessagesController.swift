@@ -105,8 +105,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         self.displayedMessages.append(message)
         self.tableView.reloadData()
         
-        
-        var nextId : String
         idEvent.once { nextId in
             self.setMessageToDisplay(nextId)
         }
@@ -189,17 +187,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     // TESTING
 //                    t = 0
                     
-                    let State = UIApplication.sharedApplication().applicationState
-                    
-                    if State.rawValue != 0
-                    {
-                        let notification:UILocalNotification = UILocalNotification()
-                        notification.category = "Expédition Antarctique"
-                        notification.alertAction = "Vous avez reçu un nouveau message"
-                        notification.alertBody = toDisplay["content"] as? String
-                        
-                        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
-                    }
                 }
                 
                 
@@ -211,10 +198,21 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     Helper.delay(t) {
                         
+                        badgeEvent.emit("")
+                        let State = UIApplication.sharedApplication().applicationState
+                        if State.rawValue != 0
+                        {
+                            let notification:UILocalNotification = UILocalNotification()
+                            notification.category = "Expédition Antarctique"
+                            notification.alertAction = "Vous avez reçu un nouveau message"
+                            notification.alertBody = toDisplay["content"] as? String
+                            
+                            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                        }
+                        
                         let lastMessage = self.displayedMessages.last
                         if lastMessage!["content"] as! String == "==typing=="
                         {
-                            print(lastMessage!["content"])
                             self.displayedMessages.removeLast()
                         }
                     
@@ -223,7 +221,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                         if toDisplay["type"] as? String != "choice"
                         {
                         
-                            var nextId : String
                             idEvent.once { nextId in
                                 if(nextId != "")
                                 {

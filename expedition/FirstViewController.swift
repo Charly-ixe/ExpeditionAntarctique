@@ -19,7 +19,6 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         
         imageView = UIImageView(image: UIImage(named: "terre-danger2.png"))
         scrollView.addSubview(imageView)
-        print(imageView.frame.size)
         scrollView.contentSize = imageView.bounds.size
         scrollView.contentOffset = imageView.center
         scrollView.minimumZoomScale = 0.4

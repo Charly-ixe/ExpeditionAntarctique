@@ -79,6 +79,8 @@ class ChoiceCell: UITableViewCell {
         
         topLabel.contentInset = UIEdgeInsetsMake(-3, 0, 0, 0)
         
+        topLabel.scrollEnabled = false
+        
         topLabel.textColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
         topLabel.backgroundColor = UIColor(red:0.49, green:0.56, blue:0.95, alpha:1.0)
         
