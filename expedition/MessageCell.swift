@@ -36,8 +36,29 @@ class MessageCell: UITableViewCell {
     
     // MARK: Message Bubble TextView
     
+    
+    
+    private lazy var container: ContainerView = {
+        let container = ContainerView(frame: CGRectZero)
+        
+        self.contentView.addSubview(container)
+        return container
+    }()
+    
+    private class ContainerView : UIView {
+        
+        override init(frame: CGRect = CGRectZero) {
+            super.init(frame: frame)
+        }
+        
+        required init(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    }
+    
     private lazy var textView: MessageBubbleTextView = {
         let textView = MessageBubbleTextView(frame: CGRectZero, textContainer: nil)
+        
         self.contentView.addSubview(textView)
         return textView
     }()
@@ -102,58 +123,71 @@ class MessageCell: UITableViewCell {
         let content = message["content"] as? String
         
         
-//        if content!.rangeOfString("{{") != nil{
-//            
-//            // is image
-//            var named = content!.stringByReplacingOccurrencesOfString("{", withString: "")
-//            named = named.stringByReplacingOccurrencesOfString("}", withString: "")
-//            
-//            print(named)
-//            
-//            imgView.image = UIImage(named: named)
-//            print(imgView)
-//            size = imgView.sizeThatFits(maxSize)
-//            if size.height < minimumHeight {
-//                size.height = minimumHeight
-//            }
-//            imgView.bounds.size = size
-//            
-//            self.styleImgViewForSentBy(message["received"] as! String)
-//            
-//            size.height = size.height + padding
-//        }
-//        else {
-//            
-//            imgView.removeFromSuperview()
-//            textView.text = content
-//            
-//            textView.font = UIFont(name: "Avenir-Medium", size: textView.font!.pointSize)
-//            size = textView.sizeThatFits(maxSize)
-//            if size.height < minimumHeight {
-//                size.height = minimumHeight
-//            }
-//            textView.bounds.size = size
-//            
-//            self.styleTextViewForSentBy(message["received"] as! String)
-//            
-//            size.height = size.height + padding
-//        }
-        
-        
-        imgView.removeFromSuperview()
-        textView.text = content
-        
-        textView.font = UIFont(name: "Avenir-Medium", size: textView.font!.pointSize)
-        size = textView.sizeThatFits(maxSize)
-        if size.height < minimumHeight {
-            size.height = minimumHeight
+        if content!.rangeOfString("{{") != nil{
+            textView.removeFromSuperview()
+            container.removeFromSuperview()
+            self.contentView.addSubview(imgView)
+            // is image
+            var named = content!.stringByReplacingOccurrencesOfString("{", withString: "")
+            named = named.stringByReplacingOccurrencesOfString("}", withString: "")
+            
+            imgView.image = UIImage(named: named)
+            
+            let newHeight = (maxSize.width * imgView.image!.size.height) / imgView.image!.size.width
+            
+            size.height = newHeight
+            size.width = maxSize.width
+            
+            imgView.bounds.size = size
+            
+            imgView.contentMode = UIViewContentMode.ScaleAspectFill
+            imgView.clipsToBounds = true
+            
+            self.styleImgViewForSentBy("true")
+            
+            size.height = size.height + padding * 3
         }
-        textView.bounds.size = size
-        
-        self.styleTextViewForSentBy(message["received"] as! String)
-        
-        size.height = size.height + padding
-        
+        else if content!.rangeOfString("==typing==") != nil{
+            textView.removeFromSuperview()
+            imgView.removeFromSuperview()
+            container.addSubview(imgView)
+            self.contentView.addSubview(container)
+            imgView.image = UIImage.gifWithName("typing")
+            
+            let newHeight = (20 * imgView.image!.size.height) / imgView.image!.size.width
+            
+            size.height = newHeight + 10
+            size.width = 40
+            
+            imgView.bounds.size = size
+            
+            imgView.contentMode = UIViewContentMode.ScaleAspectFill
+            container.clipsToBounds = true
+            
+            size.height = 37.5
+            size.width = 60
+            container.bounds.size = size
+            size.height = size.height + padding * 2
+            self.styleTypeViewForSentBy(container, h: size.height)
+            
+        }
+        else {
+            self.contentView.addSubview(textView)
+            imgView.removeFromSuperview()
+            container.removeFromSuperview()
+            textView.text = content
+            
+            textView.font = UIFont(name: "Avenir-Medium", size: textView.font!.pointSize)
+            size = textView.sizeThatFits(maxSize)
+            if size.height < minimumHeight {
+                size.height = minimumHeight
+            }
+            textView.bounds.size = size
+            
+            self.styleTextViewForSentBy(message["received"] as! String)
+            
+            size.height = size.height + padding
+        }
         return size
     }
     
@@ -203,6 +237,7 @@ class MessageCell: UITableViewCell {
         let halfTextViewWidth = CGRectGetWidth(self.imgView.bounds) / 2.0
         let targetX = halfTextViewWidth + padding * 4
         let halfTextViewHeight = CGRectGetHeight(self.imgView.bounds) / 2.0
+        self.textView.backgroundColor = UIColor(red:1, green:1, blue:1, alpha:1.0)
         switch sentBy {
         case "true":
             self.imgView.center.x = targetX
@@ -216,5 +251,25 @@ class MessageCell: UITableViewCell {
         default:
             break
         }
+    }
+    
+    // MARK: Typing Styling
+    
+    private func styleTypeViewForSentBy(container: UIView, h: CGFloat) {
+        let halfTextViewWidth = CGRectGetWidth(self.container.bounds) / 2.0
+        let targetX = halfTextViewWidth + padding * 3
+        let halfTextViewHeight = h / 2.0
+        container.backgroundColor = UIColor(red:1, green:1, blue:1, alpha:1.0)
+        container.center.x = targetX + padding
+        container.center.y = halfTextViewHeight + (padding / 2)
+        container.layer.borderColor = Appearance.opponentColor.CGColor
+        
+        imgView.center.x = container.center.x - (imgView.bounds.width / 2)
+        imgView.center.y = container.center.y - (imgView.bounds.height / 4)
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = container.bounds
+        maskLayer.path = UIBezierPath(roundedRect: container.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight).union(.TopLeft), cornerRadii: CGSizeMake(10, 10)).CGPath
+        container.layer.mask = maskLayer
     }
 }
