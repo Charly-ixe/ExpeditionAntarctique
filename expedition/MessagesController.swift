@@ -11,7 +11,8 @@ import UIKit
 class MessagesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-        
+    
+    var typing = [String: AnyObject]()
     var messages: [[String:AnyObject]] = []
     var displayedMessages: [[String:AnyObject]] = []
     let Model : ModelController = ModelController()
@@ -22,6 +23,9 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.typing["content"] = "==typing=="
+        self.typing["received"] = "true"
         
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
@@ -180,8 +184,10 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     toDisplay["received"] = newMessage["received"] as? String
                     
                     let content = toDisplay["content"] as! String
-                    t = Double(content.characters.count) / 9
-                    t = 1
+                    t = Double(content.characters.count) / 14
+                    
+                    // TESTING
+//                    t = 0
                     
                     let State = UIApplication.sharedApplication().applicationState
                     
@@ -196,31 +202,47 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 }
                 
-                Helper.delay(t) {
-                    self.displayedMessages.append(toDisplay)
-                    
-                    if toDisplay["type"] as? String != "choice"
-                    {
-                        
-                        var nextId : String
-                        idEvent.once { nextId in
-                            if(nextId != "")
-                            {
-                                self.setMessageToDisplay(nextId)
-                                self.tableView.reloadData()
-                                self.tableViewScrollToBottom(true)
-                            }
-                        }
-                        
-                        var msg = [String:String]()
-                        msg["content"] = toDisplay["content"] as? String
-                        msg["received"] = toDisplay["received"] as? String
-                        self.Model.addToCurrentDay(msg)
-                    }
+                
+                Helper.delay(1) {
+                    self.displayedMessages.append(self.typing)
                     self.tableView.reloadData()
                     self.tableViewScrollToBottom(true)
                     
-                    self.Model.getNextSub(id)
+                    
+                    Helper.delay(t) {
+                        
+                        let lastMessage = self.displayedMessages.last
+                        if lastMessage!["content"] as! String == "==typing=="
+                        {
+                            print(lastMessage!["content"])
+                            self.displayedMessages.removeLast()
+                        }
+                    
+                        self.displayedMessages.append(toDisplay)
+                    
+                        if toDisplay["type"] as? String != "choice"
+                        {
+                        
+                            var nextId : String
+                            idEvent.once { nextId in
+                                if(nextId != "")
+                                {
+                                    self.setMessageToDisplay(nextId)
+                                    self.tableView.reloadData()
+                                    self.tableViewScrollToBottom(true)
+                                }
+                            }
+                        
+                            var msg = [String:String]()
+                            msg["content"] = toDisplay["content"] as? String
+                            msg["received"] = toDisplay["received"] as? String
+                            self.Model.addToCurrentDay(msg)
+                        }
+                        self.tableView.reloadData()
+                        self.tableViewScrollToBottom(true)
+                    
+                        self.Model.getNextSub(id)
+                    }
                 }
             }
         }
