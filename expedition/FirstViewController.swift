@@ -22,12 +22,22 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         print(imageView.frame.size)
         scrollView.contentSize = imageView.bounds.size
         scrollView.contentOffset = imageView.center
-        scrollView.minimumZoomScale = 0.4
+        scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 1
         
+//        var elt = MapElementUIView(frame: CGRectMake(1000, 850, 80, 80), name: "Dumont", eltDescription: "Base Française")
+//        elt.backgroundColor = nunatakBlack
+//        imageView.addSubview(elt)
+//        print(elt.elementDescription)
+        
+        
+//        let point = CGPointMake(1000, 1000)
+//        let frame = CGRectMake(point.x, point.y, 20, 20)
+//        let viewtest = UIView(frame: frame)
+//        viewtest.backgroundColor = UIColor.redColor()
+//        imageView.addSubview(viewtest)
+        
         scrollView.delegate = self
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

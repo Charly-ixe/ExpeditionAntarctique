@@ -321,7 +321,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEW-mB-QTs" id="OcW-D9-ODD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -329,7 +329,7 @@
                                         <rect key="frame" x="0.0" y="72" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJZ-7q-3yi" id="frq-Mo-BrA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -367,30 +367,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" restorationIdentifier="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="BuH-bV-sDq">
-                                <rect key="frame" x="24" y="32" width="552" height="130"/>
+                            <view contentMode="scaleToFill" restorationIdentifier="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="okl-US-O6t">
+                                <rect key="frame" x="24" y="383" width="272" height="205"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-4" translatesAutoresizingMaskIntoConstraints="NO" id="UPA-pO-Mzo">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="205"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="0YO-JN-ntB"/>
+                                    <constraint firstItem="UPA-pO-Mzo" firstAttribute="width" secondItem="okl-US-O6t" secondAttribute="width" id="9Tg-ns-6eg"/>
+                                    <constraint firstItem="UPA-pO-Mzo" firstAttribute="leading" secondItem="okl-US-O6t" secondAttribute="leading" id="BLI-Af-85i"/>
+                                    <constraint firstItem="UPA-pO-Mzo" firstAttribute="height" secondItem="okl-US-O6t" secondAttribute="height" id="DGO-qK-ofV"/>
+                                    <constraint firstItem="UPA-pO-Mzo" firstAttribute="top" secondItem="okl-US-O6t" secondAttribute="top" id="cVL-Pe-pCM"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="V3y-9j-S6z" appends="YES" id="Gh4-ue-DvU"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="okl-US-O6t">
-                                <rect key="frame" x="24" y="383" width="272" height="205"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
@@ -406,8 +397,21 @@
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="dy2-jW-2SJ">
                                 <rect key="frame" x="24" y="170" width="272" height="205"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-1" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-G2-Xvx">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="205"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="wlP-G2-Xvx" firstAttribute="height" secondItem="dy2-jW-2SJ" secondAttribute="height" id="5qP-Gf-ZU4"/>
+                                    <constraint firstAttribute="trailing" secondItem="wlP-G2-Xvx" secondAttribute="trailing" constant="32" id="I4y-En-Ckk"/>
+                                    <constraint firstAttribute="trailing" secondItem="wlP-G2-Xvx" secondAttribute="trailing" constant="32" id="LQW-a4-7wJ"/>
+                                    <constraint firstItem="wlP-G2-Xvx" firstAttribute="leading" secondItem="dy2-jW-2SJ" secondAttribute="leading" id="Ra7-uw-cDj"/>
+                                    <constraint firstItem="wlP-G2-Xvx" firstAttribute="top" secondItem="dy2-jW-2SJ" secondAttribute="top" id="T0U-Iz-H13"/>
+                                    <constraint firstItem="wlP-G2-Xvx" firstAttribute="width" secondItem="dy2-jW-2SJ" secondAttribute="width" id="vE4-uQ-oGV"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
@@ -417,14 +421,31 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="I4y-En-Ckk"/>
+                                        <exclude reference="LQW-a4-7wJ"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="1es-Rt-7f7" appends="YES" id="chx-SZ-QjT"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="wind" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-5q-tTk">
                                 <rect key="frame" x="304" y="170" width="272" height="418"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-3" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-Y9-bGu">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="418"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="1ZN-Y9-bGu" firstAttribute="width" secondItem="m0C-5q-tTk" secondAttribute="width" id="Dn2-dt-PqB"/>
+                                    <constraint firstItem="1ZN-Y9-bGu" firstAttribute="leading" secondItem="m0C-5q-tTk" secondAttribute="leading" id="G1t-mC-iNW"/>
+                                    <constraint firstItem="1ZN-Y9-bGu" firstAttribute="height" secondItem="m0C-5q-tTk" secondAttribute="height" id="TsX-ey-5tS"/>
+                                    <constraint firstItem="1ZN-Y9-bGu" firstAttribute="top" secondItem="m0C-5q-tTk" secondAttribute="top" id="YzY-dQ-5TN"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="6"/>
@@ -436,6 +457,35 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="1j8-H0-plM" appends="YES" id="Lzw-ee-kEJ"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" restorationIdentifier="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="BuH-bV-sDq">
+                                <rect key="frame" x="24" y="32" width="552" height="130"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-2" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-Sq-YG2">
+                                        <rect key="frame" x="0.0" y="0.0" width="552" height="130"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="0YO-JN-ntB"/>
+                                    <constraint firstItem="Owt-Sq-YG2" firstAttribute="width" secondItem="BuH-bV-sDq" secondAttribute="width" id="Agn-fK-ZvR"/>
+                                    <constraint firstItem="Owt-Sq-YG2" firstAttribute="height" secondItem="BuH-bV-sDq" secondAttribute="height" id="RKu-dy-O2f"/>
+                                    <constraint firstItem="Owt-Sq-YG2" firstAttribute="top" secondItem="BuH-bV-sDq" secondAttribute="top" id="Umx-aY-qoz"/>
+                                    <constraint firstItem="Owt-Sq-YG2" firstAttribute="leading" secondItem="BuH-bV-sDq" secondAttribute="leading" id="o7t-26-WAd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="V3y-9j-S6z" appends="YES" id="Gh4-ue-DvU"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -474,12 +524,16 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="humidityGraphImageView" destination="UPA-pO-Mzo" id="tFJ-S5-d0X"/>
                         <outlet property="humidityTapGesture" destination="Sfx-Ie-EbT" id="Zpd-CI-Xsq"/>
                         <outlet property="humidityView" destination="okl-US-O6t" id="qK4-qn-NOr"/>
+                        <outlet property="pressureGraphImageView" destination="wlP-G2-Xvx" id="Nzw-CT-ym4"/>
                         <outlet property="pressureTapGesture" destination="1es-Rt-7f7" id="3Yz-pi-OAx"/>
                         <outlet property="pressureView" destination="dy2-jW-2SJ" id="eh3-ZD-9uJ"/>
+                        <outlet property="tempGraphImageView" destination="Owt-Sq-YG2" id="tNN-rh-WOS"/>
                         <outlet property="temperatureTapGesture" destination="V3y-9j-S6z" id="x4r-LC-p02"/>
                         <outlet property="temperatureView" destination="BuH-bV-sDq" id="M3H-FU-bN7"/>
+                        <outlet property="windGraphImageView" destination="1ZN-Y9-bGu" id="rfv-Zo-71R"/>
                         <outlet property="windTapGesture" destination="1j8-H0-plM" id="D0D-0T-F7N"/>
                         <outlet property="windView" destination="m0C-5q-tTk" id="FpT-50-GgV"/>
                     </connections>
@@ -560,7 +614,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qy0-Ag-VFI">
                                 <rect key="frame" x="164" y="58" width="44" height="44"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-58-hFn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portraits3" translatesAutoresizingMaskIntoConstraints="NO" id="fjW-58-hFn">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
@@ -600,7 +654,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vif-11-8mp">
                                 <rect key="frame" x="278" y="58" width="44" height="44"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-Ma-W94">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portraits2" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-Ma-W94">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -632,7 +686,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39U-Va-oC1">
                                 <rect key="frame" x="392" y="58" width="44" height="44"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JRG-Iu-t3y">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="portraits" translatesAutoresizingMaskIntoConstraints="NO" id="JRG-Iu-t3y">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -666,13 +720,13 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FAIM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-wS-zgg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAIM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-wS-zgg">
                                 <rect key="frame" x="34" y="178" width="29" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SOIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04P-nT-g7e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04P-nT-g7e">
                                 <rect key="frame" x="34" y="232" width="28" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -690,7 +744,7 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="hungerGauge" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-5n-rXy" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                            <view contentMode="scaleToFill" restorationIdentifier="hungerGauge" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-5n-rXy" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
                                 <rect key="frame" x="34" y="198" width="532" height="4"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OnK-bj-biq">
@@ -997,6 +1051,13 @@
         <image name="bg" width="750" height="1334"/>
         <image name="first" width="30" height="30"/>
         <image name="icones-meteo2-50" width="788" height="788"/>
+        <image name="portraits" width="88" height="88"/>
+        <image name="portraits2" width="88" height="88"/>
+        <image name="portraits3" width="88" height="88"/>
         <image name="second" width="30" height="30"/>
+        <image name="stats-1" width="2000" height="1125"/>
+        <image name="stats-2" width="2000" height="1124"/>
+        <image name="stats-3" width="2000" height="1124"/>
+        <image name="stats-4" width="2000" height="1124"/>
     </resources>
 </document>

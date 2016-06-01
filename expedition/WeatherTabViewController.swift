@@ -22,6 +22,11 @@ class WeatherTabViewController: UIViewController {
     var selectedView : UIView?
     var container : UIView?
     
+    @IBOutlet weak var tempGraphImageView: UIImageView!
+    
+    @IBOutlet weak var windGraphImageView: UIImageView!
+    @IBOutlet weak var pressureGraphImageView: UIImageView!
+    @IBOutlet weak var humidityGraphImageView: UIImageView!
     
     override func viewDidLoad() {
         
@@ -37,6 +42,19 @@ class WeatherTabViewController: UIViewController {
         pressureView.layer.shadowOffset = CGSizeZero
         humidityView.layer.shadowColor = brashWhite.CGColor
         humidityView.layer.shadowOffset = CGSizeZero
+        
+        tempGraphImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        tempGraphImageView.clipsToBounds = true
+        windGraphImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        windGraphImageView.clipsToBounds = true
+        pressureGraphImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        pressureGraphImageView.clipsToBounds = true
+        humidityGraphImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        humidityGraphImageView.clipsToBounds = true
+        
+//        let graphTemp = UIImageView(frame: temperatureView.frame)
+//        graphTemp.image = UIImage(named: "stat-2")
+//        temperatureView.addSubview(graphTemp)
         
         // Tap Gestures
         
