@@ -57,6 +57,9 @@ class MoralTabViewController: UIViewController {
         currentCharacter = guillaume
         currentCharacterView = centerView
         currentCharacterView?.transform = CGAffineTransformMakeScale(2, 2)
+//        let imageCharacter : UIImageView = currentCharacterView?.subviews.first as! UIImageView
+//        imageCharacter.image = UIImage(named: "portraits2")
+        
         
         setGaugesValues(currentCharacter!)
         
