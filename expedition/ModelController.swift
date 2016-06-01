@@ -24,10 +24,6 @@ class ModelController {
         self.getData()
     }
     
-    //    func getDay(i: Int) {
-    //        return self.history.getDay(i)
-    //    }
-    
     func getData() {
         if let url = NSBundle.mainBundle().URLForResource("db", withExtension: "json")
         {
@@ -53,8 +49,9 @@ class ModelController {
                                 let id = situation.valueForKey("id") as! String
                                 let place = situation.valueForKey("place") as! String
                                 let name = situation.valueForKey("name") as! String
+                                let delay = situation.valueForKey("delay") as! Double
                                 
-                                let sit = Situation(id: id, place: place, name: name)
+                                let sit = Situation(id: id, place: place, name: name, delay: delay)
                                 
                                 if let subs_json = dictionary["subsituations"] as? Array<AnyObject>
                                 {
@@ -158,9 +155,10 @@ class ModelController {
             {
                 let triggeredId = filtered[0].valueForKey("sub_id") as? String
                 
-                answerEvent.emit(triggeredId!)
+                idEvent.emit(triggeredId!)
                 return
             }
+            
         }
         else {
             filtered = self.triggers.triggers_sub_sub!.filter { $0.valueForKey("trigger_id") as? String == id }
@@ -191,12 +189,11 @@ class ModelController {
                     if situation.id == "0a2f9269-8a3f-46cd-bc11-e54f42487516"
                     {
                         self.days.append([])
-                        print("it's a new day adele")
                     }
+                    
                     self.currentSituation = situation
                     Helper.delay(self.currentSituation!.delay){
                         let triggeredId = self.currentSituation?.subs[0].id
-                        print(triggeredId)
                         
                         idEvent.emit(triggeredId!)
                     }

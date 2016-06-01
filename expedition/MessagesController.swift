@@ -29,6 +29,11 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.dataSource = self
         self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         
+        let bottomConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: -20)
+        let topConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 100)
+        self.view.addConstraint(bottomConstraint)
+        self.view.addConstraint(topConstraint)
+        
         self.setMessages()
         
         
@@ -98,7 +103,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         var nextId : String
-        answerEvent.once { nextId in
+        idEvent.once { nextId in
             self.setMessageToDisplay(nextId)
         }
         self.Model.getNextSub(answer.answerId!, type: "answer")
@@ -176,6 +181,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     let content = toDisplay["content"] as! String
                     t = Double(content.characters.count) / 9
+                    t = 1
                     
                     let State = UIApplication.sharedApplication().applicationState
                     
@@ -198,7 +204,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                         
                         var nextId : String
                         idEvent.once { nextId in
-                            print(nextId)
                             if(nextId != "")
                             {
                                 self.setMessageToDisplay(nextId)
