@@ -57,6 +57,23 @@ class MessageCell: UITableViewCell {
         }
     }
     
+    private lazy var imgView: MessageBubbleImageView = {
+        let imgView = MessageBubbleImageView(frame: CGRectZero)
+        self.contentView.addSubview(imgView)
+        return imgView
+    }()
+    
+    private class MessageBubbleImageView : UIImageView {
+        
+        override init(frame: CGRect = CGRectZero) {
+            super.init(frame: frame)
+        }
+        
+        required init(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    }
+    
     // MARK: ImageView
     
     
@@ -82,7 +99,49 @@ class MessageCell: UITableViewCell {
      Use this in cellForRowAtIndexPath to setup the cell.
      */
     func setupWithMessage(message: [String:AnyObject]) -> CGSize {
-        textView.text = message["content"] as? String
+        let content = message["content"] as? String
+        
+        
+//        if content!.rangeOfString("{{") != nil{
+//            
+//            // is image
+//            var named = content!.stringByReplacingOccurrencesOfString("{", withString: "")
+//            named = named.stringByReplacingOccurrencesOfString("}", withString: "")
+//            
+//            print(named)
+//            
+//            imgView.image = UIImage(named: named)
+//            print(imgView)
+//            size = imgView.sizeThatFits(maxSize)
+//            if size.height < minimumHeight {
+//                size.height = minimumHeight
+//            }
+//            imgView.bounds.size = size
+//            
+//            self.styleImgViewForSentBy(message["received"] as! String)
+//            
+//            size.height = size.height + padding
+//        }
+//        else {
+//            
+//            imgView.removeFromSuperview()
+//            textView.text = content
+//            
+//            textView.font = UIFont(name: "Avenir-Medium", size: textView.font!.pointSize)
+//            size = textView.sizeThatFits(maxSize)
+//            if size.height < minimumHeight {
+//                size.height = minimumHeight
+//            }
+//            textView.bounds.size = size
+//            
+//            self.styleTextViewForSentBy(message["received"] as! String)
+//            
+//            size.height = size.height + padding
+//        }
+        
+        
+        imgView.removeFromSuperview()
+        textView.text = content
         
         textView.font = UIFont(name: "Avenir-Medium", size: textView.font!.pointSize)
         size = textView.sizeThatFits(maxSize)
@@ -117,8 +176,6 @@ class MessageCell: UITableViewCell {
             maskLayer.path = UIBezierPath(roundedRect: textView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight).union(.TopLeft), cornerRadii: CGSizeMake(10, 10)).CGPath
             textView.layer.mask = maskLayer
             
-            
-            
         case "false":
             self.textView.center.x = CGRectGetWidth(self.bounds) - targetX
             self.textView.center.y = halfTextViewHeight + (padding / 2)
@@ -135,6 +192,27 @@ class MessageCell: UITableViewCell {
             maskLayer.path = UIBezierPath(roundedRect: textView.bounds, byRoundingCorners: UIRectCorner.TopLeft.union(.BottomLeft).union(.TopRight), cornerRadii: CGSizeMake(10, 10)).CGPath
             textView.layer.mask = maskLayer
             
+        default:
+            break
+        }
+    }
+    
+    // MARK: ImgBubble Styling
+    
+    private func styleImgViewForSentBy(sentBy: String) {
+        let halfTextViewWidth = CGRectGetWidth(self.imgView.bounds) / 2.0
+        let targetX = halfTextViewWidth + padding * 4
+        let halfTextViewHeight = CGRectGetHeight(self.imgView.bounds) / 2.0
+        switch sentBy {
+        case "true":
+            self.imgView.center.x = targetX
+            self.imgView.center.y = halfTextViewHeight + (padding / 2)
+            self.imgView.layer.borderColor = Appearance.opponentColor.CGColor
+            
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = imgView.bounds
+            maskLayer.path = UIBezierPath(roundedRect: imgView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight).union(.TopLeft), cornerRadii: CGSizeMake(10, 10)).CGPath
+            imgView.layer.mask = maskLayer
         default:
             break
         }
