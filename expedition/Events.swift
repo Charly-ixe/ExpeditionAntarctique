@@ -10,4 +10,4 @@ import Foundation
 import EmitterKit
 
 let idEvent = Event<String>()
-let answerEvent = Event<String>()
+let badgeEvent = Event<String>()
