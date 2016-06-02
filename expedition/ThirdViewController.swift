@@ -68,8 +68,6 @@ class ThirdViewController: UIViewController {
         self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
         weatherTabButton.selected = true
         
-        print(self.dataTabsContainer.frame)
-        
         
     }
     
