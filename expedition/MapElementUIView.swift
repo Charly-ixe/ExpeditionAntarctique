@@ -13,6 +13,7 @@ class MapElementUIView: UIView {
     var name : String
     var elementDescription : String
     var img : String
+    var btn : UIButton?
     
     init(frame : CGRect, name: String, eltDescription: String, img: String) {
         self.elementFrame = frame
@@ -28,17 +29,21 @@ class MapElementUIView: UIView {
         placeImg.clipsToBounds = true
         placeImg.userInteractionEnabled = true
         
-        let button = UIButton(type: .Custom) as UIButton
-        button.frame = placeImg.frame
-        button.bounds.size = elementFrame.size
-        button.setTitle("Tap", forState: .Normal)
+        btn = UIButton(type: .Custom)
+        btn!.frame = placeImg.frame
+        btn!.bounds.size = elementFrame.size
+//        btn!.setTitle("Tap", forState: .Normal)
+//        let button = UIButton(type: .Custom) as UIButton
+//        button.frame = placeImg.frame
+//        button.bounds.size = elementFrame.size
+//        button.setTitle("Tap", forState: .Normal)
         
         super.init(frame: frame)
         self.layer.cornerRadius = self.frame.size.width / 2
         self.addSubview(placeImg)
-        button.addTarget(self, action: #selector(MapElementUIView.tapElement(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn!.addTarget(self, action: #selector(FirstViewController.tapElement(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
-        placeImg.addSubview(button)
+        placeImg.addSubview(btn!)
         print(placeImg.image)
         
     }
@@ -47,9 +52,7 @@ class MapElementUIView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @IBAction func tapElement(sender: UIButton!) {
-        print("tap this shiiiiiiiiiit")
-    }
+    
     
     
 }
