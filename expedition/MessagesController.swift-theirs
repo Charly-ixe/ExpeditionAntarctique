@@ -157,7 +157,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 toDisplay["id"] = newMessage["id"] as? String
                 
-                var t : Double = 2
+                var t: Double = 0
                 
                 if newMessage["answers"] != nil
                 {

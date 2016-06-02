@@ -11,10 +11,10 @@ import UIKit
 class MessagesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var typing = [String: AnyObject]()
+        
     var messages: [[String:AnyObject]] = []
     var displayedMessages: [[String:AnyObject]] = []
+    let Model : ModelController = ModelController()
     private let sizingCell = MessageCell()
     private let sizingCellChoice = ChoiceCell()
     
@@ -22,9 +22,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.typing["content"] = "==typing=="
-        self.typing["received"] = "true"
         
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
@@ -39,13 +36,14 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.setMessages()
         
+        
         setMessageToDisplay(self.messages[0]["id"] as! String)
         
     }
     
     func setMessages(){
         self.messages = []
-        for sub in ModelController.Model.currentSituation!.subs {
+        for sub in self.Model.currentSituation!.subs {
             
             var dico = [String: AnyObject]()
             
@@ -91,22 +89,24 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     func answerTap(sender:UITapGestureRecognizer) {
         
         let answer : MessageBubbleTextView = (sender.view as? MessageBubbleTextView)!
-        ModelController.Model.history.saveHistory(answer.answerId!)
+        self.Model.history.saveHistory(answer.answerId!)
         answer.backgroundColor = UIColor.redColor()
-        ModelController.Model.days[self.day] = ModelController.Model.days[self.day].filter({
+        self.displayedMessages = self.displayedMessages.filter({
             $0["id"] as? String != answer.subId
         })
         
         var message = [String: String]()
         message["content"] = answer.text
         message["received"] = "false"
-        ModelController.Model.days[ModelController.Model.days.count - 1].append(message)
+        self.displayedMessages.append(message)
         self.tableView.reloadData()
         
+        
+        var nextId : String
         idEvent.once { nextId in
             self.setMessageToDisplay(nextId)
         }
-        ModelController.Model.getNextSub(answer.answerId!, type: "answer")
+        self.Model.getNextSub(answer.answerId!, type: "answer")
         
     }
     
@@ -136,7 +136,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
             UIApplication.sharedApplication().endBackgroundTask(bgTask)
         }
         
-        if id != "" && ModelController.Model.days.count - 1 == self.day
+        if id != ""
         {
             var newMessageArray = self.messages.filter({
                 $0["id"] as! String == id //access the value to filter
@@ -157,7 +157,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 toDisplay["id"] = newMessage["id"] as? String
                 
-                var t : Double = 2
+                var t: Double = 0
                 
                 if newMessage["answers"] != nil
                 {
@@ -180,64 +180,47 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     toDisplay["received"] = newMessage["received"] as? String
                     
                     let content = toDisplay["content"] as! String
-                    t = Double(content.characters.count) / 14
+                    t = Double(content.characters.count) / 9
+                    t = 1
                     
-                    // TESTING
-//                    t = 0
+                    let State = UIApplication.sharedApplication().applicationState
                     
+                    if State.rawValue != 0
+                    {
+                        let notification:UILocalNotification = UILocalNotification()
+                        notification.category = "Expédition Antarctique"
+                        notification.alertAction = "Vous avez reçu un nouveau message"
+                        notification.alertBody = toDisplay["content"] as? String
+                        
+                        UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+                    }
                 }
                 
-                
-                Helper.delay(1) {
-                    ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
+                Helper.delay(t) {
+                    self.displayedMessages.append(toDisplay)
+                    
+                    if toDisplay["type"] as? String != "choice"
+                    {
+                        
+                        var nextId : String
+                        idEvent.once { nextId in
+                            if(nextId != "")
+                            {
+                                self.setMessageToDisplay(nextId)
+                                self.tableView.reloadData()
+                                self.tableViewScrollToBottom(true)
+                            }
+                        }
+                        
+                        var msg = [String:String]()
+                        msg["content"] = toDisplay["content"] as? String
+                        msg["received"] = toDisplay["received"] as? String
+                        self.Model.addToCurrentDay(msg)
+                    }
                     self.tableView.reloadData()
                     self.tableViewScrollToBottom(true)
                     
-                    
-                    Helper.delay(t) {
-                        
-                        badgeEvent.emit("")
-                        let State = UIApplication.sharedApplication().applicationState
-                        if State.rawValue != 0
-                        {
-                            let notification:UILocalNotification = UILocalNotification()
-                            notification.category = "Expédition Antarctique"
-                            notification.alertAction = "Vous avez reçu un nouveau message"
-                            notification.alertBody = toDisplay["content"] as? String
-                            
-                            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
-                        }
-                        
-                        let lastMessage = ModelController.Model.days[ModelController.Model.days.count - 1].last
-                        
-                        if lastMessage!["content"] as? String == "==typing=="
-                        {
-                            ModelController.Model.days[ModelController.Model.days.count - 1].removeLast()
-                        }
-                    
-                        ModelController.Model.days[ModelController.Model.days.count - 1].append(toDisplay)
-                    
-                        if toDisplay["type"] as? String != "choice"
-                        {
-                        
-                            idEvent.once { nextId in
-                                if(nextId != "")
-                                {
-                                    self.setMessageToDisplay(nextId)
-                                    self.tableView.reloadData()
-                                    self.tableViewScrollToBottom(true)
-                                }
-                            }
-                        
-                            var msg = [String:String]()
-                            msg["content"] = toDisplay["content"] as? String
-                            msg["received"] = toDisplay["received"] as? String
-                        }
-                        self.tableView.reloadData()
-                        self.tableViewScrollToBottom(true)
-                    
-                        ModelController.Model.getNextSub(id)
-                    }
+                    self.Model.getNextSub(id)
                 }
             }
         }
@@ -245,15 +228,15 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: CGFloat = 100
-        if ModelController.Model.days[self.day][indexPath.row]["type"] as? String != "choice"
+        if displayedMessages[indexPath.row]["type"] as? String != "choice"
         {
             sizingCell.bounds.size.width = CGRectGetWidth(self.view.bounds)
-            height = self.sizingCell.setupWithMessage(ModelController.Model.days[self.day][indexPath.row]).height;
+            height = self.sizingCell.setupWithMessage(displayedMessages[indexPath.row]).height;
         }
         else
         {
             sizingCellChoice.bounds.size.width = CGRectGetWidth(self.view.bounds)
-            height = self.sizingCellChoice.setupWithMessage(ModelController.Model.days[self.day][indexPath.row]["answers"] as! [[String : AnyObject]]).height;
+            height = self.sizingCellChoice.setupWithMessage(displayedMessages[indexPath.row]["answers"] as! [[String : AnyObject]]).height;
         }
         return height
     }
@@ -263,16 +246,12 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if  ModelController.Model.days.count > 0
-        {
-            return ModelController.Model.days[self.day].count
-        }
-        return 0
+        return self.displayedMessages.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let message = ModelController.Model.days[self.day][indexPath.row]
+        let message = self.displayedMessages[indexPath.row]
         
         if message["type"] as? String == "choice"{
             

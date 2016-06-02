@@ -14,13 +14,16 @@
 		690771991CFD1628000B6B43 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690771981CFD1628000B6B43 /* History.swift */; };
 		6907719B1CFD1644000B6B43 /* MessageBubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907719A1CFD1644000B6B43 /* MessageBubbleTextView.swift */; };
 		6907719D1CFD1651000B6B43 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907719C1CFD1651000B6B43 /* MessageCell.swift */; };
-		6907719F1CFD166D000B6B43 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907719E1CFD166D000B6B43 /* MessagesController.swift */; };
+		6907719F1CFD166D000B6B43 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6907719E1CFD166D000B6B43 /* MessagesController.swift */; settings = {COMPILER_FLAGS = "-Wno-unused-parameter"; }; };
 		690771A11CFD167F000B6B43 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690771A01CFD167F000B6B43 /* ModelController.swift */; };
 		690771A31CFD16B1000B6B43 /* Situation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690771A21CFD16B1000B6B43 /* Situation.swift */; };
 		690771A51CFD16C4000B6B43 /* Subsituation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690771A41CFD16C4000B6B43 /* Subsituation.swift */; };
 		690771A71CFD1711000B6B43 /* Triggers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690771A61CFD1711000B6B43 /* Triggers.swift */; };
 		690771A91CFD2957000B6B43 /* db.json in Resources */ = {isa = PBXBuildFile; fileRef = 690771A81CFD2957000B6B43 /* db.json */; };
 		690771AC1CFD2A67000B6B43 /* EmitterKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 690771AA1CFD2A66000B6B43 /* EmitterKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6941756F1CFF2E6E00DC54E7 /* swiftgif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941756E1CFF2E6E00DC54E7 /* swiftgif.swift */; };
+		694175711CFF2FA300DC54E7 /* typing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 694175701CFF2FA300DC54E7 /* typing.gif */; };
+		694175731CFF4B9700DC54E7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694175721CFF4B9700DC54E7 /* TabBarController.swift */; };
 		6B102A7E1CE4EBAB004EB942 /* MoralTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */; };
 		6B102A7F1CE4EBAB004EB942 /* StuffTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */; };
 		6B102A801CE4EBAB004EB942 /* WeatherTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */; };
@@ -88,6 +91,9 @@
 		690771A61CFD1711000B6B43 /* Triggers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triggers.swift; sourceTree = "<group>"; };
 		690771A81CFD2957000B6B43 /* db.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = db.json; sourceTree = "<group>"; };
 		690771AA1CFD2A66000B6B43 /* EmitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EmitterKit.framework; path = Carthage/Build/iOS/EmitterKit.framework; sourceTree = "<group>"; };
+		6941756E1CFF2E6E00DC54E7 /* swiftgif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = swiftgif.swift; path = ../swiftgif.swift; sourceTree = "<group>"; };
+		694175701CFF2FA300DC54E7 /* typing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = typing.gif; sourceTree = "<group>"; };
+		694175721CFF4B9700DC54E7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoralTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StuffTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabViewController.swift; sourceTree = "<group>"; };
@@ -188,11 +194,14 @@
 		6B3670AE1CC77A1400C29629 /* expedition */ = {
 			isa = PBXGroup;
 			children = (
+				6941756E1CFF2E6E00DC54E7 /* swiftgif.swift */,
 				6B233BD41CE323A300986EA9 /* Variables */,
 				6B233BCD1CE0B18300986EA9 /* Subviews */,
+				690771901CFD1575000B6B43 /* Answer.swift */,
 				6B3670AF1CC77A1400C29629 /* AppDelegate.swift */,
 				690771921CFD15D6000B6B43 /* ChoiceCell.swift */,
 				690771941CFD1605000B6B43 /* Events.swift */,
+				6B3670B11CC77A1400C29629 /* FirstViewController.swift */,
 				690771961CFD1616000B6B43 /* Helper.swift */,
 				690771981CFD1628000B6B43 /* History.swift */,
 				6907719A1CFD1644000B6B43 /* MessageBubbleTextView.swift */,
@@ -200,13 +209,13 @@
 				6907719E1CFD166D000B6B43 /* MessagesController.swift */,
 				690771A01CFD167F000B6B43 /* ModelController.swift */,
 				690771A41CFD16C4000B6B43 /* Subsituation.swift */,
-				690771A61CFD1711000B6B43 /* Triggers.swift */,
-				6B3670B11CC77A1400C29629 /* FirstViewController.swift */,
 				6B3670B31CC77A1400C29629 /* SecondViewController.swift */,
 				690771A21CFD16B1000B6B43 /* Situation.swift */,
-				6B3670B51CC77A1400C29629 /* Main.storyboard */,
-				690771901CFD1575000B6B43 /* Answer.swift */,
+				694175721CFF4B9700DC54E7 /* TabBarController.swift */,
 				6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */,
+				690771A61CFD1711000B6B43 /* Triggers.swift */,
+				6B3670B51CC77A1400C29629 /* Main.storyboard */,
+				694175701CFF2FA300DC54E7 /* typing.gif */,
 				6B3670B81CC77A1400C29629 /* Assets.xcassets */,
 				6B3670BA1CC77A1400C29629 /* LaunchScreen.storyboard */,
 				6B3670BD1CC77A1400C29629 /* Info.plist */,
@@ -343,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B3670BC1CC77A1400C29629 /* LaunchScreen.storyboard in Resources */,
+				694175711CFF2FA300DC54E7 /* typing.gif in Resources */,
 				690771A91CFD2957000B6B43 /* db.json in Resources */,
 				6B3670B91CC77A1400C29629 /* Assets.xcassets in Resources */,
 				6B3670B71CC77A1400C29629 /* Main.storyboard in Resources */,
@@ -373,7 +383,9 @@
 				690771991CFD1628000B6B43 /* History.swift in Sources */,
 				6907719D1CFD1651000B6B43 /* MessageCell.swift in Sources */,
 				6907719B1CFD1644000B6B43 /* MessageBubbleTextView.swift in Sources */,
+				694175731CFF4B9700DC54E7 /* TabBarController.swift in Sources */,
 				6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */,
+				6941756F1CFF2E6E00DC54E7 /* swiftgif.swift in Sources */,
 				6B102A7F1CE4EBAB004EB942 /* StuffTabViewController.swift in Sources */,
 				6B3670B41CC77A1400C29629 /* SecondViewController.swift in Sources */,
 				690771911CFD1575000B6B43 /* Answer.swift in Sources */,

@@ -8,19 +8,22 @@
 
 import Foundation
 
+private let model = ModelController.Model
+
 class ModelController {
     
+    static let Model = ModelController()
     let history: History
     let triggers: Triggers
     var currentSituation: Situation?
     var situations: Array<Situation>
-    var days: Array<Array<Dictionary<String,String>>>
+    var days: Array<Array<Dictionary<String,AnyObject>>>
     
-    init() {
+    private init() {
         self.history = History()
         self.triggers = Triggers()
         self.situations = []
-        self.days = []
+        self.days = [[]]
         self.getData()
     }
     
@@ -132,7 +135,7 @@ class ModelController {
         self.currentSituation = self.situations[0]
     }
     
-    func addToCurrentDay(msg: Dictionary<String,String>)
+    func addToCurrentDay(msg: Dictionary<String,AnyObject>)
     {
         if self.days.count == 0
         {
@@ -186,8 +189,9 @@ class ModelController {
                 
                 if differentSituation
                 {
-                    if situation.id == "0a2f9269-8a3f-46cd-bc11-e54f42487516"
+                    if situation.id == "cb1b1ed5-160e-4f98-8a44-19e8e3f6c92b"
                     {
+                        print("hey adele i was wondering its a new day")
                         self.days.append([])
                     }
                     

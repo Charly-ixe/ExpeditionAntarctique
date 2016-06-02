@@ -46,16 +46,12 @@ class History {
                     fileHandle.closeFile()
                     print("***** Data saved to history file *****")
                 }
-                catch let error as NSError{
-                    //                    print(error)
+                catch{
                     do {
                         try string!.dataUsingEncoding(NSUTF8StringEncoding)!.writeToURL(url, options: .DataWritingAtomic)
                     }
-                    catch let error as NSError{
-                        //                        print(error)
+                    catch{
                     }
-                    
-                    
                 }
             }
         }catch{

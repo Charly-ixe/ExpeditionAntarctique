@@ -424,7 +424,7 @@
              "id": "a60f3c92-b47f-45e7-8bc8-b2f06fdd3aed"
              },
              {
-             "content": "Aussi bien qu’on puisse être lorsqu’on est coincé dans un blizzard, et qu’on ne voit rien à plus de 5 mètres",
+             "content": "Aussi bien qu’on puisse être lorsqu’on est coincé dans un blizzard, qu’on voit rien à plus de 5 mètres",
              "received": "true",
              "id": "4caa30b5-064b-46db-aa49-c4894877d58a"
              },
@@ -637,14 +637,14 @@
                "id": "6606212f-154b-4665-820e-bfa72c802e5a"
                },
                {
-               "content": "Ok !",
-               "parent_id": "3ede6a61-5291-4bed-a292-8572972709eb",
-               "id": "0f206c19-e1b2-486f-a678-7479d7f1147b"
-               },
-               {
                "content": "Ouais enfin moi et les cartes... Bon j’essaye",
                "parent_id": "3ede6a61-5291-4bed-a292-8572972709eb",
                "id": "f436a476-135c-44c5-b338-b494209d313b"
+               },
+               {
+               "content": "Ok !",
+               "parent_id": "3ede6a61-5291-4bed-a292-8572972709eb",
+               "id": "0f206c19-e1b2-486f-a678-7479d7f1147b"
                },
                {
                "content": "Bon. Prends plein nord !",
@@ -662,6 +662,11 @@
                "id": "2aacf253-172a-4808-af6d-5cc282e8ac07"
                },
                {
+               "content": "Si tu y tiens...",
+               "parent_id": "daea1a00-c8b7-4eed-a45e-337bba9e2246",
+               "id": "c32a3baf-5c6b-440e-9303-96cb623f7967"
+               },
+               {
                "content": "Ok",
                "parent_id": "daea1a00-c8b7-4eed-a45e-337bba9e2246",
                "id": "98ff5609-d529-4dc4-9dd0-7f39abe8305d"
@@ -670,11 +675,6 @@
                "content": "Cool !",
                "parent_id": "daea1a00-c8b7-4eed-a45e-337bba9e2246",
                "id": "8dabd74d-ad7c-4447-959c-abe531fefa55"
-               },
-               {
-               "content": "Si tu y tiens...",
-               "parent_id": "daea1a00-c8b7-4eed-a45e-337bba9e2246",
-               "id": "c32a3baf-5c6b-440e-9303-96cb623f7967"
                },
                {
                "content": "T’as vraiment besoin d’eux?",
