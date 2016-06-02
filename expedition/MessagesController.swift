@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MessagesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -103,6 +104,11 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         ModelController.Model.days[ModelController.Model.days.count - 1].append(message)
         self.tableView.reloadData()
         
+        let systemSoundID: SystemSoundID = 1004
+        
+        // to play sound
+        AudioServicesPlaySystemSound (systemSoundID)
+        
         idEvent.once { nextId in
             self.setMessageToDisplay(nextId)
         }
@@ -189,10 +195,12 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 
                 Helper.delay(1) {
-                    ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
-                    self.tableView.reloadData()
-                    self.tableViewScrollToBottom(true)
-                    
+                    if toDisplay["type"] as? String != "choice"
+                    {
+                        ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
+                        self.tableView.reloadData()
+                        self.tableViewScrollToBottom(true)
+                    }
                     
                     Helper.delay(t) {
                         
@@ -232,8 +240,14 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             var msg = [String:String]()
                             msg["content"] = toDisplay["content"] as? String
                             msg["received"] = toDisplay["received"] as? String
+                            // create a sound ID, in this case its the tweet sound.
+                            let systemSoundID: SystemSoundID = 1057
+                            
+                            // to play sound
+                            AudioServicesPlaySystemSound (systemSoundID)
                         }
                         self.tableView.reloadData()
+                        
                         self.tableViewScrollToBottom(true)
                     
                         ModelController.Model.getNextSub(id)
