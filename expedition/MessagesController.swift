@@ -15,7 +15,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     var typing = [String: AnyObject]()
     var messages: [[String:AnyObject]] = []
     var displayedMessages: [[String:AnyObject]] = []
-    let Model : ModelController = ModelController()
     private let sizingCell = MessageCell()
     private let sizingCellChoice = ChoiceCell()
     
@@ -40,14 +39,13 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.setMessages()
         
-        
         setMessageToDisplay(self.messages[0]["id"] as! String)
         
     }
     
     func setMessages(){
         self.messages = []
-        for sub in self.Model.currentSituation!.subs {
+        for sub in ModelController.Model.currentSituation!.subs {
             
             var dico = [String: AnyObject]()
             
@@ -93,22 +91,22 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     func answerTap(sender:UITapGestureRecognizer) {
         
         let answer : MessageBubbleTextView = (sender.view as? MessageBubbleTextView)!
-        self.Model.history.saveHistory(answer.answerId!)
+        ModelController.Model.history.saveHistory(answer.answerId!)
         answer.backgroundColor = UIColor.redColor()
-        self.displayedMessages = self.displayedMessages.filter({
+        ModelController.Model.days[self.day] = ModelController.Model.days[self.day].filter({
             $0["id"] as? String != answer.subId
         })
         
         var message = [String: String]()
         message["content"] = answer.text
         message["received"] = "false"
-        self.displayedMessages.append(message)
+        ModelController.Model.days[ModelController.Model.days.count - 1].append(message)
         self.tableView.reloadData()
         
         idEvent.once { nextId in
             self.setMessageToDisplay(nextId)
         }
-        self.Model.getNextSub(answer.answerId!, type: "answer")
+        ModelController.Model.getNextSub(answer.answerId!, type: "answer")
         
     }
     
@@ -138,7 +136,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
             UIApplication.sharedApplication().endBackgroundTask(bgTask)
         }
         
-        if id != ""
+        if id != "" && ModelController.Model.days.count - 1 == self.day
         {
             var newMessageArray = self.messages.filter({
                 $0["id"] as! String == id //access the value to filter
@@ -191,7 +189,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 
                 Helper.delay(1) {
-                    self.displayedMessages.append(self.typing)
+                    ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
                     self.tableView.reloadData()
                     self.tableViewScrollToBottom(true)
                     
@@ -210,13 +208,14 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
                         }
                         
-                        let lastMessage = self.displayedMessages.last
-                        if lastMessage!["content"] as! String == "==typing=="
+                        let lastMessage = ModelController.Model.days[ModelController.Model.days.count - 1].last
+                        
+                        if lastMessage!["content"] as? String == "==typing=="
                         {
-                            self.displayedMessages.removeLast()
+                            ModelController.Model.days[ModelController.Model.days.count - 1].removeLast()
                         }
                     
-                        self.displayedMessages.append(toDisplay)
+                        ModelController.Model.days[ModelController.Model.days.count - 1].append(toDisplay)
                     
                         if toDisplay["type"] as? String != "choice"
                         {
@@ -233,12 +232,11 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             var msg = [String:String]()
                             msg["content"] = toDisplay["content"] as? String
                             msg["received"] = toDisplay["received"] as? String
-                            self.Model.addToCurrentDay(msg)
                         }
                         self.tableView.reloadData()
                         self.tableViewScrollToBottom(true)
                     
-                        self.Model.getNextSub(id)
+                        ModelController.Model.getNextSub(id)
                     }
                 }
             }
@@ -247,15 +245,15 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: CGFloat = 100
-        if displayedMessages[indexPath.row]["type"] as? String != "choice"
+        if ModelController.Model.days[self.day][indexPath.row]["type"] as? String != "choice"
         {
             sizingCell.bounds.size.width = CGRectGetWidth(self.view.bounds)
-            height = self.sizingCell.setupWithMessage(displayedMessages[indexPath.row]).height;
+            height = self.sizingCell.setupWithMessage(ModelController.Model.days[self.day][indexPath.row]).height;
         }
         else
         {
             sizingCellChoice.bounds.size.width = CGRectGetWidth(self.view.bounds)
-            height = self.sizingCellChoice.setupWithMessage(displayedMessages[indexPath.row]["answers"] as! [[String : AnyObject]]).height;
+            height = self.sizingCellChoice.setupWithMessage(ModelController.Model.days[self.day][indexPath.row]["answers"] as! [[String : AnyObject]]).height;
         }
         return height
     }
@@ -265,12 +263,16 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.displayedMessages.count
+        if  ModelController.Model.days.count > 0
+        {
+            return ModelController.Model.days[self.day].count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let message = self.displayedMessages[indexPath.row]
+        let message = ModelController.Model.days[self.day][indexPath.row]
         
         if message["type"] as? String == "choice"{
             
