@@ -16,7 +16,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+                
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController!.dataSource = self
         
@@ -63,7 +63,14 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
         
         index += 1
         
-        return viewControllerAtIndex(index)
+        print("index: " + String(index))
+        print(ModelController.Model.days.count)
+        if ModelController.Model.days.count >= index + 1
+        {
+            print("New controller")
+            return viewControllerAtIndex(index)
+        }
+        return nil
     }
     
     func viewControllerAtIndex(index: Int) -> MessagesController?
