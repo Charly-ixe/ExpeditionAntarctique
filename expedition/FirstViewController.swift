@@ -11,8 +11,15 @@ import UIKit
 class FirstViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleViewBottomConstraint: NSLayoutConstraint!
     var imageView : UIImageView!
     var mapElements : [MapElementUIView] = []
+    var isOpen : Bool = false
+    let transition = PopAnimator()
+    var container : UIView?
+    @IBOutlet var titleViewTapGesture: UITapGestureRecognizer!
+    
     
     override func viewDidLoad() {
         
@@ -67,7 +74,22 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
             imageView.addSubview(elt)
         }
         
-//        imageView.addSubview(elt)
+//        var titleView = UIView()
+//        self.view.addSubview(titleView)
+//        
+//        var constraints : [NSLayoutConstraint] = []
+//        var bottomConstraint = NSLayoutConstraint(item: titleView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0)
+//        constraints.append(bottomConstraint)
+//        var leftConstraint = NSLayoutConstraint(item: titleView, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 12)
+//        constraints.append(leftConstraint)
+//        var rightConstraint = NSLayoutConstraint(item: titleView, attribute: .Right, relatedBy: .Equal, toItem: self.view, attribute: .Right, multiplier: 1.0, constant: 12)
+//        constraints.append(rightConstraint)
+//        self.view.addConstraints(constraints)
+//        titleView.bounds.size.height = 110
+//        titleView.backgroundColor = nunatakBlack
+        
+        titleView.layer.shadowColor = brashWhite.CGColor
+        titleView.layer.shadowOffset = CGSizeZero
         
         scrollView.delegate = self
     }
@@ -82,14 +104,54 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
-        
+        if isOpen == false {
+            UIView.animateWithDuration(0.3, animations: {
+                self.titleViewBottomConstraint.constant += 120
+                self.view.layoutIfNeeded()
+                self.isOpen = true
+            })
+        }
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if isOpen == true {
+            UIView.animateWithDuration(0.3, animations: {
+                self.titleViewBottomConstraint.constant -= 120
+                self.view.layoutIfNeeded()
+                self.isOpen = false
+            })
+        }
     }
     
     
     @IBAction func tapElement(sender: UIButton!) {
-        print("tap this shiiiiiiiiiit")
+        print("tap this shiiiiiiiiiit will I tap or not fuck this motherfucking shit")
     }
     
+    @IBAction func tappedTitleView(sender: UITapGestureRecognizer) {
+        print("Tap !!")
+        let placeDetails = storyboard?.instantiateViewControllerWithIdentifier("PlaceViewController") as! PlaceViewController
+        placeDetails.transitioningDelegate = self
+        presentViewController(placeDetails, animated: true, completion: nil)
+    }
 
 }
 
+extension FirstViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForPresentedController(
+        presented: UIViewController,
+        presentingController presenting: UIViewController,
+                             sourceController source: UIViewController) ->
+        UIViewControllerAnimatedTransitioning? {
+            
+            transition.originFrame = titleView!.superview!.convertRect(titleView!.frame, toView: nil)
+            transition.presenting = true
+            return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
+    }
+}
