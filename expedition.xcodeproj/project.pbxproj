@@ -25,6 +25,7 @@
 		694175711CFF2FA300DC54E7 /* typing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 694175701CFF2FA300DC54E7 /* typing.gif */; };
 		694175731CFF4B9700DC54E7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694175721CFF4B9700DC54E7 /* TabBarController.swift */; };
 		6B0CC8C91D00D73100E76D78 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0CC8C81D00D73100E76D78 /* PlaceViewController.swift */; };
+		6B0CC8CB1D017C6200E76D78 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */; };
 		6B102A7E1CE4EBAB004EB942 /* MoralTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */; };
 		6B102A7F1CE4EBAB004EB942 /* StuffTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */; };
 		6B102A801CE4EBAB004EB942 /* WeatherTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */; };
@@ -96,6 +97,7 @@
 		694175701CFF2FA300DC54E7 /* typing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = typing.gif; sourceTree = "<group>"; };
 		694175721CFF4B9700DC54E7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6B0CC8C81D00D73100E76D78 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoralTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StuffTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */,
 				6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */,
 				6BC034981CFDE39F0087C56F /* MapElementUIView.swift */,
+				6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */,
 			);
 			name = Subviews;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				6B3670B41CC77A1400C29629 /* SecondViewController.swift in Sources */,
 				690771911CFD1575000B6B43 /* Answer.swift in Sources */,
 				6B276B821CF4A7CB00F6BF23 /* Character.swift in Sources */,
+				6B0CC8CB1D017C6200E76D78 /* CarouselView.swift in Sources */,
 				6B233BD81CE32AFF00986EA9 /* Colors.swift in Sources */,
 				6B3670B01CC77A1400C29629 /* AppDelegate.swift in Sources */,
 				6BF827A11CEB1C770085C68B /* DrawBackground.swift in Sources */,
