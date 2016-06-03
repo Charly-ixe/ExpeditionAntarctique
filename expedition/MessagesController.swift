@@ -32,9 +32,11 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.dataSource = self
         self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         
+        self.tableView.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
+        
         let bottomConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: -20)
-        let topConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 100)
         self.view.addConstraint(bottomConstraint)
+        let topConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 0)
         self.view.addConstraint(topConstraint)
         
         self.setMessages()

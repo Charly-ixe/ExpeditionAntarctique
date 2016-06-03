@@ -12,6 +12,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
 {
     var pageViewController : UIPageViewController?
     var currentIndex : Int = 0
+    var dio: Diorama?
     
     override func viewDidLoad()
     {
@@ -22,12 +23,21 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
         
         let startingViewController: MessagesController = viewControllerAtIndex(0)!
         let viewControllers = [startingViewController]
+        
+        let diorama_height: CGFloat = 0.3
+        
         pageViewController!.setViewControllers(viewControllers , direction: .Forward, animated: false, completion: nil)
-        pageViewController!.view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+        pageViewController!.view.frame = CGRectMake(0, view.frame.size.height -  view.frame.size.height * (1 - diorama_height ), view.frame.size.width, view.frame.size.height * (1 - diorama_height ));
         
         addChildViewController(pageViewController!)
         view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
+        
+        dio = Diorama(frame: CGRectMake(0, 0, self.view.frame.width, view.frame.size.height * diorama_height))
+        
+        self.view.addSubview(dio!)
+        
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -63,11 +73,8 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
         
         index += 1
         
-        print("index: " + String(index))
-        print(ModelController.Model.days.count)
         if ModelController.Model.days.count >= index + 1
         {
-            print("New controller")
             return viewControllerAtIndex(index)
         }
         return nil
