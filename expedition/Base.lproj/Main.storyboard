@@ -293,9 +293,23 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVi-go-4Yw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QVi-go-4Yw" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="-20" id="MRS-wg-yiZ"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="QVi-go-4Yw" secondAttribute="bottom" id="ScT-3C-0Nc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QVi-go-4Yw" secondAttribute="trailing" constant="-20" id="nTs-Ee-585"/>
+                            <constraint firstItem="QVi-go-4Yw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="xbU-Km-3ix"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="scrollview" destination="QVi-go-4Yw" id="DUH-Ma-n3h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -313,23 +327,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-b0-Z09">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="620"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f2o-b0-Z09">
+                                <rect key="frame" x="20" y="20" width="560" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCellReceived" id="xEW-mB-QTs" customClass="MessageCell" customModule="expedition" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEW-mB-QTs" id="OcW-D9-ODD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="messageCellChoice" id="cJZ-7q-3yi" customClass="ChoiceCell" customModule="expedition" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJZ-7q-3yi" id="frq-Mo-BrA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -341,8 +355,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="f2o-b0-Z09" firstAttribute="leading" secondItem="9j6-Nk-aBZ" secondAttribute="leadingMargin" constant="-20" id="FqB-Wk-6wD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="f2o-b0-Z09" secondAttribute="trailing" constant="-20" id="xNA-do-J4u"/>
+                            <constraint firstItem="f2o-b0-Z09" firstAttribute="leading" secondItem="9j6-Nk-aBZ" secondAttribute="leadingMargin" id="FqB-Wk-6wD"/>
+                            <constraint firstItem="f2o-b0-Z09" firstAttribute="top" secondItem="Dnp-g6-PgK" secondAttribute="bottom" id="gDT-Ff-k94"/>
+                            <constraint firstItem="rGH-qG-3a8" firstAttribute="top" secondItem="f2o-b0-Z09" secondAttribute="bottom" id="ust-5s-NeR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f2o-b0-Z09" secondAttribute="trailing" id="xNA-do-J4u"/>
                         </constraints>
                     </view>
                     <connections>

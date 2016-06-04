@@ -8,15 +8,28 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UIPageViewControllerDataSource
+class SecondViewController: UIViewController, UIPageViewControllerDataSource, UIScrollViewDelegate
 {
     var pageViewController : UIPageViewController?
     var currentIndex : Int = 0
     var dio: Diorama?
+    var pageViewControllerTop: CGFloat?
+    var pageViewControllerHeight: CGFloat?
+    @IBOutlet weak var scrollview: UIScrollView!
+    
+    var diorama_height_start: CGFloat?
+    var diorama_height_final: CGFloat?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        scrollview.contentSize = CGSize(width: scrollview.frame.width, height: scrollview.frame.height * 3)
+        
+        diorama_height_start = scrollview.frame.size.height * 1.0
+        diorama_height_final = scrollview.frame.size.height / 4
+        
+        scrollview.delegate = self
                 
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController!.dataSource = self
@@ -24,24 +37,29 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
         let startingViewController: MessagesController = viewControllerAtIndex(0)!
         let viewControllers = [startingViewController]
         
-        let diorama_height: CGFloat = 0.3
+        
+        pageViewControllerHeight = scrollview.frame.size.height - diorama_height_final!
         
         pageViewController!.setViewControllers(viewControllers , direction: .Forward, animated: false, completion: nil)
-        pageViewController!.view.frame = CGRectMake(0, view.frame.size.height -  view.frame.size.height * (1 - diorama_height ), view.frame.size.width, view.frame.size.height * (1 - diorama_height ));
         
         addChildViewController(pageViewController!)
-        view.addSubview(pageViewController!.view)
+        scrollview.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
         
-        dio = Diorama(frame: CGRectMake(0, 0, self.view.frame.width, view.frame.size.height * diorama_height))
+        dio = Diorama(frame: CGRectMake(0, 0, scrollview.frame.width, diorama_height_start!))
         
-        self.view.addSubview(dio!)
+        scrollview.addSubview(dio!)
+        scrollview.bringSubviewToFront(pageViewController!.view)
         
+        pageViewControllerTop = scrollview.contentSize.height - pageViewControllerHeight!
         
-    }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+        pageViewController!.view.frame = CGRectMake(0, pageViewControllerTop!, scrollview.frame.size.width, pageViewControllerHeight!);
+
+        
+        let bottomConstraint = NSLayoutConstraint(item: pageViewController!.view, attribute: .Bottom, relatedBy: .Equal, toItem: scrollview, attribute: .Bottom, multiplier: 1, constant: 0)
+        view.addConstraint(bottomConstraint)
+        
+        scrollview.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
         
     }
     
@@ -91,14 +109,48 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource
         return pageContentViewController
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
-    {
-        return 1
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let top = scrollview.frame.height * 2 + diorama_height_final!
+        let scroll = top - scrollview.contentOffset.y
+        
+        print(top)
+        print(scroll)
+        
+        let percentage = 100 - (scroll * 100 / top)
+        
+        print(percentage)
+        
+        print("-------------")
+        
+        let newY = top * percentage / 165
+        
+        if percentage >= 0 && percentage <= 100
+        {
+            self.dio!.frame = CGRectMake(0, newY, scrollview.frame.width, self.dio!.frame.height)
+            
+            self.dio!.sky.frame = CGRectMake(0, scrollview.contentOffset.y - newY, scrollview.frame.width, self.dio!.sky.frame.height)
+            
+            for layer in self.dio!.layers {
+                
+                let frm: CGRect = layer.frame
+                
+                let commonVariation =  percentage * top / 100
+                
+                let layerVariation = CGFloat(dio!.layers.count + 1 - layer.index) / 17
+                
+                layer.frame = CGRectMake(frm.origin.x, layer.yO! + commonVariation * layerVariation, layer.frame.width, layer.frame.height)
+                
+            }
+        }
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
-    {
-        return 0
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
     }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView,
+                                  willDecelerate decelerate: Bool) {
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {    }
     
 }
