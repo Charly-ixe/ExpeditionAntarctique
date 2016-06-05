@@ -167,7 +167,7 @@ class MessageCell: UITableViewCell {
             size.height = 37.5
             size.width = 60
             container.bounds.size = size
-            size.height = size.height + padding * 2
+            size.height = size.height + padding
             self.styleTypeViewForSentBy(container, h: size.height)
             
         }

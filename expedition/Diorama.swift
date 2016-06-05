@@ -81,6 +81,9 @@ class Diorama: UIView {
             index = i
             super.init(frame: frame)
             image = UIImage(named: name)
+            let newFrame = CGRectMake(0, 0, image!.size.width, frame.size.height)
+            self.frame = newFrame
+//            self.contentMode = UIViewContentMode.ScaleAspectFill
         }
                     
     }

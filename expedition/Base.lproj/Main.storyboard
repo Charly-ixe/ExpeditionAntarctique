@@ -308,7 +308,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="scrollview" destination="QVi-go-4Yw" id="DUH-Ma-n3h"/>
+                        <outlet property="wrapperScrollView" destination="QVi-go-4Yw" id="cpp-cq-gK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

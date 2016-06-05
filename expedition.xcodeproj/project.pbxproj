@@ -25,6 +25,7 @@
 		694175711CFF2FA300DC54E7 /* typing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 694175701CFF2FA300DC54E7 /* typing.gif */; };
 		694175731CFF4B9700DC54E7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694175721CFF4B9700DC54E7 /* TabBarController.swift */; };
 		694175751D00552200DC54E7 /* Diorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694175741D00552200DC54E7 /* Diorama.swift */; };
+		6960AD421D03853A00EEF42B /* MessagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960AD411D03853A00EEF42B /* MessagesPageViewController.swift */; };
 		6B102A7E1CE4EBAB004EB942 /* MoralTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */; };
 		6B102A7F1CE4EBAB004EB942 /* StuffTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */; };
 		6B102A801CE4EBAB004EB942 /* WeatherTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */; };
@@ -95,6 +96,7 @@
 		694175701CFF2FA300DC54E7 /* typing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = typing.gif; sourceTree = "<group>"; };
 		694175721CFF4B9700DC54E7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		694175741D00552200DC54E7 /* Diorama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diorama.swift; sourceTree = "<group>"; };
+		6960AD411D03853A00EEF42B /* MessagesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesPageViewController.swift; sourceTree = "<group>"; };
 		6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoralTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StuffTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				694175741D00552200DC54E7 /* Diorama.swift */,
 				690771A41CFD16C4000B6B43 /* Subsituation.swift */,
 				6B3670B31CC77A1400C29629 /* SecondViewController.swift */,
+				6960AD411D03853A00EEF42B /* MessagesPageViewController.swift */,
 				690771A21CFD16B1000B6B43 /* Situation.swift */,
 				694175721CFF4B9700DC54E7 /* TabBarController.swift */,
 				6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */,
@@ -401,6 +404,7 @@
 				690771A51CFD16C4000B6B43 /* Subsituation.swift in Sources */,
 				6B102A7E1CE4EBAB004EB942 /* MoralTabViewController.swift in Sources */,
 				6B3670B21CC77A1400C29629 /* FirstViewController.swift in Sources */,
+				6960AD421D03853A00EEF42B /* MessagesPageViewController.swift in Sources */,
 				690771951CFD1605000B6B43 /* Events.swift in Sources */,
 				690771A71CFD1711000B6B43 /* Triggers.swift in Sources */,
 				6907719F1CFD166D000B6B43 /* MessagesController.swift in Sources */,

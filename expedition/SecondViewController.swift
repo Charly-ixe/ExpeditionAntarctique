@@ -8,15 +8,16 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UIPageViewControllerDataSource, UIScrollViewDelegate
+class SecondViewController: UIViewController, UIPageViewControllerDataSource, UIScrollViewDelegate, UIPageViewControllerDelegate
 {
-    var pageViewController : UIPageViewController?
+    var pageViewController : MessagesPageViewController?
     var currentIndex : Int = 0
+    var currentDay: Int = 0
     var dio: Diorama?
     var pageViewControllerTop: CGFloat?
     var pageViewControllerHeight: CGFloat?
-    @IBOutlet weak var scrollview: UIScrollView!
     
+    @IBOutlet weak var wrapperScrollView: UIScrollView!
     var diorama_height_start: CGFloat?
     var diorama_height_final: CGFloat?
     
@@ -24,42 +25,51 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     {
         super.viewDidLoad()
         
-        scrollview.contentSize = CGSize(width: scrollview.frame.width, height: scrollview.frame.height * 3)
+        wrapperScrollView.contentSize = CGSize(width: wrapperScrollView.frame.width, height: wrapperScrollView.frame.height * 3)
         
-        diorama_height_start = scrollview.frame.size.height * 1.0
-        diorama_height_final = scrollview.frame.size.height / 4
+        diorama_height_start = wrapperScrollView.frame.size.height * 1.0
+        diorama_height_final = wrapperScrollView.frame.size.height / 4
         
-        scrollview.delegate = self
-                
-        pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        wrapperScrollView.delegate = self
+        
+        pageViewController = MessagesPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController!.dataSource = self
         
         let startingViewController: MessagesController = viewControllerAtIndex(0)!
         let viewControllers = [startingViewController]
         
-        
-        pageViewControllerHeight = scrollview.frame.size.height - diorama_height_final!
+        pageViewControllerHeight = wrapperScrollView.frame.size.height - diorama_height_final!
         
         pageViewController!.setViewControllers(viewControllers , direction: .Forward, animated: false, completion: nil)
         
         addChildViewController(pageViewController!)
-        scrollview.addSubview(pageViewController!.view)
+        
+        wrapperScrollView.addSubview(pageViewController!.view)
+        
         pageViewController!.didMoveToParentViewController(self)
         
-        dio = Diorama(frame: CGRectMake(0, 0, scrollview.frame.width, diorama_height_start!))
+        dio = Diorama(frame: CGRectMake(0, 0, wrapperScrollView.frame.width, diorama_height_start!))
         
-        scrollview.addSubview(dio!)
-        scrollview.bringSubviewToFront(pageViewController!.view)
+        wrapperScrollView.addSubview(dio!)
+        wrapperScrollView.bringSubviewToFront(pageViewController!.view)
         
-        pageViewControllerTop = scrollview.contentSize.height - pageViewControllerHeight!
+        pageViewControllerTop = wrapperScrollView.contentSize.height - pageViewControllerHeight!
         
-        pageViewController!.view.frame = CGRectMake(0, pageViewControllerTop!, scrollview.frame.size.width, pageViewControllerHeight!);
-
+        pageViewController!.view.frame = CGRectMake(0, pageViewControllerTop!, wrapperScrollView.frame.size.width, pageViewControllerHeight!);
         
-        let bottomConstraint = NSLayoutConstraint(item: pageViewController!.view, attribute: .Bottom, relatedBy: .Equal, toItem: scrollview, attribute: .Bottom, multiplier: 1, constant: 0)
+        let bottomConstraint = NSLayoutConstraint(item: pageViewController!.view, attribute: .Bottom, relatedBy: .Equal, toItem: wrapperScrollView, attribute: .Bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint)
         
-        scrollview.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
+        wrapperScrollView.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
+        
+        pageViewController?.delegate = self
+        
+        for v in pageViewController!.view.subviews {
+            if let w = v as? UIScrollView {
+                w.delegate = self
+                //                w.bounces = false
+            }
+        }
         
     }
     
@@ -79,6 +89,14 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         index -= 1
         
         return viewControllerAtIndex(index)
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if let cont = pageViewController.viewControllers![0] as? MessagesController
+        {
+            currentDay = cont.day
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
@@ -110,47 +128,46 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let top = scrollview.frame.height * 2 + diorama_height_final!
-        let scroll = top - scrollview.contentOffset.y
+        //
+        //        print(current)
+        //        print(scrollView.contentOffset.x)
+        print("***********************")
+        print(scrollView.contentOffset)
+        print(currentDay)
         
-        print(top)
-        print(scroll)
+        let top = wrapperScrollView.frame.height * 2 + diorama_height_final!
+        let scroll = top - wrapperScrollView.contentOffset.y
         
         let percentage = 100 - (scroll * 100 / top)
-        
-        print(percentage)
-        
-        print("-------------")
         
         let newY = top * percentage / 165
         
         if percentage >= 0 && percentage <= 100
         {
-            self.dio!.frame = CGRectMake(0, newY, scrollview.frame.width, self.dio!.frame.height)
+            self.dio!.frame = CGRectMake(0, newY, wrapperScrollView.frame.width, self.dio!.frame.height)
             
-            self.dio!.sky.frame = CGRectMake(0, scrollview.contentOffset.y - newY, scrollview.frame.width, self.dio!.sky.frame.height)
+            self.dio!.sky.frame = CGRectMake(0, wrapperScrollView.contentOffset.y - newY, wrapperScrollView.frame.width, self.dio!.sky.frame.height)
             
             for layer in self.dio!.layers {
-                
-                let frm: CGRect = layer.frame
                 
                 let commonVariation =  percentage * top / 100
                 
                 let layerVariation = CGFloat(dio!.layers.count + 1 - layer.index) / 17
+                var slide = layer.frame.width * wrapperScrollView.frame.width / (7 * wrapperScrollView.frame.width)
                 
-                layer.frame = CGRectMake(frm.origin.x, layer.yO! + commonVariation * layerVariation, layer.frame.width, layer.frame.height)
+                var newX: CGFloat = CGFloat(currentDay) * wrapperScrollView.frame.width * (-1)
+                if scrollView.contentOffset.x != 0 {
+                    if scrollView.contentOffset.x == wrapperScrollView.frame.width {
+//                        newX = -newX
+                    }
+                    else {
+                        newX = newX - (scrollView.contentOffset.x - wrapperScrollView.frame.width)
+                    }
+                }
+                
+                layer.frame = CGRectMake(newX, layer.yO! + commonVariation * layerVariation, layer.frame.width, layer.frame.height)
                 
             }
         }
     }
-    
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-    }
-    
-    func scrollViewDidEndDragging(scrollView: UIScrollView,
-                                  willDecelerate decelerate: Bool) {
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {    }
-    
 }

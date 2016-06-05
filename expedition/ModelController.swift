@@ -189,16 +189,19 @@ class ModelController {
                 
                 if differentSituation
                 {
-                    if situation.id == "cb1b1ed5-160e-4f98-8a44-19e8e3f6c92b"
+                    var newDay = false
+                    if situation.id == "0513c85f-dd4e-42a7-98c1-0c84a818c4f0" || situation.id == "450b5dbb-e26e-4dcf-9e3a-04b13072eb1e" || situation.id == "8721ca4f-2f8c-49ff-99e8-868af5913cf5" || situation.id == "2a6de758-1fc1-4941-a85a-9bf7b499a431"
                     {
-                        print("hey adele i was wondering its a new day")
+                        newDay = true
                         self.days.append([])
                     }
                     
                     self.currentSituation = situation
                     Helper.delay(self.currentSituation!.delay){
                         let triggeredId = self.currentSituation?.subs[0].id
-                        
+                        if newDay {
+                            print("hey adele i was wondering its a new day")
+                        }
                         idEvent.emit(triggeredId!)
                     }
                 }
