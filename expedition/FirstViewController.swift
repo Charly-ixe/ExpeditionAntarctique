@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UIScrollViewDelegate {
+class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleView: UIView!
@@ -20,6 +20,11 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
     var container : UIView?
     @IBOutlet var titleViewTapGesture: UITapGestureRecognizer!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    var childs : [UIView] = []
+    
+    @IBOutlet var mapTapGesture: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         
@@ -32,7 +37,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 1
         scrollView.userInteractionEnabled = true
-        scrollView.exclusiveTouch = true
+//        scrollView.exclusiveTouch = true
         
         let elt = MapElementUIView(frame: CGRectMake(1240, 695, 120, 120), name: "Dumont", eltDescription: "Base Française", img: "base-off")
         mapElements.append(elt)
@@ -69,27 +74,26 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         let elt17 = MapElementUIView(frame: CGRectMake(402, 2176, 120, 120), name: "Glacier", eltDescription: "Un glacier", img: "glacier-off")
         mapElements.append(elt17)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapElement(_:)))
+        tapGesture.delegate = self
+        
         
         for elt in mapElements {
             imageView.addSubview(elt)
+            elt.addGestureRecognizer(tapGesture)
+            elt.userInteractionEnabled = true
         }
-        
-//        var titleView = UIView()
-//        self.view.addSubview(titleView)
-//        
-//        var constraints : [NSLayoutConstraint] = []
-//        var bottomConstraint = NSLayoutConstraint(item: titleView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: 0)
-//        constraints.append(bottomConstraint)
-//        var leftConstraint = NSLayoutConstraint(item: titleView, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1.0, constant: 12)
-//        constraints.append(leftConstraint)
-//        var rightConstraint = NSLayoutConstraint(item: titleView, attribute: .Right, relatedBy: .Equal, toItem: self.view, attribute: .Right, multiplier: 1.0, constant: 12)
-//        constraints.append(rightConstraint)
-//        self.view.addConstraints(constraints)
-//        titleView.bounds.size.height = 110
-//        titleView.backgroundColor = nunatakBlack
         
         titleView.layer.shadowColor = brashWhite.CGColor
         titleView.layer.shadowOffset = CGSizeZero
+        
+        typeLabel.text = "BASE"
+        typeLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12)
+        typeLabel.textColor = nunatakBlackAlpha
+        
+        titleLabel.text = "Dumont d'Urville"
+        titleLabel.font = UIFont(name: "AvenirNext-Regular", size: 32)
+        titleLabel.textColor = nunatakBlack
         
         scrollView.delegate = self
     }
@@ -114,22 +118,28 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if isOpen == true {
-            UIView.animateWithDuration(0.3, animations: {
-                self.titleViewBottomConstraint.constant -= 120
-                self.view.layoutIfNeeded()
-                self.isOpen = false
-            })
-        }
+//        if isOpen == true {
+//            UIView.animateWithDuration(0.3, animations: {
+//                self.titleViewBottomConstraint.constant -= 120
+//                self.view.layoutIfNeeded()
+//                self.isOpen = false
+//            })
+//        }
     }
     
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
     
-    @IBAction func tapElement(sender: UIButton!) {
-        print("tap this shiiiiiiiiiit will I tap or not fuck this motherfucking shit")
+    func tapElement(sender: UITapGestureRecognizer? = nil) {
+        print("Tapped Elt")
+    }
+    
+    @IBAction func tappedElt(sender: UITapGestureRecognizer) {
+        print("Tapping shit")
     }
     
     @IBAction func tappedTitleView(sender: UITapGestureRecognizer) {
-        print("Tap !!")
         let placeDetails = storyboard?.instantiateViewControllerWithIdentifier("PlaceViewController") as! PlaceViewController
         placeDetails.transitioningDelegate = self
         presentViewController(placeDetails, animated: true, completion: nil)
