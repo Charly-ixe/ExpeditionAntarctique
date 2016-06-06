@@ -189,7 +189,8 @@ class ModelController {
                 
                 if differentSituation
                 {
-                    if situation.id == "cb1b1ed5-160e-4f98-8a44-19e8e3f6c92b"
+                    var newDay = false
+                    if situation.id == "122d40b9-26dc-42f1-a611-b378660f059c"
                     {
                         print("hey adele i was wondering its a new day")
                         self.days.append([])
@@ -199,6 +200,25 @@ class ModelController {
                     Helper.delay(self.currentSituation!.delay){
                         let triggeredId = self.currentSituation?.subs[0].id
                         
+                        idEvent.emit(triggeredId!)
+                    }
+                }
+            }
+        }
+        else if currentSituation?.id == "122d40b9-26dc-42f1-a611-b378660f059c" {
+            let situation_id = "cca9500e-fdd1-49d1-8680-45255cc9fa4a"
+            let filtersituation = self.situations.filter { $0.id == situation_id }
+            let differentSituation = situation_id != self.currentSituation!.id
+            
+            if filtersituation.count > 0
+            {
+                let situation = filtersituation[0]
+                
+                if differentSituation
+                {
+                    self.currentSituation = situation
+                    Helper.delay(self.currentSituation!.delay){
+                        let triggeredId = self.currentSituation?.subs[0].id
                         idEvent.emit(triggeredId!)
                     }
                 }

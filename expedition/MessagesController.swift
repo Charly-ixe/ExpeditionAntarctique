@@ -202,8 +202,13 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                         {
                             let notification:UILocalNotification = UILocalNotification()
                             notification.category = "Expédition Antarctique"
-                            notification.alertAction = "Vous avez reçu un nouveau message"
-                            notification.alertBody = toDisplay["content"] as? String
+                            notification.alertTitle = "Expédition Antarctique"
+                            notification.alertAction = "répondre à l'explorateur"
+                            notification.alertBody = "Sélectionnez une réponse"
+                            if let body = toDisplay["content"] as? String {
+                                notification.alertBody = body
+                                notification.alertAction = "afficher le nouveau message"
+                            }
                             
                             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
                         }
