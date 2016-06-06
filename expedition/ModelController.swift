@@ -190,7 +190,7 @@ class ModelController {
                 if differentSituation
                 {
                     var newDay = false
-                    if situation.id == "122d40b9-26dc-42f1-a611-b378660f059c"
+                    if situation.id == "122d40b9-26dc-42f1-a611-b378660f059c" || situation.id == "0a94e4a6-a855-4df2-9464-f91066427972"
                     {
                         newDay = true
                         self.days.append([])
