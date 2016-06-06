@@ -186,7 +186,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     t = Double(content.characters.count) / 14
                     
                     // TESTING
-                    t = 0
+//                    t = 0
                     
                 }
                 

@@ -318,7 +318,6 @@
             </objects>
             <point key="canvasLocation" x="-1902" y="1602"/>
         </scene>
-        <!--Données-->
         <!--Informations-->
         <scene sceneID="a8w-kE-2BQ">
             <objects>
@@ -577,7 +576,7 @@
                             <constraint firstItem="QVi-go-4Yw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="xbU-Km-3ix"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="Message-off" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="wrapperScrollView" destination="QVi-go-4Yw" id="cpp-cq-gK1"/>
                     </connections>
@@ -606,8 +605,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEW-mB-QTs" id="OcW-D9-ODD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -615,8 +613,7 @@
                                         <rect key="frame" x="0.0" y="72" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJZ-7q-3yi" id="frq-Mo-BrA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1344,7 +1341,6 @@
         <image name="portraits" width="88" height="88"/>
         <image name="portraits2" width="88" height="88"/>
         <image name="portraits3" width="88" height="88"/>
-        <image name="second" width="30" height="30"/>
         <image name="stats-1" width="2000" height="1125"/>
         <image name="stats-2" width="2000" height="1124"/>
         <image name="stats-3" width="2000" height="1124"/>
