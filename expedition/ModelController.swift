@@ -192,14 +192,17 @@ class ModelController {
                     var newDay = false
                     if situation.id == "122d40b9-26dc-42f1-a611-b378660f059c"
                     {
-                        print("hey adele i was wondering its a new day")
+                        newDay = true
                         self.days.append([])
                     }
                     
                     self.currentSituation = situation
                     Helper.delay(self.currentSituation!.delay){
                         let triggeredId = self.currentSituation?.subs[0].id
-                        
+                        if newDay {
+                            print("hey adele i was wondering its a new day")
+                            newDayEvent.emit(self.days.count - 1)
+                        }
                         idEvent.emit(triggeredId!)
                     }
                 }

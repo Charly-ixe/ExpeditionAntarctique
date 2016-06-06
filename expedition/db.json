@@ -32,7 +32,7 @@
                    "delay": 5
                    },
                    {
-                   "name": "Retour à la base",
+                   "name": "jour2",
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "34c68c3c-a877-49bf-b988-58a4a030cdfe",
@@ -97,7 +97,7 @@
                       "id": "5b78f99d-5013-446b-8ecb-734843e37726"
                       },
                       {
-                      "name": "C'EST GUILLAUME",
+                      "name": "text2",
                       "type": "txt",
                       "parent_id": "0e057c6d-e6ad-46b7-bfac-0b0c008c0794",
                       "child_id": "5a29292a-0d8b-420a-86a1-8bb04138219a",
@@ -118,7 +118,7 @@
                       "id": "bdfc51bb-8fa7-461f-af65-7bad01fe521d"
                       },
                       {
-                      "name": "Ah! ENFIN une réponse ! Putain j’ai réussi à te contacter!!",
+                      "name": "text1",
                       "type": "txt",
                       "parent_id": "0e057c6d-e6ad-46b7-bfac-0b0c008c0794",
                       "child_id": "b52f190d-9603-4324-b928-1922c77afdca",
@@ -146,14 +146,14 @@
                       "id": "372a3584-bd22-40bd-beee-02839368ab49"
                       },
                       {
-                      "name": "Pas vraiment",
+                      "name": "text1",
                       "type": "txt",
                       "parent_id": "0e057c6d-e6ad-46b7-bfac-0b0c008c0794",
                       "child_id": "1fcb8fd9-3399-4098-9bf1-5d1c05353ac0",
                       "id": "c24f3c0b-ff11-4493-8a19-f1dfc2c440e1"
                       },
                       {
-                      "name": "Pas du tout",
+                      "name": "text2",
                       "type": "txt",
                       "parent_id": "0e057c6d-e6ad-46b7-bfac-0b0c008c0794",
                       "child_id": "5e6a793b-80a0-4f36-bd38-2f7e1c760e5f",
@@ -202,7 +202,7 @@
                       "id": "cf95410e-4268-4565-9ba4-f023ae91efee"
                       },
                       {
-                      "name": "J’en sais rien…",
+                      "name": "text",
                       "type": "txt",
                       "parent_id": "0e057c6d-e6ad-46b7-bfac-0b0c008c0794",
                       "child_id": "d83ec6ea-970b-4db1-81ff-ddf238b90548",
@@ -722,12 +722,12 @@
                       ],
     "text": [
              {
-             "content": "T'ES LÀ ?",
+             "content": "Insert content here",
              "received": "true",
              "id": "eb63f769-2410-410c-a10e-48312ce5cc95"
              },
              {
-             "content": "C'EST GUILLAUME",
+             "content": "Insert content here",
              "received": "true",
              "id": "5a29292a-0d8b-420a-86a1-8bb04138219a"
              },
@@ -737,7 +737,7 @@
              "id": "87650f07-5127-4fa1-9a60-efc0d294bdeb"
              },
              {
-             "content": "Ah! ENFIN une réponse ! Putain j’ai réussi à te contacter!!",
+             "content": "Insert content here",
              "received": "true",
              "id": "b52f190d-9603-4324-b928-1922c77afdca"
              },
@@ -752,12 +752,12 @@
              "id": "ebd7c4ea-4a5f-46b5-9e6c-c6c776371ddb"
              },
              {
-             "content": "Pas vraiment",
+             "content": "Insert content here",
              "received": "true",
              "id": "1fcb8fd9-3399-4098-9bf1-5d1c05353ac0"
              },
              {
-             "content": "Pas du tout",
+             "content": "Insert content here",
              "received": "true",
              "id": "5e6a793b-80a0-4f36-bd38-2f7e1c760e5f"
              },

@@ -26,18 +26,15 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.typing["content"] = "==typing=="
         self.typing["received"] = "true"
-        
+                
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        let bottomConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: -20)
-        let topConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 100)
-        self.view.addConstraint(bottomConstraint)
-        self.view.addConstraint(topConstraint)
-        
+        self.tableView.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
+                        
         self.setMessages()
         
         setMessageToDisplay(self.messages[0]["id"] as! String)
@@ -189,7 +186,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     t = Double(content.characters.count) / 14
                     
                     // TESTING
-//                    t = 0
+                    t = 0
                     
                 }
                 
@@ -342,9 +339,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
             v.layer.shadowOffset = CGSize(width: 0, height: 0)
             v.layer.shadowOpacity = 0.1
             v.layer.shadowRadius = 10
-            
-            
-            
+                        
             cell.layer.masksToBounds = false
             cell.clipsToBounds = false
             

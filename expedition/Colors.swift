@@ -18,3 +18,11 @@ let waterSkyBlue3 = UIColor(red:125/255, green:143/255, blue:241/255, alpha:0.4)
 let gaugeGreen = UIColor(red:75/255, green:242/255, blue:195/255, alpha:1.0)
 let gaugeYellow = UIColor(red:242/255, green:202/255, blue:75/255, alpha:1.0)
 let gaugeRed = UIColor(red:242/255, green:75/255, blue:75/255, alpha:1.0)
+
+
+let skyBlue = UIColor(red:119/255, green:133/255, blue:253/255, alpha:1.0)
+let skyBlue2 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.9)
+let skyBlue3 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.8)
+let skyBlue4 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.7)
+let skyBlue5 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.6)
+let skyBlue6 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.5)
