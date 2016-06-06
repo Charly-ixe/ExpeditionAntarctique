@@ -213,12 +213,12 @@ class MessageCell: UITableViewCell {
         case "false":
             self.textView.center.x = CGRectGetWidth(self.bounds) - targetX
             self.textView.center.y = halfTextViewHeight + (padding / 2)
-            self.textView.layer.borderColor = Appearance.userColor.CGColor
+            self.textView.layer.borderColor = waterSkyBlue.CGColor
             
             
             
             self.textView.textColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
-            self.textView.backgroundColor = UIColor(red:0.49, green:0.56, blue:0.95, alpha:1.0)
+            self.textView.backgroundColor = waterSkyBlue
             
             
             let maskLayer = CAShapeLayer()

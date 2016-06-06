@@ -39,7 +39,7 @@
                             <constraint firstItem="lDC-Zi-Sew" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-20" id="xFX-E0-TfN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Carte" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Carte" image="Map-off" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="scrollView" destination="lDC-Zi-Sew" id="WVL-LK-fJI"/>
                     </connections>
@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="-1902" y="893"/>
         </scene>
-        <!--Données-->
+        <!--Informations-->
         <scene sceneID="a8w-kE-2BQ">
             <objects>
                 <viewController id="GUS-3Z-WbD" customClass="ThirdViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
@@ -259,7 +259,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Données" id="mDO-Ad-F1q"/>
+                    <tabBarItem key="tabBarItem" title="Informations" image="Info-off" id="mDO-Ad-F1q"/>
                     <connections>
                         <outlet property="celciusLabel" destination="PeD-2g-Ikb" id="2V0-aK-lUS"/>
                         <outlet property="currentWeatherImageView" destination="pGj-Um-qt9" id="oa6-0d-msU"/>
@@ -295,7 +295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="Message-off" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -992,9 +992,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Info-off" width="22" height="22"/>
+        <image name="Map-off" width="22" height="22"/>
+        <image name="Message-off" width="22" height="22"/>
         <image name="bg" width="750" height="1334"/>
-        <image name="first" width="30" height="30"/>
         <image name="icones-meteo2-50" width="788" height="788"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
