@@ -8,7 +8,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Carte-->
+        <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,9 @@
                             <constraint firstItem="lDC-Zi-Sew" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-20" id="xFX-E0-TfN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Carte" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="" image="Map-off" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="scrollView" destination="lDC-Zi-Sew" id="WVL-LK-fJI"/>
                     </connections>
@@ -48,7 +50,7 @@
             </objects>
             <point key="canvasLocation" x="-1902" y="893"/>
         </scene>
-        <!--Données-->
+        <!--Third View Controller-->
         <scene sceneID="a8w-kE-2BQ">
             <objects>
                 <viewController id="GUS-3Z-WbD" customClass="ThirdViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
@@ -259,7 +261,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Données" id="mDO-Ad-F1q"/>
+                    <tabBarItem key="tabBarItem" title="" image="Info-off" id="mDO-Ad-F1q">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="celciusLabel" destination="PeD-2g-Ikb" id="2V0-aK-lUS"/>
                         <outlet property="currentWeatherImageView" destination="pGj-Um-qt9" id="oa6-0d-msU"/>
@@ -282,7 +286,7 @@
             </objects>
             <point key="canvasLocation" x="2006" y="893"/>
         </scene>
-        <!--Messages-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
@@ -295,7 +299,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Messages" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="" image="Message-off" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -992,9 +998,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Info-off" width="22" height="22"/>
+        <image name="Map-off" width="22" height="22"/>
+        <image name="Message-off" width="22" height="22"/>
         <image name="bg" width="750" height="1334"/>
-        <image name="first" width="30" height="30"/>
         <image name="icones-meteo2-50" width="788" height="788"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
