@@ -34,8 +34,11 @@
                                 <rect key="frame" x="20" y="30" width="560" height="130"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqN-jB-a3Y">
-                                        <rect key="frame" x="373" y="0.0" width="187" height="130"/>
+                                        <rect key="frame" x="460" y="0.0" width="100" height="130"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="g55-Ui-5Vt"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VITESSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-OC-YX2">
                                         <rect key="frame" x="8" y="8" width="46" height="16.5"/>
@@ -98,7 +101,7 @@
                                     <constraint firstItem="nGI-QR-nAw" firstAttribute="top" secondItem="AVw-fF-TEL" secondAttribute="bottom" constant="7" id="KfH-fw-Bki"/>
                                     <constraint firstItem="sFO-2w-EMi" firstAttribute="leading" secondItem="nGI-QR-nAw" secondAttribute="trailing" constant="10" id="Lmp-17-YWZ"/>
                                     <constraint firstAttribute="height" constant="130" id="OCK-1Q-9wl"/>
-                                    <constraint firstItem="RqN-jB-a3Y" firstAttribute="width" secondItem="1Ul-oX-czT" secondAttribute="width" multiplier="1:3" id="QOw-Pw-Zwn"/>
+                                    <constraint firstItem="RqN-jB-a3Y" firstAttribute="width" secondItem="1Ul-oX-czT" secondAttribute="width" multiplier="1:4" id="QOw-Pw-Zwn"/>
                                     <constraint firstItem="ctv-OC-YX2" firstAttribute="leading" secondItem="1Ul-oX-czT" secondAttribute="leading" constant="8" id="TzB-Pk-qLr"/>
                                     <constraint firstItem="vik-b9-apt" firstAttribute="top" secondItem="1Ul-oX-czT" secondAttribute="top" constant="81" id="WAN-92-Y7w"/>
                                     <constraint firstItem="vik-b9-apt" firstAttribute="leading" secondItem="AVw-fF-TEL" secondAttribute="trailing" constant="10" id="XT8-Tg-h8E"/>
@@ -121,6 +124,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5kZ-Ub-wco"/>
+                                        <exclude reference="QOw-Pw-Zwn"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -996,14 +1000,14 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MORAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-8X-Nsq">
-                                <rect key="frame" x="34" y="287" width="44" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-8X-Nsq">
+                                <rect key="frame" x="34" y="286" width="44" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ESPRIT D'ÉQUIPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-UD-uYl">
-                                <rect key="frame" x="34" y="341" width="98" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESPRIT D'ÉQUIPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-UD-uYl">
+                                <rect key="frame" x="34" y="340" width="98" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1032,8 +1036,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="droughtGauge" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-KN-Lpg" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
-                                <rect key="frame" x="34" y="253" width="532" height="4"/>
+                            <view contentMode="scaleToFill" restorationIdentifier="droughtGauge" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-KN-Lpg" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="252" width="532" height="4"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="Wfs-VR-Ilk"/>
@@ -1044,8 +1048,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="moralGauge" translatesAutoresizingMaskIntoConstraints="NO" id="g2J-5z-5y6" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
-                                <rect key="frame" x="34" y="308" width="532" height="4"/>
+                            <view contentMode="scaleToFill" restorationIdentifier="moralGauge" translatesAutoresizingMaskIntoConstraints="NO" id="g2J-5z-5y6" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="306" width="532" height="4"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="dvL-4M-Jb2"/>
@@ -1056,8 +1060,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="teamSpiritGauge" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-2C-kN0" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
-                                <rect key="frame" x="34" y="362" width="532" height="4"/>
+                            <view contentMode="scaleToFill" restorationIdentifier="teamSpiritGauge" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-2C-kN0" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                                <rect key="frame" x="34" y="360" width="532" height="4"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="anV-Dy-mTP"/>

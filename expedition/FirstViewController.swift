@@ -109,7 +109,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         destinationLabel.textColor = nunatakBlackAlpha
         destinationDataLabel.textColor = nunatakBlack
         
-        currentMoveView.clipsToBounds = true
+//        currentMoveView.clipsToBounds = true
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: showMovementView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight), cornerRadii: CGSizeMake(6, 6)).CGPath
         showMovementView.layer.mask = maskLayer
@@ -121,8 +121,8 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         player?.muted = true
         
         let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        playerLayer.zPosition = -1
+        playerLayer.videoGravity = AVLayerVideoGravityResize
+//        playerLayer.zPosition = -1
         
         playerLayer.frame = CGRectMake(0, 0, showMovementView.frame.width, showMovementView.frame.height)
         
