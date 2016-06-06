@@ -7,12 +7,37 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
-class FirstViewController: UIViewController, UIScrollViewDelegate {
+class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleViewBottomConstraint: NSLayoutConstraint!
     var imageView : UIImageView!
     var mapElements : [MapElementUIView] = []
+    var isOpen : Bool = false
+    let transition = PopAnimator()
+    var container : UIView?
+    @IBOutlet var titleViewTapGesture: UITapGestureRecognizer!
+    
+    @IBOutlet weak var currentMoveView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    var childs : [UIView] = []
+    
+    @IBOutlet var mapTapGesture: UITapGestureRecognizer!
+    @IBOutlet weak var showMovementView: UIView!
+    
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var speedDataLabel: UILabel!
+    @IBOutlet weak var kmLabel: UILabel!
+    @IBOutlet weak var directionLabel: UILabel!
+    @IBOutlet weak var directionDataLabel: UILabel!
+    @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var destinationDataLabel: UILabel!
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         
@@ -25,7 +50,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 1
         scrollView.userInteractionEnabled = true
-        scrollView.exclusiveTouch = true
+//        scrollView.exclusiveTouch = true
         
         let elt = MapElementUIView(frame: CGRectMake(1240, 695, 120, 120), name: "Dumont", eltDescription: "Base Française", img: "base-off")
         mapElements.append(elt)
@@ -62,12 +87,68 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
         let elt17 = MapElementUIView(frame: CGRectMake(402, 2176, 120, 120), name: "Glacier", eltDescription: "Un glacier", img: "glacier-off")
         mapElements.append(elt17)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapElement(_:)))
+        tapGesture.delegate = self
         
-        for elt in mapElements {
-            imageView.addSubview(elt)
+        
+        for element in mapElements {
+            imageView.addSubview(element)
+            element.btn!.addGestureRecognizer(tapGesture)
+            element.userInteractionEnabled = true
+            scrollView.bringSubviewToFront(element)
         }
         
-//        imageView.addSubview(elt)
+        currentMoveView.layer.shadowColor = brashWhite.CGColor
+        currentMoveView.layer.shadowOffset = CGSizeZero
+        
+        speedLabel.textColor = nunatakBlackAlpha
+        speedDataLabel.textColor = nunatakBlack
+        kmLabel.textColor = nunatakBlack
+        directionLabel.textColor = nunatakBlackAlpha
+        directionDataLabel.textColor = nunatakBlack
+        destinationLabel.textColor = nunatakBlackAlpha
+        destinationDataLabel.textColor = nunatakBlack
+        
+//        currentMoveView.clipsToBounds = true
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: showMovementView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight), cornerRadii: CGSizeMake(6, 6)).CGPath
+        showMovementView.layer.mask = maskLayer
+        
+        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("lent", withExtension: "mp4")!
+        
+        player = AVPlayer(URL: videoURL)
+        player?.actionAtItemEnd = .None
+        player?.muted = true
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravityResize
+//        playerLayer.zPosition = -1
+        
+        playerLayer.frame = CGRectMake(0, 0, showMovementView.frame.width, showMovementView.frame.height)
+        
+        showMovementView.layer.addSublayer(playerLayer)
+        player?.play()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(self.loopVideo),
+                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(self.loopVideo),
+                                                         name: UIApplicationDidBecomeActiveNotification,
+                                                         object: nil)
+        
+        titleView.layer.shadowColor = brashWhite.CGColor
+        titleView.layer.shadowOffset = CGSizeZero
+        
+        typeLabel.text = "BASE"
+        typeLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12)
+        typeLabel.textColor = nunatakBlackAlpha
+        
+        titleLabel.text = "Dumont d'Urville"
+        titleLabel.font = UIFont(name: "AvenirNext-Regular", size: 32)
+        titleLabel.textColor = nunatakBlack
         
         scrollView.delegate = self
     }
@@ -82,14 +163,66 @@ class FirstViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
-        
+        if isOpen == false {
+            UIView.animateWithDuration(0.3, animations: {
+                self.titleViewBottomConstraint.constant += 120
+                self.view.layoutIfNeeded()
+                self.isOpen = true
+            })
+        }
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        if isOpen == true {
+//            UIView.animateWithDuration(0.3, animations: {
+//                self.titleViewBottomConstraint.constant -= 120
+//                self.view.layoutIfNeeded()
+//                self.isOpen = false
+//            })
+//        }
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func tapElement(sender: UITapGestureRecognizer? = nil) {
+        print(sender?.view)
+    }
+    
+    func loopVideo() {
+        player?.seekToTime(kCMTimeZero)
+        player?.play()
     }
     
     
-    @IBAction func tapElement(sender: UIButton!) {
-        print("tap this shiiiiiiiiiit")
+    @IBAction func tappedElt(sender: UITapGestureRecognizer) {
+        print("Tapping shit")
     }
     
+    @IBAction func tappedTitleView(sender: UITapGestureRecognizer) {
+        let placeDetails = storyboard?.instantiateViewControllerWithIdentifier("PlaceViewController") as! PlaceViewController
+        placeDetails.transitioningDelegate = self
+        presentViewController(placeDetails, animated: true, completion: nil)
+    }
 
 }
 
+extension FirstViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationControllerForPresentedController(
+        presented: UIViewController,
+        presentingController presenting: UIViewController,
+                             sourceController source: UIViewController) ->
+        UIViewControllerAnimatedTransitioning? {
+            
+            transition.originFrame = titleView!.superview!.convertRect(titleView!.frame, toView: nil)
+            transition.presenting = true
+            return transition
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
+    }
+}
