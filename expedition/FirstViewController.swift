@@ -134,6 +134,11 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
                                                          name: AVPlayerItemDidPlayToEndTimeNotification,
                                                          object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(self.loopVideo),
+                                                         name: UIApplicationDidBecomeActiveNotification,
+                                                         object: nil)
+        
         titleView.layer.shadowColor = brashWhite.CGColor
         titleView.layer.shadowOffset = CGSizeZero
         
@@ -189,6 +194,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         player?.seekToTime(kCMTimeZero)
         player?.play()
     }
+    
     
     @IBAction func tappedElt(sender: UITapGestureRecognizer) {
         print("Tapping shit")
