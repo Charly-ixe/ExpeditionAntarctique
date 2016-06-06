@@ -183,7 +183,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     toDisplay["received"] = newMessage["received"] as? String
                     
                     let content = toDisplay["content"] as! String
-                    t = Double(content.characters.count) / 14
+                    t = Double(content.characters.count) / 19
                     
                     // TESTING
 //                    t = 0

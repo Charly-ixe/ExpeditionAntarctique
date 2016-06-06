@@ -66,6 +66,7 @@ class VideoViewController: UIViewController {
         textView.font = UIFont(name: "AvenirNext-Medium", size: 17)
         textView.backgroundColor = .None
         textView.editable = false
+        textView.scrollEnabled = false
         
         self.view.addSubview(textView)
         
