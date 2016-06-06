@@ -1010,8 +1010,8 @@
     <resources>
         <image name="Info-off" width="22" height="22"/>
         <image name="Map-off" width="22" height="22"/>
-        <image name="Message-off" width="22" height="22"/>
         <image name="bg" width="750" height="1334"/>
         <image name="icones-meteo2-50" width="788" height="788"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>
