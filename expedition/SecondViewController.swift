@@ -27,7 +27,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     {
         super.viewDidLoad()
         
-        wrapperScrollView.contentSize = CGSize(width: wrapperScrollView.frame.width, height: wrapperScrollView.frame.height * 3)
+        wrapperScrollView.contentSize = CGSize(width: wrapperScrollView.frame.width, height: wrapperScrollView.frame.height * 2)
         
         diorama_height_start = wrapperScrollView.frame.size.height * 1.0
         diorama_height_final = wrapperScrollView.frame.size.height / 4
@@ -80,8 +80,10 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     }
     
     func turnPage(i: Int) {
-        self.currentDay = i
-        self.pageViewController!.setViewControllers([self.viewControllerAtIndex(i)!], direction: .Forward, animated: true, completion: nil)
+        self.currentDay = i-1
+        self.pageViewController!.setViewControllers([self.viewControllerAtIndex(i)!], direction: .Forward, animated: true, completion: { finished in
+            self.currentDay = i
+        })
         
         newDayEvent.once{ dayIndex in
             self.turnPage(dayIndex)
@@ -153,12 +155,12 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         print(scrollView.contentOffset)
         print(currentDay)
         
-        let top = wrapperScrollView.frame.height * 2 + diorama_height_final!
+        let top = wrapperScrollView.frame.height * 1 + diorama_height_final!
         let scroll = top - wrapperScrollView.contentOffset.y
         
         let percentage = 100 - (scroll * 100 / top)
         
-        let newY = top * percentage / 165
+        let newY = top * percentage / 420
         
         if percentage >= 0 && percentage <= 100
         {
@@ -170,7 +172,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
                 
                 let commonVariation =  percentage * top / 100
                 
-                let layerVariation = CGFloat(dio!.layers.count + 1 - layer.index) / 17
+                let layerVariation = CGFloat(dio!.layers.count + 1 - layer.index) / 9
                 var slide = layer.frame.width * wrapperScrollView.frame.width / (7 * wrapperScrollView.frame.width)
                 
                 var newX: CGFloat = CGFloat(currentDay) * wrapperScrollView.frame.width * (-1)
