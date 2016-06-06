@@ -17,6 +17,8 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     var pageViewControllerTop: CGFloat?
     var pageViewControllerHeight: CGFloat?
     
+    var controllers: [MessagesController] = []
+    
     @IBOutlet weak var wrapperScrollView: UIScrollView!
     var diorama_height_start: CGFloat?
     var diorama_height_final: CGFloat?
@@ -67,10 +69,23 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         for v in pageViewController!.view.subviews {
             if let w = v as? UIScrollView {
                 w.delegate = self
-                //                w.bounces = false
+//                w.bounces = false
             }
         }
         
+        newDayEvent.once { dayIndex in
+            self.turnPage(dayIndex)
+        }
+        
+    }
+    
+    func turnPage(i: Int) {
+        self.currentDay = i
+        self.pageViewController!.setViewControllers([self.viewControllerAtIndex(i)!], direction: .Forward, animated: true, completion: nil)
+        
+        newDayEvent.once{ dayIndex in
+            self.turnPage(dayIndex)
+        }
     }
     
     override func didReceiveMemoryWarning()
@@ -120,11 +135,14 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     {
         
         // Create a new view controller and pass suitable data.
-        let pageContentViewController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("Messages") as! MessagesController
-        pageContentViewController.day = index
+        if index >= self.controllers.count
+        {
+            self.controllers.append(UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("Messages") as! MessagesController)
+            self.controllers.last?.day = index
+        }
         currentIndex = index
         
-        return pageContentViewController
+        return self.controllers[index]
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

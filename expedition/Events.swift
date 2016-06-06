@@ -11,3 +11,4 @@ import EmitterKit
 
 let idEvent = Event<String>()
 let badgeEvent = Event<String>()
+let newDayEvent = Event<Int>()

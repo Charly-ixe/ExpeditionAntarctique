@@ -201,6 +201,7 @@ class ModelController {
                         let triggeredId = self.currentSituation?.subs[0].id
                         if newDay {
                             print("hey adele i was wondering its a new day")
+                            newDayEvent.emit(self.days.count - 1)
                         }
                         idEvent.emit(triggeredId!)
                     }
