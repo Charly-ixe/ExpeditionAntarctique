@@ -82,7 +82,7 @@ class ChoiceCell: UITableViewCell {
         topLabel.scrollEnabled = false
         
         topLabel.textColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
-        topLabel.backgroundColor = UIColor(red:0.49, green:0.56, blue:0.95, alpha:1.0)
+        topLabel.backgroundColor = waterSkyBlue
         
         topLabel.font = UIFont(name: "Avenir-Medium", size: topLabel.font!.pointSize)
         self.contentView.addSubview(topLabel)
@@ -123,7 +123,7 @@ class ChoiceCell: UITableViewCell {
             
             textView.bounds.size = size
             
-            textView.textColor = UIColor(red:0.49, green:0.56, blue:0.95, alpha:1.0)
+            textView.textColor = waterSkyBlue
             
             let maskLayer = CAShapeLayer()
             maskLayer.frame = textView.bounds
@@ -134,7 +134,7 @@ class ChoiceCell: UITableViewCell {
             let borderLayer = CAShapeLayer()
             borderLayer.path = maskLayer.path
             borderLayer.fillColor = UIColor.clearColor().CGColor
-            borderLayer.strokeColor = UIColor(red:0.49, green:0.56, blue:0.95, alpha:1.0).CGColor
+            borderLayer.strokeColor = waterSkyBlue.CGColor
             borderLayer.lineWidth = 2
             borderLayer.frame = textView.bounds
             textView.layer.addSublayer(borderLayer)

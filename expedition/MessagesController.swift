@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MessagesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -25,18 +26,15 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.typing["content"] = "==typing=="
         self.typing["received"] = "true"
-        
+                
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .None
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        let bottomConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1.0, constant: -20)
-        let topConstraint = NSLayoutConstraint(item: self.tableView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1.0, constant: 100)
-        self.view.addConstraint(bottomConstraint)
-        self.view.addConstraint(topConstraint)
-        
+        self.tableView.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
+                        
         self.setMessages()
         
         setMessageToDisplay(self.messages[0]["id"] as! String)
@@ -102,6 +100,11 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         message["received"] = "false"
         ModelController.Model.days[ModelController.Model.days.count - 1].append(message)
         self.tableView.reloadData()
+        
+        let systemSoundID: SystemSoundID = 1004
+        
+        // to play sound
+        AudioServicesPlaySystemSound (systemSoundID)
         
         idEvent.once { nextId in
             self.setMessageToDisplay(nextId)
@@ -183,16 +186,18 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     t = Double(content.characters.count) / 14
                     
                     // TESTING
-//                    t = 0
+                    t = 0
                     
                 }
                 
                 
                 Helper.delay(1) {
-                    ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
-                    self.tableView.reloadData()
-                    self.tableViewScrollToBottom(true)
-                    
+                    if toDisplay["type"] as? String != "choice"
+                    {
+                        ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
+                        self.tableView.reloadData()
+                        self.tableViewScrollToBottom(true)
+                    }
                     
                     Helper.delay(t) {
                         
@@ -202,8 +207,13 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                         {
                             let notification:UILocalNotification = UILocalNotification()
                             notification.category = "Expédition Antarctique"
-                            notification.alertAction = "Vous avez reçu un nouveau message"
-                            notification.alertBody = toDisplay["content"] as? String
+                            notification.alertTitle = "Expédition Antarctique"
+                            notification.alertAction = "répondre à l'explorateur"
+                            notification.alertBody = "Sélectionnez une réponse"
+                            if let body = toDisplay["content"] as? String {
+                                notification.alertBody = body
+                                notification.alertAction = "afficher le nouveau message"
+                            }
                             
                             UIApplication.sharedApplication().presentLocalNotificationNow(notification)
                         }
@@ -232,8 +242,14 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             var msg = [String:String]()
                             msg["content"] = toDisplay["content"] as? String
                             msg["received"] = toDisplay["received"] as? String
+                            
+                            let systemSoundID: SystemSoundID = 1003
+                            
+                            // to play sound
+                            AudioServicesPlaySystemSound (systemSoundID)
                         }
                         self.tableView.reloadData()
+                        
                         self.tableViewScrollToBottom(true)
                     
                         ModelController.Model.getNextSub(id)
@@ -323,9 +339,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
             v.layer.shadowOffset = CGSize(width: 0, height: 0)
             v.layer.shadowOpacity = 0.1
             v.layer.shadowRadius = 10
-            
-            
-            
+                        
             cell.layer.masksToBounds = false
             cell.clipsToBounds = false
             
