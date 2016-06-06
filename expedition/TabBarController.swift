@@ -14,6 +14,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         currentItem = self.tabBar.items![1]
+        
+        
+        self.tabBar.items![1].selectedImage = UIImage(named: "Message")
+        self.tabBar.items![0].selectedImage = UIImage(named: "Map")
+        self.tabBar.items![2].selectedImage = UIImage(named: "Info")
+        
+        self.tabBar.tintColor = waterSkyBlue
+        
         badgeEvent.once { str in
             self.setMessagesBadge()
         }

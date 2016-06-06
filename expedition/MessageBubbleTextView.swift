@@ -10,7 +10,7 @@ import UIKit
 
 struct Appearance {
     static var opponentColor = UIColor(red: 0.142954, green: 0.60323, blue: 0.862548, alpha: 0.88)
-    static var userColor = UIColor(red:0.41, green:0.47, blue:0.93, alpha:1.0)
+    static var userColor = waterSkyBlue
     static var font: UIFont = UIFont.systemFontOfSize(17.0)
 }
 
