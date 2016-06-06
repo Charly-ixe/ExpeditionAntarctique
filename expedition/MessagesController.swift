@@ -240,8 +240,8 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             var msg = [String:String]()
                             msg["content"] = toDisplay["content"] as? String
                             msg["received"] = toDisplay["received"] as? String
-                            // create a sound ID, in this case its the tweet sound.
-                            let systemSoundID: SystemSoundID = 1057
+                            
+                            let systemSoundID: SystemSoundID = 1003
                             
                             // to play sound
                             AudioServicesPlaySystemSound (systemSoundID)
