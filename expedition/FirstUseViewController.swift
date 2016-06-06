@@ -12,7 +12,7 @@ class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
 
     var pageViewController : UIPageViewController?
     var pageVideos : Array<String> = ["ecran1", "ecran2", "ecran3", "ecran4"]
-    var pageTexts : [String] = ["Bienvenue en Antarctique. Ici se situe la base française Dumont D’Urville.", "Chaque année, des scientifiques viennent y mener leurs recherches.  Voici l’équipe T66.", "Ces hommes sont coupés du monde. Presque à l’état de survie, ils bravent le froid pour accomplir leur mission.", "Ils vont avoir besoin d’aide pour faire face aux défis de la nature."]
+    var pageTexts : [String] = ["Bienvenue en Antarctique. Ici se situe la base française Dumont d’Urville.", "Chaque année, des scientifiques viennent y mener leurs recherches.  Voici l’équipe T66.", "Ces hommes sont coupés du monde. Presque à l’état de survie, ils bravent le froid pour accomplir leur mission.", "Ils vont avoir besoin d’aide pour faire face aux défis de la nature."]
     var currentIndex : Int = 0
     var controllers : [VideoViewController] = []
     
@@ -75,6 +75,7 @@ class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
         if index >= self.controllers.count {
             self.controllers.append(VideoViewController())
             self.controllers.last?.imageFile = pageVideos[index]
+            self.controllers.last?.bottomText = pageTexts[index]
             self.controllers.last?.pageIndex = index
         }
         currentIndex = index

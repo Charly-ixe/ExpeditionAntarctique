@@ -15,6 +15,7 @@ class VideoViewController: UIViewController {
     var pageIndex : Int = 0
     var titleText : String = ""
     var imageFile : String = ""
+    var bottomText : String = ""
     var player: AVPlayer?
     
     override func viewDidLoad()
@@ -42,8 +43,33 @@ class VideoViewController: UIViewController {
                                                          name: AVPlayerItemDidPlayToEndTimeNotification,
                                                          object: player?.currentItem)
         
+        let textView = UITextView()
         
-
+        if imageFile == "ecran4" {
+            textView.frame = CGRectMake(20, 500, self.view.frame.width - 40, 80)
+            
+            let button = UIButton(type: .Custom)
+            button.frame = CGRectMake(70, 570, self.view.frame.width - 140, 45)
+            button.backgroundColor = waterSkyBlue
+            button.setTitle("Rejoindre l'expédition", forState:UIControlState.Normal)
+            button.tintColor = UIColor.whiteColor()
+            button.addTarget(self, action: #selector(VideoViewController.reachExpedition(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            self.view.addSubview(button)
+        }
+        else {
+            textView.frame = CGRectMake(20, 520, self.view.frame.width - 40, 80)
+        }
+        
+        textView.textColor = nunatakBlack
+        textView.text = bottomText
+        textView.textAlignment = .Center
+        textView.font = UIFont(name: "AvenirNext-Medium", size: 17)
+        textView.backgroundColor = .None
+        textView.editable = false
+        
+        self.view.addSubview(textView)
+        
+        
         
 //        let label = UILabel(frame: CGRectMake(0, 0, view.frame.width, 200))
 //        label.textColor = UIColor.whiteColor()
@@ -66,5 +92,11 @@ class VideoViewController: UIViewController {
     func loopVideo() {
         player?.seekToTime(kCMTimeZero)
         player?.play()
+    }
+    
+    func reachExpedition(sender: UIButton) {
+        let newStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : UIViewController? = newStoryboard.instantiateViewControllerWithIdentifier("tab")
+        self.showViewController(vc!, sender: self)
     }
 }

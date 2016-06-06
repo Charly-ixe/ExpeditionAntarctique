@@ -14,6 +14,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         currentItem = self.tabBar.items![1]
+        self.selectedIndex = 1
         badgeEvent.once { str in
             self.setMessagesBadge()
         }

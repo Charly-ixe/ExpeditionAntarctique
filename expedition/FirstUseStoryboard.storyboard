@@ -8,7 +8,7 @@
         <!--First Use View Controller-->
         <scene sceneID="Rt9-3T-tdN">
             <objects>
-                <viewController id="IIN-ke-fL3" customClass="FirstUseViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstuse" id="IIN-ke-fL3" customClass="FirstUseViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sij-Pw-fRd"/>
                         <viewControllerLayoutGuide type="bottom" id="c9A-um-Tj1"/>
@@ -21,7 +21,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWB-Oi-E17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="227"/>
+            <point key="canvasLocation" x="268" y="227"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0sG-Pr-Ktz">
+            <objects>
+                <viewController storyboardIdentifier="characterChoice" id="03U-rs-MMe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9tV-1D-gSo"/>
+                        <viewControllerLayoutGuide type="bottom" id="qov-Ka-cxY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RHg-eg-OYQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKj-6f-rrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933" y="227"/>
         </scene>
     </scenes>
 </document>
