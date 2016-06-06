@@ -25,9 +25,9 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
     var distanceDataLabel : UILabel?
     var inhabitantsLabel : UILabel?
     var inhabitantsDataLabel : UILabel?
-    var firstStuffImageView : UIView?
-    var secondStuffImageView : UIView?
-    var thirdStuffImageView : UIView?
+    var firstStuffView : UIView?
+    var secondStuffView : UIView?
+    var thirdStuffView : UIView?
     var scrollViewDescription : UIScrollView?
     var scrollViewDescriptionConstraints : [NSLayoutConstraint] = []
     
@@ -93,6 +93,7 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         scrollViewDescription?.addSubview(descriptionLabel!)
         
         descriptionTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus condimentum semper. Cras elementum hendrerit viverra. Nulla sed lacus quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas sit amet elit sapien. Maecenas mauris lacus, commodo quis est eget, euismod elementum leo. Quisque consequat dignissim dui sit amet tincidunt. Duis eget magna consectetur, molestie mauris quis, sodales nulla. Duis sit amet lectus nunc. Maecenas pulvinar lacus ut nibh cursus, at tempus est rhoncus. Praesent vehicula molestie velit ut mattis. Maecenas tristique interdum justo. Nullam auctor elit eu elit posuere efficitur. Sed at volutpat massa. Fusce tincidunt pharetra ullamcorper. Nulla a ipsum lectus."
+        
         descriptionTextView.font = UIFont(name: "AvenirNext-Medium", size: 16)
         descriptionTextView.textColor = nunatakBlack
         descriptionTextView.frame = CGRectMake(24, 180, self.view.frame.width - 40, 500)
@@ -112,22 +113,26 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         footerLabel.textColor = UIColor.whiteColor()
         footerLabel.textAlignment = .Center
         
-        firstStuffImageView = UIView()
-        firstStuffImageView!.frame = CGRectMake((footer.frame.width / 4) - 32, 170, 64, 64)
-        firstStuffImageView!.layer.cornerRadius = firstStuffImageView!.frame.size.width / 2
-        firstStuffImageView!.backgroundColor = nunatakBlack
-        secondStuffImageView = UIView()
-        secondStuffImageView!.frame = CGRectMake((footer.frame.width / 2) - 32, 170, 64, 64)
-        secondStuffImageView!.layer.cornerRadius = secondStuffImageView!.frame.size.width / 2
-        secondStuffImageView!.backgroundColor = nunatakBlack
-        thirdStuffImageView = UIView()
-        thirdStuffImageView!.frame = CGRectMake(((footer.frame.width / 4) * 3) - 32, 170, 64, 64)
-        thirdStuffImageView!.layer.cornerRadius = thirdStuffImageView!.frame.size.width / 2
-        thirdStuffImageView!.backgroundColor = nunatakBlack
+        firstStuffView = UIView()
+        firstStuffView!.frame = CGRectMake((footer.frame.width / 4) - 32, 170, 64, 64)
+        firstStuffView!.layer.cornerRadius = firstStuffView!.frame.size.width / 2
+        firstStuffView!.backgroundColor = UIColor.whiteColor()
+        var firstStuffImageView = UIImageView(image: UIImage(named: "Fuel"))
+//        firstStuffImageView.frame = firstStuffView!.frame
+        firstStuffView!.addSubview(firstStuffImageView)
         
-        footer.addSubview(firstStuffImageView!)
-        footer.addSubview(secondStuffImageView!)
-        footer.addSubview(thirdStuffImageView!)
+        secondStuffView = UIView()
+        secondStuffView!.frame = CGRectMake((footer.frame.width / 2) - 32, 170, 64, 64)
+        secondStuffView!.layer.cornerRadius = secondStuffView!.frame.size.width / 2
+        secondStuffView!.backgroundColor = nunatakBlack
+        thirdStuffView = UIView()
+        thirdStuffView!.frame = CGRectMake(((footer.frame.width / 4) * 3) - 32, 170, 64, 64)
+        thirdStuffView!.layer.cornerRadius = thirdStuffView!.frame.size.width / 2
+        thirdStuffView!.backgroundColor = nunatakBlack
+        
+        footer.addSubview(firstStuffView!)
+        footer.addSubview(secondStuffView!)
+        footer.addSubview(thirdStuffView!)
         
 
         scrollViewDescription!.contentSize = CGSize(width: self.view.frame.width, height: 640 + footer.frame.height)

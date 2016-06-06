@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
@@ -20,11 +22,22 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var container : UIView?
     @IBOutlet var titleViewTapGesture: UITapGestureRecognizer!
     
+    @IBOutlet weak var currentMoveView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     var childs : [UIView] = []
     
     @IBOutlet var mapTapGesture: UITapGestureRecognizer!
+    @IBOutlet weak var showMovementView: UIView!
+    
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var speedDataLabel: UILabel!
+    @IBOutlet weak var kmLabel: UILabel!
+    @IBOutlet weak var directionLabel: UILabel!
+    @IBOutlet weak var directionDataLabel: UILabel!
+    @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var destinationDataLabel: UILabel!
+    var player: AVPlayer?
     
     override func viewDidLoad() {
         
@@ -78,11 +91,48 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         tapGesture.delegate = self
         
         
-        for elt in mapElements {
-            imageView.addSubview(elt)
-            elt.addGestureRecognizer(tapGesture)
-            elt.userInteractionEnabled = true
+        for element in mapElements {
+            imageView.addSubview(element)
+            element.btn!.addGestureRecognizer(tapGesture)
+            element.userInteractionEnabled = true
+            scrollView.bringSubviewToFront(element)
         }
+        
+        currentMoveView.layer.shadowColor = brashWhite.CGColor
+        currentMoveView.layer.shadowOffset = CGSizeZero
+        
+        speedLabel.textColor = nunatakBlackAlpha
+        speedDataLabel.textColor = nunatakBlack
+        kmLabel.textColor = nunatakBlack
+        directionLabel.textColor = nunatakBlackAlpha
+        directionDataLabel.textColor = nunatakBlack
+        destinationLabel.textColor = nunatakBlackAlpha
+        destinationDataLabel.textColor = nunatakBlack
+        
+        currentMoveView.clipsToBounds = true
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: showMovementView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight), cornerRadii: CGSizeMake(6, 6)).CGPath
+        showMovementView.layer.mask = maskLayer
+        
+        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("lent", withExtension: "mp4")!
+        
+        player = AVPlayer(URL: videoURL)
+        player?.actionAtItemEnd = .None
+        player?.muted = true
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerLayer.zPosition = -1
+        
+        playerLayer.frame = CGRectMake(0, 0, showMovementView.frame.width, showMovementView.frame.height)
+        
+        showMovementView.layer.addSublayer(playerLayer)
+        player?.play()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(self.loopVideo),
+                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         object: nil)
         
         titleView.layer.shadowColor = brashWhite.CGColor
         titleView.layer.shadowOffset = CGSizeZero
@@ -132,7 +182,12 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     }
     
     func tapElement(sender: UITapGestureRecognizer? = nil) {
-        print("Tapped Elt")
+        print(sender?.view)
+    }
+    
+    func loopVideo() {
+        player?.seekToTime(kCMTimeZero)
+        player?.play()
     }
     
     @IBAction func tappedElt(sender: UITapGestureRecognizer) {

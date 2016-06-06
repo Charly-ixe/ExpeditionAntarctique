@@ -35,6 +35,7 @@ class MapElementUIView: UIView {
         btn!.clipsToBounds = true
         btn!.userInteractionEnabled = true
 //        btn!.setTitle("Tap", forState: .Normal)
+        
 //        let button = UIButton(type: .Custom) as UIButton
 //        button.frame = placeImg.frame
 //        button.bounds.size = elementFrame.size
@@ -44,10 +45,10 @@ class MapElementUIView: UIView {
         self.layer.cornerRadius = self.frame.size.width / 2
         self.addSubview(placeImg)
         btn!.addTarget(self, action: #selector(FirstViewController.tapElement(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        self.bringSubviewToFront(btn!)
         
-//        placeImg.addSubview(btn!)
+        placeImg.addSubview(btn!)
         
-        print(placeImg.image)
         
     }
     

@@ -42,6 +42,11 @@
 		6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
+		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
+		6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */; };
+		6BB447871D0572EC008E92F6 /* lent.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447821D0572EC008E92F6 /* lent.mp4 */; };
+		6BB447881D0572EC008E92F6 /* normal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447831D0572EC008E92F6 /* normal.mp4 */; };
+		6BB447891D0572EC008E92F6 /* rapide.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447841D0572EC008E92F6 /* rapide.mp4 */; };
 		6BB64A3E1D04638800550B0F /* DrawFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB64A3D1D04638800550B0F /* DrawFooter.swift */; };
 		6BC034991CFDE39F0087C56F /* MapElementUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC034981CFDE39F0087C56F /* MapElementUIView.swift */; };
 		6BF827A11CEB1C770085C68B /* DrawBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF827A01CEB1C770085C68B /* DrawBackground.swift */; };
@@ -121,6 +126,11 @@
 		6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
+		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
+		6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-nuit.mp4"; sourceTree = "<group>"; };
+		6BB447821D0572EC008E92F6 /* lent.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lent.mp4; sourceTree = "<group>"; };
+		6BB447831D0572EC008E92F6 /* normal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = normal.mp4; sourceTree = "<group>"; };
+		6BB447841D0572EC008E92F6 /* rapide.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rapide.mp4; sourceTree = "<group>"; };
 		6BB64A3D1D04638800550B0F /* DrawFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawFooter.swift; sourceTree = "<group>"; };
 		6BC034981CFDE39F0087C56F /* MapElementUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapElementUIView.swift; sourceTree = "<group>"; };
 		6BF827A01CEB1C770085C68B /* DrawBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawBackground.swift; sourceTree = "<group>"; };
@@ -214,6 +224,11 @@
 				690771961CFD1616000B6B43 /* Helper.swift */,
 				690771981CFD1628000B6B43 /* History.swift */,
 				6907719A1CFD1644000B6B43 /* MessageBubbleTextView.swift */,
+				6BB447801D0572EC008E92F6 /* arret-jour.mp4 */,
+				6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */,
+				6BB447821D0572EC008E92F6 /* lent.mp4 */,
+				6BB447831D0572EC008E92F6 /* normal.mp4 */,
+				6BB447841D0572EC008E92F6 /* rapide.mp4 */,
 				6907719C1CFD1651000B6B43 /* MessageCell.swift */,
 				6907719E1CFD166D000B6B43 /* MessagesController.swift */,
 				690771A01CFD167F000B6B43 /* ModelController.swift */,
@@ -360,11 +375,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */,
 				6B3670BC1CC77A1400C29629 /* LaunchScreen.storyboard in Resources */,
+				6BB447871D0572EC008E92F6 /* lent.mp4 in Resources */,
 				694175711CFF2FA300DC54E7 /* typing.gif in Resources */,
+				6BB447891D0572EC008E92F6 /* rapide.mp4 in Resources */,
 				690771A91CFD2957000B6B43 /* db.json in Resources */,
 				6B3670B91CC77A1400C29629 /* Assets.xcassets in Resources */,
+				6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */,
 				6B3670B71CC77A1400C29629 /* Main.storyboard in Resources */,
+				6BB447881D0572EC008E92F6 /* normal.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
