@@ -49,7 +49,7 @@ class VideoViewController: UIViewController {
             textView.frame = CGRectMake(20, 500, self.view.frame.width - 40, 80)
             
             let button = UIButton(type: .Custom)
-            button.frame = CGRectMake(70, 570, self.view.frame.width - 140, 45)
+            button.frame = CGRectMake(70, self.view.frame.height - 100, self.view.frame.width - 140, 45)
             button.backgroundColor = waterSkyBlue
             button.setTitle("Rejoindre l'expédition", forState:UIControlState.Normal)
             button.tintColor = UIColor.whiteColor()
@@ -57,7 +57,7 @@ class VideoViewController: UIViewController {
             self.view.addSubview(button)
         }
         else {
-            textView.frame = CGRectMake(20, 520, self.view.frame.width - 40, 80)
+            textView.frame = CGRectMake(20, self.view.frame.height - 150, self.view.frame.width - 40, 80)
         }
         
         textView.textColor = nunatakBlack

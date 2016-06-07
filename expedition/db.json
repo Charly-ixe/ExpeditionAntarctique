@@ -73,7 +73,7 @@
                       "id": "a523e4fa-c243-4fbb-9e83-13d6a4597b42"
                       },
                       {
-                      "name": "[[video_blizzard]]",
+                      "name": "{{blizzard}}",
                       "type": "txt",
                       "parent_id": "3e846fa4-37c0-40d1-98a4-726002d4583f",
                       "child_id": "61bff96c-c482-4e56-99c6-c082bcbc11ec",
@@ -364,7 +364,7 @@
              "id": "eac1bf64-5197-4921-86ad-f00e69d36c34"
              },
              {
-             "content": " Je savais que j'aurais dû mieux étudier la carte",
+             "content": "Je savais que j'aurais dû mieux étudier la carte",
              "received": "true",
              "id": "120c299e-e1e7-4fbd-b718-b33beb3299d7"
              },
@@ -394,12 +394,12 @@
              "id": "c86c793a-dd81-4d8c-afb9-288aecadafd9"
              },
              {
-             "content": "la beauté du paysage est si pure",
+             "content": "La beauté du paysage est si pure",
              "received": "true",
              "id": "1e0aef8d-aeee-430f-816d-0fba8278c37f"
              },
              {
-             "content": "iens regarde",
+             "content": "Tiens regarde",
              "received": "true",
              "id": "4d0b03cc-13c8-4f56-8159-39b473bbaa71"
              },
@@ -650,6 +650,36 @@
                        "situation_id": "8fb48a0d-1bf9-48d5-ae01-8079ada687af",
                        "answer_id": "40b2a067-97f8-4d07-8e05-abeb5acf7fdc",
                        "id": "61a9c579-b585-4633-bfd6-5f579a525c25"
+                       },
+                       {
+                       "situation_id": "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f",
+                       "answer_id": "2d0ac8e2-a46a-421a-96ee-3b1ec1f27fae",
+                       "id": "0d7418a3-bba6-41ed-89da-6ed85a5e83f2"
+                       },
+                       {
+                       "situation_id": "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f",
+                       "answer_id": "ad241cc0-da64-45bc-bb56-7efe81271890",
+                       "id": "383ab215-45f0-4eaf-9c9e-3cee4602cff1"
+                       },
+                       {
+                       "situation_id": "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f",
+                       "answer_id": "40b2a067-97f8-4d07-8e05-abeb5acf7fdc",
+                       "id": "1defa5c4-6a41-4e5c-80e7-e34d5ba67f0b"
+                       },
+                       {
+                       "situation_id": "b8e7521e-07bc-47aa-8cf4-725137188f74",
+                       "answer_id": "2d0ac8e2-a46a-421a-96ee-3b1ec1f27fae",
+                       "id": "0d18c2a1-fea8-418d-8d66-76ed3891ff10"
+                       },
+                       {
+                       "situation_id": "b8e7521e-07bc-47aa-8cf4-725137188f74",
+                       "answer_id": "ad241cc0-da64-45bc-bb56-7efe81271890",
+                       "id": "3fd14421-8979-4c70-b53f-dc47c51a251c"
+                       },
+                       {
+                       "situation_id": "b8e7521e-07bc-47aa-8cf4-725137188f74",
+                       "answer_id": "40b2a067-97f8-4d07-8e05-abeb5acf7fdc",
+                       "id": "ab8a605f-8ea3-4255-bdfe-9ced942bb8b7"
                        }
                        ],
     "trigger_sub_sub": [
