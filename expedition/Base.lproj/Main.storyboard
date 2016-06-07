@@ -23,12 +23,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="mEj-tZ-5KN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </imageView>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-Zi-Sew">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-Zi-Sew" customClass="PassTouchesScrollView" customModule="expedition" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="L85-AN-Dsv" appends="YES" id="8aU-wf-GKL"/>
-                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-oX-czT">
                                 <rect key="frame" x="20" y="30" width="560" height="130"/>
@@ -229,7 +226,6 @@
                         <outlet property="directionDataLabel" destination="vik-b9-apt" id="HP2-2d-jvC"/>
                         <outlet property="directionLabel" destination="AVw-fF-TEL" id="AGW-cZ-0nj"/>
                         <outlet property="kmLabel" destination="uLp-Ou-vZt" id="HBB-EC-9Th"/>
-                        <outlet property="mapTapGesture" destination="L85-AN-Dsv" id="scy-ZL-lba"/>
                         <outlet property="scrollView" destination="lDC-Zi-Sew" id="WVL-LK-fJI"/>
                         <outlet property="showMovementView" destination="RqN-jB-a3Y" id="HQd-Y0-EFs"/>
                         <outlet property="speedDataLabel" destination="G5e-w2-r21" id="m2m-GR-1C4"/>
@@ -245,11 +241,6 @@
                 <tapGestureRecognizer id="UYT-E6-Dbq">
                     <connections>
                         <action selector="tappedTitleView:" destination="9pv-A4-QxB" id="Vn0-4w-3Dz"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="L85-AN-Dsv">
-                    <connections>
-                        <action selector="tappedElt:" destination="9pv-A4-QxB" id="Beo-Es-vuI"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

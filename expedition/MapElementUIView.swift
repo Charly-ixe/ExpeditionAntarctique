@@ -44,10 +44,10 @@ class MapElementUIView: UIView {
         super.init(frame: frame)
         self.layer.cornerRadius = self.frame.size.width / 2
         self.addSubview(placeImg)
-        btn!.addTarget(self, action: #selector(FirstViewController.tapElement(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn!.addTarget(self, action: #selector(self.tapElement(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.bringSubviewToFront(btn!)
         
-        placeImg.addSubview(btn!)
+//        placeImg.addSubview(btn!)
         
         
     }
@@ -56,7 +56,22 @@ class MapElementUIView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func tapElement(sender: UIButton) {
+        print(sender.superview)
+    }
     
     
-    
+}
+
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.nextResponder()
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 }

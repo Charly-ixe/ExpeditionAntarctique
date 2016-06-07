@@ -12,7 +12,7 @@ import AVFoundation
 
 class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: PassTouchesScrollView!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var titleViewBottomConstraint: NSLayoutConstraint!
     var imageView : UIImageView!
@@ -27,7 +27,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBOutlet weak var typeLabel: UILabel!
     var childs : [UIView] = []
     
-    @IBOutlet var mapTapGesture: UITapGestureRecognizer!
+    
     @IBOutlet weak var showMovementView: UIView!
     
     @IBOutlet weak var speedLabel: UILabel!
@@ -50,7 +50,11 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 1
         scrollView.userInteractionEnabled = true
-//        scrollView.exclusiveTouch = true
+        
+        scrollView.delegate = self
+//        scrollView.delegatePass = imageView
+//        scrollView.delaysContentTouches = false
+//        imageView.userInteractionEnabled = true
         
         let elt = MapElementUIView(frame: CGRectMake(1240, 695, 120, 120), name: "Dumont", eltDescription: "Base Française", img: "base-off")
         mapElements.append(elt)
@@ -87,16 +91,19 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         let elt17 = MapElementUIView(frame: CGRectMake(402, 2176, 120, 120), name: "Glacier", eltDescription: "Un glacier", img: "glacier-off")
         mapElements.append(elt17)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapElement(_:)))
-        tapGesture.delegate = self
-        
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapElement(_:)))
+//        tapGesture.delegate = self
+//        imageView.addGestureRecognizer(tapGesture)
+//        print(imageView.gestureRecognizers)
+//        scrollView.bringSubviewToFront(imageView)
         
         for element in mapElements {
             imageView.addSubview(element)
-            element.btn!.addGestureRecognizer(tapGesture)
+//            element.addGestureRecognizer(tapGesture)
             element.userInteractionEnabled = true
             scrollView.bringSubviewToFront(element)
         }
+        
         
         currentMoveView.layer.shadowColor = brashWhite.CGColor
         currentMoveView.layer.shadowOffset = CGSizeZero
@@ -181,13 +188,18 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 //            })
 //        }
     }
+
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
-    func tapElement(sender: UITapGestureRecognizer? = nil) {
-        print(sender?.view)
+    func touchMoved() {
+        print("touch moved")
+    }
+    
+    func touchBegan() {
+        print("touch began")
     }
     
     func loopVideo() {
@@ -195,10 +207,6 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         player?.play()
     }
     
-    
-    @IBAction func tappedElt(sender: UITapGestureRecognizer) {
-        print("Tapping shit")
-    }
     
     @IBAction func tappedTitleView(sender: UITapGestureRecognizer) {
         let placeDetails = storyboard?.instantiateViewControllerWithIdentifier("PlaceViewController") as! PlaceViewController

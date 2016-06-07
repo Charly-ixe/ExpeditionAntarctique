@@ -45,6 +45,7 @@
 		6B53C3ED1D06C0A800394C2F /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53C3EC1D06C0A800394C2F /* CharacterChoiceViewController.swift */; };
 		6B53C3EF1D06C43600394C2F /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53C3EE1D06C43600394C2F /* CharacterViewController.swift */; };
 		6B53C3F11D06CA5400394C2F /* ecran1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3F01D06CA5400394C2F /* ecran1.mp4 */; };
+		6B53C3F31D06E1E700394C2F /* PassTouchesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53C3F21D06E1E700394C2F /* PassTouchesScrollView.swift */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
 		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
@@ -141,6 +142,7 @@
 		6B53C3EC1D06C0A800394C2F /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
 		6B53C3EE1D06C43600394C2F /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		6B53C3F01D06CA5400394C2F /* ecran1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecran1.mp4; sourceTree = "<group>"; };
+		6B53C3F21D06E1E700394C2F /* PassTouchesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassTouchesScrollView.swift; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				6BC034981CFDE39F0087C56F /* MapElementUIView.swift */,
 				6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */,
 				6BB64A3D1D04638800550B0F /* DrawFooter.swift */,
+				6B53C3F21D06E1E700394C2F /* PassTouchesScrollView.swift */,
 			);
 			name = Subviews;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				6B3670B01CC77A1400C29629 /* AppDelegate.swift in Sources */,
 				6BF827A11CEB1C770085C68B /* DrawBackground.swift in Sources */,
 				690771A11CFD167F000B6B43 /* ModelController.swift in Sources */,
+				6B53C3F31D06E1E700394C2F /* PassTouchesScrollView.swift in Sources */,
 				690771971CFD1616000B6B43 /* Helper.swift in Sources */,
 				6BF827A31CEDB38E0085C68B /* DrawGauge.swift in Sources */,
 				6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */,
