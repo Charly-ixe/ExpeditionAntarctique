@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "FirstUseStoryboard", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("firstuse")
         self.window?.rootViewController = vc
-        
+
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = nunatakBlackAlpha
         pageControl.currentPageIndicatorTintColor = nunatakBlack
@@ -48,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 //        let tabBarController = self.window?.rootViewController as! UITabBarController
 //        tabBarController.selectedIndex = 1
+        
+        
+        application.cancelAllLocalNotifications()
         
     }
 

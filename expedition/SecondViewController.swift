@@ -85,6 +85,8 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             self.currentDay = i
         })
         
+        self.wrapperScrollView.setContentOffset(CGPointZero, animated: true)
+        
         newDayEvent.once{ dayIndex in
             self.turnPage(dayIndex)
         }
@@ -148,13 +150,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        //
-        //        print(current)
-        //        print(scrollView.contentOffset.x)
-        print("***********************")
-        print(scrollView.contentOffset)
-        print(currentDay)
-        
+
         let top = wrapperScrollView.frame.height * 1 + diorama_height_final!
         let scroll = top - wrapperScrollView.contentOffset.y
         

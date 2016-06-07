@@ -33,7 +33,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.dataSource = self
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        self.tableView.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
+        self.tableView.backgroundColor = UIColor.clearColor()
                         
         self.setMessages()
         
@@ -212,6 +212,12 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             notification.alertBody = "Sélectionnez une réponse"
                             if let body = toDisplay["content"] as? String {
                                 notification.alertBody = body
+                                if body.rangeOfString("{{") != nil{
+                                    notification.alertBody = "Nouvelle image"
+                                }
+                                else if body.rangeOfString("[[") != nil{
+                                    notification.alertBody = "Nouvelle vidéo"
+                                }
                                 notification.alertAction = "afficher le nouveau message"
                             }
                             
