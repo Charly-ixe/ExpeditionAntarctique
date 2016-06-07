@@ -74,7 +74,7 @@ class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
         // Create a new view controller and pass suitable data.
         if index >= self.controllers.count {
             self.controllers.append(VideoViewController())
-            self.controllers.last?.imageFile = pageVideos[index]
+            self.controllers.last?.videoFile = pageVideos[index]
             self.controllers.last?.bottomText = pageTexts[index]
             self.controllers.last?.pageIndex = index
         }

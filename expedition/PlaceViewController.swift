@@ -117,14 +117,16 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         firstStuffView!.frame = CGRectMake((footer.frame.width / 4) - 32, 170, 64, 64)
         firstStuffView!.layer.cornerRadius = firstStuffView!.frame.size.width / 2
         firstStuffView!.backgroundColor = UIColor.whiteColor()
-        var firstStuffImageView = UIImageView(image: UIImage(named: "Fuel"))
-//        firstStuffImageView.frame = firstStuffView!.frame
+        let firstStuffImageView = UIImageView(image: UIImage(named: "Fuel-1"))
         firstStuffView!.addSubview(firstStuffImageView)
+        
         
         secondStuffView = UIView()
         secondStuffView!.frame = CGRectMake((footer.frame.width / 2) - 32, 170, 64, 64)
         secondStuffView!.layer.cornerRadius = secondStuffView!.frame.size.width / 2
         secondStuffView!.backgroundColor = nunatakBlack
+        let secondStuffImageView = UIImageView(image: UIImage(named: "Water-1"))
+        secondStuffView!.addSubview(secondStuffImageView)
         thirdStuffView = UIView()
         thirdStuffView!.frame = CGRectMake(((footer.frame.width / 4) * 3) - 32, 170, 64, 64)
         thirdStuffView!.layer.cornerRadius = thirdStuffView!.frame.size.width / 2
