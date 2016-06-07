@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="268" y="227"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Choice View Controller-->
         <scene sceneID="0sG-Pr-Ktz">
             <objects>
-                <viewController storyboardIdentifier="characterChoice" id="03U-rs-MMe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="characterChoice" id="03U-rs-MMe" customClass="CharacterChoiceViewController" customModule="expedition" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9tV-1D-gSo"/>
                         <viewControllerLayoutGuide type="bottom" id="qov-Ka-cxY"/>
@@ -35,9 +35,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tnf-Nr-kDS" appends="YES" id="Rqa-EH-2d7"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="tapGesture" destination="tnf-Nr-kDS" id="neV-Eg-99K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKj-6f-rrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tnf-Nr-kDS">
+                    <connections>
+                        <action selector="chooseCharacter:" destination="03U-rs-MMe" id="NaZ-28-xyn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="933" y="227"/>
         </scene>

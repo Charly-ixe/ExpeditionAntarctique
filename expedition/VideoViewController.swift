@@ -14,7 +14,7 @@ class VideoViewController: UIViewController {
 
     var pageIndex : Int = 0
     var titleText : String = ""
-    var imageFile : String = ""
+    var videoFile : String? = ""
     var bottomText : String = ""
     var player: AVPlayer?
     
@@ -22,7 +22,7 @@ class VideoViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        let videoURL: NSURL = NSBundle.mainBundle().URLForResource(imageFile, withExtension: "mp4")!
+        let videoURL: NSURL = NSBundle.mainBundle().URLForResource(videoFile!, withExtension: "mp4")!
         
         player = AVPlayer(URL: videoURL)
         player?.actionAtItemEnd = .None
@@ -45,7 +45,7 @@ class VideoViewController: UIViewController {
         
         let textView = UITextView()
         
-        if imageFile == "ecran4" {
+        if videoFile == "ecran4" {
             textView.frame = CGRectMake(20, 500, self.view.frame.width - 40, 80)
             
             let button = UIButton(type: .Custom)
@@ -96,8 +96,8 @@ class VideoViewController: UIViewController {
     }
     
     func reachExpedition(sender: UIButton) {
-        let newStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc : UIViewController? = newStoryboard.instantiateViewControllerWithIdentifier("tab")
+        let newStoryboard: UIStoryboard = UIStoryboard(name: "FirstUseStoryboard", bundle: nil)
+        let vc : UIViewController? = newStoryboard.instantiateViewControllerWithIdentifier("characterChoice")
         self.showViewController(vc!, sender: self)
     }
 }

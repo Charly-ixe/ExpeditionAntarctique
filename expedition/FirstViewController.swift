@@ -132,12 +132,12 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(self.loopVideo),
                                                          name: AVPlayerItemDidPlayToEndTimeNotification,
-                                                         object: nil)
+                                                         object: player?.currentItem)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
                                                          selector: #selector(self.loopVideo),
                                                          name: UIApplicationDidBecomeActiveNotification,
-                                                         object: nil)
+                                                         object: player?.currentItem)
         
         titleView.layer.shadowColor = brashWhite.CGColor
         titleView.layer.shadowOffset = CGSizeZero

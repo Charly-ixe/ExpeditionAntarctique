@@ -10,10 +10,17 @@ import UIKit
 
 class CharacterViewController: UIViewController {
 
+    var pageIndex : Int = 0
+    var imageFile : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let image = UIImageView(image: UIImage(named: imageFile))
+        image.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        image.contentMode = UIViewContentMode.ScaleAspectFill
+        image.clipsToBounds = true
+        self.view.addSubview(image)
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +29,5 @@ class CharacterViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
