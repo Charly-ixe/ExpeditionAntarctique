@@ -190,7 +190,7 @@ class ModelController {
                 if differentSituation
                 {
                     var newDay = false
-                    if situation.id == "122d40b9-26dc-42f1-a611-b378660f059c" || situation.id == "0a94e4a6-a855-4df2-9464-f91066427972"
+                    if situation.id != "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f"
                     {
                         newDay = true
                         self.days.append([])
@@ -208,8 +208,29 @@ class ModelController {
                 }
             }
         }
-        else if currentSituation?.id == "122d40b9-26dc-42f1-a611-b378660f059c" {
-            let situation_id = "cca9500e-fdd1-49d1-8680-45255cc9fa4a"
+        // no choice situation
+        else if currentSituation?.id == "8fb48a0d-1bf9-48d5-ae01-8079ada687af" {
+            let situation_id = "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f"
+            let filtersituation = self.situations.filter { $0.id == situation_id }
+            let differentSituation = situation_id != self.currentSituation!.id
+            
+            if filtersituation.count > 0
+            {
+                let situation = filtersituation[0]
+                
+                if differentSituation
+                {
+                    self.currentSituation = situation
+                    Helper.delay(self.currentSituation!.delay){
+                        let triggeredId = self.currentSituation?.subs[0].id
+                        idEvent.emit(triggeredId!)
+                    }
+                }
+            }
+        }
+            // no choice situation
+        else if currentSituation?.id == "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f" {
+            let situation_id = "b8e7521e-07bc-47aa-8cf4-725137188f74"
             let filtersituation = self.situations.filter { $0.id == situation_id }
             let differentSituation = situation_id != self.currentSituation!.id
             
