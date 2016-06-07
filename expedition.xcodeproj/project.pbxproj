@@ -383,7 +383,7 @@
 				TargetAttributes = {
 					6B3670AB1CC77A1400C29629 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = USV5Z98CAJ;
+						DevelopmentTeam = AR79S592J5;
 					};
 					6B3670C11CC77A1400C29629 = {
 						CreatedOnToolsVersion = 7.3;
@@ -649,7 +649,7 @@
 				);
 				INFOPLIST_FILE = expedition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.klct.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = klct.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -668,7 +668,7 @@
 				);
 				INFOPLIST_FILE = expedition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.klct.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = klct.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
