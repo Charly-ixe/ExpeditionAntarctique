@@ -24,10 +24,10 @@
 		6941756F1CFF2E6E00DC54E7 /* swiftgif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941756E1CFF2E6E00DC54E7 /* swiftgif.swift */; };
 		694175711CFF2FA300DC54E7 /* typing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 694175701CFF2FA300DC54E7 /* typing.gif */; };
 		694175731CFF4B9700DC54E7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694175721CFF4B9700DC54E7 /* TabBarController.swift */; };
-		6B0CC8C91D00D73100E76D78 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0CC8C81D00D73100E76D78 /* PlaceViewController.swift */; };
-		6B0CC8CB1D017C6200E76D78 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */; };
 		694175751D00552200DC54E7 /* Diorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694175741D00552200DC54E7 /* Diorama.swift */; };
 		6960AD421D03853A00EEF42B /* MessagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6960AD411D03853A00EEF42B /* MessagesPageViewController.swift */; };
+		6B0CC8C91D00D73100E76D78 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0CC8C81D00D73100E76D78 /* PlaceViewController.swift */; };
+		6B0CC8CB1D017C6200E76D78 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */; };
 		6B102A7E1CE4EBAB004EB942 /* MoralTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */; };
 		6B102A7F1CE4EBAB004EB942 /* StuffTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */; };
 		6B102A801CE4EBAB004EB942 /* WeatherTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */; };
@@ -44,6 +44,11 @@
 		6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
+		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
+		6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */; };
+		6BB447871D0572EC008E92F6 /* lent.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447821D0572EC008E92F6 /* lent.mp4 */; };
+		6BB447881D0572EC008E92F6 /* normal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447831D0572EC008E92F6 /* normal.mp4 */; };
+		6BB447891D0572EC008E92F6 /* rapide.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447841D0572EC008E92F6 /* rapide.mp4 */; };
 		6BB4478B1D05A1EE008E92F6 /* FirstUseStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BB4478A1D05A1EE008E92F6 /* FirstUseStoryboard.storyboard */; };
 		6BB4478E1D05A40B008E92F6 /* FirstUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4478D1D05A40B008E92F6 /* FirstUseViewController.swift */; };
 		6BB447901D05A785008E92F6 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4478F1D05A785008E92F6 /* VideoViewController.swift */; };
@@ -52,11 +57,6 @@
 		6BB447981D05AB69008E92F6 /* ecran3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447931D05AB69008E92F6 /* ecran3.mp4 */; };
 		6BB447991D05AB69008E92F6 /* ecran4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447941D05AB69008E92F6 /* ecran4.mp4 */; };
 		6BB4479A1D05AB69008E92F6 /* splash.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447951D05AB69008E92F6 /* splash.mp4 */; };
-		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
-		6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */; };
-		6BB447871D0572EC008E92F6 /* lent.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447821D0572EC008E92F6 /* lent.mp4 */; };
-		6BB447881D0572EC008E92F6 /* normal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447831D0572EC008E92F6 /* normal.mp4 */; };
-		6BB447891D0572EC008E92F6 /* rapide.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447841D0572EC008E92F6 /* rapide.mp4 */; };
 		6BB64A3E1D04638800550B0F /* DrawFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB64A3D1D04638800550B0F /* DrawFooter.swift */; };
 		6BC034991CFDE39F0087C56F /* MapElementUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC034981CFDE39F0087C56F /* MapElementUIView.swift */; };
 		6BF827A11CEB1C770085C68B /* DrawBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF827A01CEB1C770085C68B /* DrawBackground.swift */; };
@@ -112,10 +112,10 @@
 		6941756E1CFF2E6E00DC54E7 /* swiftgif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = swiftgif.swift; path = ../swiftgif.swift; sourceTree = "<group>"; };
 		694175701CFF2FA300DC54E7 /* typing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = typing.gif; sourceTree = "<group>"; };
 		694175721CFF4B9700DC54E7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		6B0CC8C81D00D73100E76D78 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
-		6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		694175741D00552200DC54E7 /* Diorama.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diorama.swift; sourceTree = "<group>"; };
 		6960AD411D03853A00EEF42B /* MessagesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesPageViewController.swift; sourceTree = "<group>"; };
+		6B0CC8C81D00D73100E76D78 /* PlaceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		6B0CC8CA1D017C6200E76D78 /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		6B102A7B1CE4EBAB004EB942 /* MoralTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoralTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7C1CE4EBAB004EB942 /* StuffTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StuffTabViewController.swift; sourceTree = "<group>"; };
 		6B102A7D1CE4EBAB004EB942 /* WeatherTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTabViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +138,11 @@
 		6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
+		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
+		6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-nuit.mp4"; sourceTree = "<group>"; };
+		6BB447821D0572EC008E92F6 /* lent.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lent.mp4; sourceTree = "<group>"; };
+		6BB447831D0572EC008E92F6 /* normal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = normal.mp4; sourceTree = "<group>"; };
+		6BB447841D0572EC008E92F6 /* rapide.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rapide.mp4; sourceTree = "<group>"; };
 		6BB4478A1D05A1EE008E92F6 /* FirstUseStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstUseStoryboard.storyboard; sourceTree = "<group>"; };
 		6BB4478D1D05A40B008E92F6 /* FirstUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstUseViewController.swift; sourceTree = "<group>"; };
 		6BB4478F1D05A785008E92F6 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -146,11 +151,6 @@
 		6BB447931D05AB69008E92F6 /* ecran3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecran3.mp4; sourceTree = "<group>"; };
 		6BB447941D05AB69008E92F6 /* ecran4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecran4.mp4; sourceTree = "<group>"; };
 		6BB447951D05AB69008E92F6 /* splash.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.mp4; sourceTree = "<group>"; };
-		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
-		6BB447811D0572EC008E92F6 /* arret-nuit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-nuit.mp4"; sourceTree = "<group>"; };
-		6BB447821D0572EC008E92F6 /* lent.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lent.mp4; sourceTree = "<group>"; };
-		6BB447831D0572EC008E92F6 /* normal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = normal.mp4; sourceTree = "<group>"; };
-		6BB447841D0572EC008E92F6 /* rapide.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rapide.mp4; sourceTree = "<group>"; };
 		6BB64A3D1D04638800550B0F /* DrawFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawFooter.swift; sourceTree = "<group>"; };
 		6BC034981CFDE39F0087C56F /* MapElementUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapElementUIView.swift; sourceTree = "<group>"; };
 		6BF827A01CEB1C770085C68B /* DrawBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawBackground.swift; sourceTree = "<group>"; };
@@ -374,7 +374,7 @@
 				TargetAttributes = {
 					6B3670AB1CC77A1400C29629 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = AR79S592J5;
+						DevelopmentTeam = USV5Z98CAJ;
 					};
 					6B3670C11CC77A1400C29629 = {
 						CreatedOnToolsVersion = 7.3;
@@ -637,7 +637,7 @@
 				);
 				INFOPLIST_FILE = expedition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = klct.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klct.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -656,7 +656,7 @@
 				);
 				INFOPLIST_FILE = expedition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = klct.expedition;
+				PRODUCT_BUNDLE_IDENTIFIER = com.klct.expedition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
