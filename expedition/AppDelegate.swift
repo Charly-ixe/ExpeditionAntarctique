@@ -22,10 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = storyboard.instantiateViewControllerWithIdentifier("firstuse")
         self.window?.rootViewController = vc
         
-        let pageControl = UIPageControl.appearance()
-        pageControl.pageIndicatorTintColor = nunatakBlackAlpha
-        pageControl.currentPageIndicatorTintColor = nunatakBlack
-        pageControl.backgroundColor = .None
+        
         
         return true
     }

@@ -44,8 +44,8 @@
 		6B3670E01CC7A6FD00C29629 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */; };
 		6B53C3ED1D06C0A800394C2F /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53C3EC1D06C0A800394C2F /* CharacterChoiceViewController.swift */; };
 		6B53C3EF1D06C43600394C2F /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53C3EE1D06C43600394C2F /* CharacterViewController.swift */; };
-		6B53C3F11D06CA5400394C2F /* ecran1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3F01D06CA5400394C2F /* ecran1.mp4 */; };
 		6B53C3F31D06E1E700394C2F /* PassTouchesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B53C3F21D06E1E700394C2F /* PassTouchesScrollView.swift */; };
+		6B53C3F51D07329C00394C2F /* ecran1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3F41D07329C00394C2F /* ecran1.mp4 */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
 		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
@@ -141,8 +141,8 @@
 		6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		6B53C3EC1D06C0A800394C2F /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
 		6B53C3EE1D06C43600394C2F /* CharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
-		6B53C3F01D06CA5400394C2F /* ecran1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecran1.mp4; sourceTree = "<group>"; };
 		6B53C3F21D06E1E700394C2F /* PassTouchesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassTouchesScrollView.swift; sourceTree = "<group>"; };
+		6B53C3F41D07329C00394C2F /* ecran1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecran1.mp4; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 				694175741D00552200DC54E7 /* Diorama.swift */,
 				690771A41CFD16C4000B6B43 /* Subsituation.swift */,
 				6B3670B31CC77A1400C29629 /* SecondViewController.swift */,
-				6B53C3F01D06CA5400394C2F /* ecran1.mp4 */,
+				6B53C3F41D07329C00394C2F /* ecran1.mp4 */,
 				6BB447921D05AB69008E92F6 /* ecran2.mp4 */,
 				6BB447931D05AB69008E92F6 /* ecran3.mp4 */,
 				6BB447941D05AB69008E92F6 /* ecran4.mp4 */,
@@ -425,7 +425,7 @@
 				6BB447991D05AB69008E92F6 /* ecran4.mp4 in Resources */,
 				6BB4479A1D05AB69008E92F6 /* splash.mp4 in Resources */,
 				6BB447981D05AB69008E92F6 /* ecran3.mp4 in Resources */,
-				6B53C3F11D06CA5400394C2F /* ecran1.mp4 in Resources */,
+				6B53C3F51D07329C00394C2F /* ecran1.mp4 in Resources */,
 				6BB4478B1D05A1EE008E92F6 /* FirstUseStoryboard.storyboard in Resources */,
 				6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */,
 				6B3670BC1CC77A1400C29629 /* LaunchScreen.storyboard in Resources */,
