@@ -1007,14 +1007,14 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-8X-Nsq">
-                                <rect key="frame" x="34" y="286" width="44" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SANTÉ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plk-8X-Nsq">
+                                <rect key="frame" x="34" y="286" width="39" height="17"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ESPRIT D'ÉQUIPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-UD-uYl">
-                                <rect key="frame" x="34" y="340" width="98" height="16"/>
+                                <rect key="frame" x="34" y="341" width="98" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1056,7 +1056,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="moralGauge" translatesAutoresizingMaskIntoConstraints="NO" id="g2J-5z-5y6" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
-                                <rect key="frame" x="34" y="306" width="532" height="4"/>
+                                <rect key="frame" x="34" y="307" width="532" height="4"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="dvL-4M-Jb2"/>
@@ -1068,7 +1068,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" restorationIdentifier="teamSpiritGauge" translatesAutoresizingMaskIntoConstraints="NO" id="tRO-2C-kN0" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
-                                <rect key="frame" x="34" y="360" width="532" height="4"/>
+                                <rect key="frame" x="34" y="361" width="532" height="4"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="anV-Dy-mTP"/>
