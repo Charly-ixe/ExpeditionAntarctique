@@ -744,7 +744,7 @@
              "id": "bdcde554-35d5-41a9-a8f5-4d2fa03c61ad"
              },
              {
-             "content": "Insert content here",
+             "content": "C’est un peu grâce à toi si je m’en suis sorti",
              "received": "true",
              "id": "7e1ef2b7-e913-410d-9674-97cd2b8eb81a"
              },
@@ -1278,11 +1278,6 @@
                         "triggered_id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29",
                         "trigger_id": "c4083383-4660-4932-aec3-028c3adc87c6",
                         "id": "7735f1a2-e9b0-4971-bb7d-7a3901a0d778"
-                        },
-                        {
-                        "triggered_id": "81436192-e043-4a51-acfd-11e79ff71fda",
-                        "trigger_id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29",
-                        "id": "cdd35871-db66-4bcb-9b84-1515ed66bf56"
                         },
                         {
                         "triggered_id": "7a9eed97-9879-425c-a16f-bc0023eea955",
