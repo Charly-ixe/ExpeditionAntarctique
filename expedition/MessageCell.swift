@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MessageCell: UITableViewCell {
     
@@ -95,6 +96,52 @@ class MessageCell: UITableViewCell {
         }
     }
     
+    private lazy var videoView: MessageBubbleVideoView = {
+        let videoView = MessageBubbleVideoView(frame: CGRectZero)
+        self.contentView.addSubview(videoView)
+        return videoView
+    }()
+    
+    private class MessageBubbleVideoView : UIView, UIGestureRecognizerDelegate {
+        var player: AVPlayer?
+        
+        override init(frame: CGRect = CGRectZero) {
+            super.init(frame: frame)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+            tap.delegate = self
+            self.addGestureRecognizer(tap)
+        }
+        
+        required init(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        func addResetNotification() {
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: self.player?.currentItem)
+            NSNotificationCenter.defaultCenter().addObserver(self,
+                 selector: #selector(self.resetVideo),
+                 name: AVPlayerItemDidPlayToEndTimeNotification,
+                 object: self.player?.currentItem)
+        }
+        
+        @objc func handleTap() {
+            print(player!.error)
+            if player!.rate != 0 && player!.error == nil {
+                print("pause")
+                player?.pause()
+            }
+            else {
+                print("play")
+                player?.play()
+            }
+        }
+        
+        @objc func resetVideo() {
+            print("adele its the end")
+            player?.seekToTime(kCMTimeZero)
+        }
+    }
+    
     // MARK: ImageView
     
     
@@ -126,6 +173,7 @@ class MessageCell: UITableViewCell {
         if content!.rangeOfString("{{") != nil{
             textView.removeFromSuperview()
             container.removeFromSuperview()
+            videoView.removeFromSuperview()
             self.contentView.addSubview(imgView)
             // is image
             var named = content!.stringByReplacingOccurrencesOfString("{", withString: "")
@@ -147,10 +195,53 @@ class MessageCell: UITableViewCell {
             
             size.height = size.height + padding * 3
         }
+        else if content!.rangeOfString("[[") != nil{
+            textView.removeFromSuperview()
+            container.removeFromSuperview()
+            imgView.removeFromSuperview()
+            self.contentView.addSubview(videoView)
+            // is image
+            var named = content!.stringByReplacingOccurrencesOfString("[", withString: "")
+            named = named.stringByReplacingOccurrencesOfString("]", withString: "")
+            
+            let videoURL: NSURL = NSBundle.mainBundle().URLForResource(named, withExtension: "mp4")!
+            
+            videoView.player = AVPlayer(URL: videoURL)
+            videoView.player?.actionAtItemEnd = .None
+            videoView.player?.muted = true
+            
+            let naturalSize = videoView.player?.currentItem?.asset.tracks[0].naturalSize
+            
+            let playerLayer = AVPlayerLayer(player: videoView.player)
+            playerLayer.videoGravity = AVLayerVideoGravityResize
+            //        playerLayer.zPosition = -1
+            
+            playerLayer.frame = CGRectMake(0, 0, videoView.frame.width, videoView.frame.height)
+            
+            videoView.layer.addSublayer(playerLayer)
+            
+            videoView.addResetNotification()
+            
+            let newHeight = (maxSize.width * naturalSize!.height) / naturalSize!.width
+            
+            size.height = newHeight
+            size.width = maxSize.width
+            
+            videoView.bounds.size = size
+            
+//            videoView.player?.play()
+            videoView.clipsToBounds = true
+            
+            self.styleVideoViewForSentBy("true")
+            
+            size.height = size.height + padding * 3
+            
+        }
         else if content!.rangeOfString("==typing==") != nil{
             textView.removeFromSuperview()
             imgView.removeFromSuperview()
             container.addSubview(imgView)
+            videoView.removeFromSuperview()
             self.contentView.addSubview(container)
             imgView.image = UIImage.gifWithName("typing")
             
@@ -174,6 +265,7 @@ class MessageCell: UITableViewCell {
         else {
             self.contentView.addSubview(textView)
             imgView.removeFromSuperview()
+            videoView.removeFromSuperview()
             container.removeFromSuperview()
             textView.text = content
             
@@ -248,6 +340,28 @@ class MessageCell: UITableViewCell {
             maskLayer.frame = imgView.bounds
             maskLayer.path = UIBezierPath(roundedRect: imgView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight).union(.TopLeft), cornerRadii: CGSizeMake(10, 10)).CGPath
             imgView.layer.mask = maskLayer
+        default:
+            break
+        }
+    }
+    
+    // MARK: ImgBubble Styling
+    
+    private func styleVideoViewForSentBy(sentBy: String) {
+        let halfTextViewWidth = CGRectGetWidth(self.videoView.bounds) / 2.0
+        let targetX = halfTextViewWidth + padding * 4
+        let halfTextViewHeight = CGRectGetHeight(self.videoView.bounds) / 2.0
+        self.videoView.backgroundColor = UIColor(red:1, green:1, blue:1, alpha:1.0)
+        switch sentBy {
+        case "true":
+            self.videoView.center.x = targetX
+            self.videoView.center.y = halfTextViewHeight + (padding / 2)
+            self.videoView.layer.borderColor = Appearance.opponentColor.CGColor
+            
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = videoView.bounds
+            maskLayer.path = UIBezierPath(roundedRect: videoView.bounds, byRoundingCorners: UIRectCorner.TopRight.union(.BottomRight).union(.TopLeft), cornerRadii: CGSizeMake(10, 10)).CGPath
+            videoView.layer.mask = maskLayer
         default:
             break
         }

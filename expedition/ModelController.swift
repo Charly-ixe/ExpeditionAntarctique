@@ -24,7 +24,7 @@ class ModelController {
         self.triggers = Triggers()
         self.situations = []
         self.days = [[]]
-        self.getData()
+        self.getData()        
     }
     
     func getData() {
