@@ -190,7 +190,7 @@ class ModelController {
                 if differentSituation
                 {
                     var newDay = false
-                    if situation.id != "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f"
+                    if situation.id != "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" && situation.id != "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e"
                     {
                         newDay = true
                         self.days.append([])
@@ -208,9 +208,8 @@ class ModelController {
                 }
             }
         }
-        // no choice situation
-        else if currentSituation?.id == "8fb48a0d-1bf9-48d5-ae01-8079ada687af" {
-            let situation_id = "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f"
+        else if currentSituation?.id == "9126c225-7b7b-41b5-a195-6a54d2c20421" {// no choice situation
+            let situation_id = "63ef6055-4e36-4c8f-a10d-4166f59cd2d9"
             let filtersituation = self.situations.filter { $0.id == situation_id }
             let differentSituation = situation_id != self.currentSituation!.id
             
@@ -228,9 +227,8 @@ class ModelController {
                 }
             }
         }
-            // no choice situation
-        else if currentSituation?.id == "e7cdc0f8-916f-4ab2-aab9-85e85b2e318f" {
-            let situation_id = "b8e7521e-07bc-47aa-8cf4-725137188f74"
+        else if currentSituation?.id == "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7" {// no choice situation
+            let situation_id = "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e"
             let filtersituation = self.situations.filter { $0.id == situation_id }
             let differentSituation = situation_id != self.currentSituation!.id
             

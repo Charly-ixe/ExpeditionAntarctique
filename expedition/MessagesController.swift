@@ -162,7 +162,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 toDisplay["id"] = newMessage["id"] as? String
                 
-                var t : Double = 2
+                var t : Double = 0.5
                 
                 if newMessage["answers"] != nil
                 {
@@ -185,7 +185,7 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     toDisplay["received"] = newMessage["received"] as? String
                     
                     let content = toDisplay["content"] as! String
-                    t = Double(content.characters.count) / 19
+                    t = Double(content.characters.count) / 25
                     
                     // TESTING
 //                    t = 0
