@@ -177,89 +177,67 @@ class ModelController {
             }
         }
         
-        filtered = self.triggers.triggers_answer!.filter { $0.valueForKey("answer_id") as? String == self.history.lastAnswer }
-        
-        if filtered.count > 0
-        {
-            let situation_id = filtered[0].valueForKey("situation_id") as? String
-            let filtersituation = self.situations.filter { $0.id == situation_id }
-            let differentSituation = situation_id != self.currentSituation!.id
+        if currentSituation!.id == "9126c225-7b7b-41b5-a195-6a54d2c20421" {
+            print("tweak 1")
+            let situation = self.situations.filter { $0.id == "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" }.first
+            self.currentSituation = situation
+            Helper.delay(self.currentSituation!.delay){
+                let triggeredId = self.currentSituation?.subs[0].id
+                print(triggeredId)
+                idEvent.emit(triggeredId!)
+                return
+            }
+            return
+        }
+        else if currentSituation!.id == "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" {
+            print("tweak 2")
+            let situation = self.situations.filter { $0.id == "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7" }.first
+            self.currentSituation = situation
+            self.days.append([])
+            Helper.delay(self.currentSituation!.delay){
+                let triggeredId = self.currentSituation?.subs[0].id
+                idEvent.emit(triggeredId!)
+                newDayEvent.emit(self.days.count - 1)
+                return
+            }
+            return
+        }
+        else {
             
-            if filtersituation.count > 0
+            filtered = self.triggers.triggers_answer!.filter { $0.valueForKey("answer_id") as? String == self.history.lastAnswer }
+            
+            if filtered.count > 0
             {
-                let situation = filtersituation[0]
+                let situation_id = filtered[0].valueForKey("situation_id") as? String
+                let filtersituation = self.situations.filter { $0.id == situation_id }
+                let differentSituation = situation_id != self.currentSituation!.id
                 
-                print(currentSituation?.id)
-                
-                if differentSituation
+                if filtersituation.count > 0
                 {
-                    var newDay = false
-                    if situation.id != "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" && situation.id != "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e"
-                    {
-                        newDay = true
-                        self.days.append([])
-                    }
+                    let situation = filtersituation[0]
                     
-                    self.currentSituation = situation
-                    Helper.delay(self.currentSituation!.delay){
-                        let triggeredId = self.currentSituation?.subs[0].id
-                        if newDay {
-                            print("hey adele i was wondering its a new day")
-                            newDayEvent.emit(self.days.count - 1)
-                        }
-                        idEvent.emit(triggeredId!)
-                    }
-                }
-                else if currentSituation?.id == "9126c225-7b7b-41b5-a195-6a54d2c20421" {// no choice situation
-                    let situation_id = "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7"
-                    let filtersituation = self.situations.filter { $0.id == situation_id }
-                    let differentSituation = situation_id != self.currentSituation!.id
-                    var newDay = false
-                    if situation.id != "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" && situation.id != "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e"
-                    {
-                        newDay = true
-                        self.days.append([])
-                    }
+                    print(currentSituation?.id)
                     
-                    if filtersituation.count > 0
+                    if differentSituation
                     {
-                        let situation = filtersituation[0]
-                        
-                        if differentSituation
+                        var newDay = false
+                        if situation.id != "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" && situation.id != "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e"
                         {
-                            self.currentSituation = situation
-                            Helper.delay(self.currentSituation!.delay){
-                                let triggeredId = self.currentSituation?.subs[0].id
-                                
-                                newDayEvent.emit(self.days.count - 1)
-                                idEvent.emit(triggeredId!)
-                            }
+                            newDay = true
+                            self.days.append([])
                         }
-                    }
-                }
-                else if currentSituation?.id == "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" {// no choice situation
-                    let situation_id = "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7"
-                    let filtersituation = self.situations.filter { $0.id == situation_id }
-                    let differentSituation = situation_id != self.currentSituation!.id
-                    
-                        self.days.append([])
-                    
-                    if filtersituation.count > 0
-                    {
-                        let situation = filtersituation[0]
                         
-                        if differentSituation
-                        {
-                            self.currentSituation = situation
-                            Helper.delay(self.currentSituation!.delay){
-                                let triggeredId = self.currentSituation?.subs[0].id
+                        self.currentSituation = situation
+                        Helper.delay(self.currentSituation!.delay){
+                            let triggeredId = self.currentSituation?.subs[0].id
+                            if newDay {
+                                print("hey adele i was wondering its a new day")
                                 newDayEvent.emit(self.days.count - 1)
-                                idEvent.emit(triggeredId!)
                             }
+                            idEvent.emit(triggeredId!)
                         }
                     }
                 }
-
             }
         }
     }

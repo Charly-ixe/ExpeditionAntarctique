@@ -188,12 +188,16 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     t = Double(content.characters.count) / 25
                     
                     // TESTING
-                    t = 0
+//                    t = 0
                     
                 }
                 
                 
-                Helper.delay(1) {
+                var timeout: Double = 1
+                // TESTING
+//                timeout = 0
+                
+                Helper.delay(timeout) {
                     if toDisplay["type"] as? String != "choice"
                     {
                         ModelController.Model.days[ModelController.Model.days.count - 1].append(self.typing)
@@ -237,7 +241,6 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     
                         if toDisplay["type"] as? String != "choice"
                         {
-                        
                             idEvent.once { nextId in
                                 if(nextId != "")
                                 {
@@ -255,12 +258,14 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                             
                             // to play sound
                             AudioServicesPlaySystemSound (systemSoundID)
+                            
+                            ModelController.Model.getNextSub(id)
+                        }
+                        else {
                         }
                         self.tableView.reloadData()
                         
                         self.tableViewScrollToBottom(true)
-                    
-                        ModelController.Model.getNextSub(id)
                     }
                 }
             }
