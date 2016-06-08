@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 private let model = ModelController.Model
 
@@ -181,6 +182,18 @@ class ModelController {
             print("tweak 1")
             let situation = self.situations.filter { $0.id == "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" }.first
             self.currentSituation = situation
+            
+            let State = UIApplication.sharedApplication().applicationState
+            if State.rawValue != 0
+            {
+                let notification:UILocalNotification = UILocalNotification()
+                notification.category = "Expédition Antarctique"
+                notification.alertTitle = "Expédition Antarctique"
+                notification.alertAction = "répondre à l'explorateur"
+                notification.alertBody = "Sélectionnez une réponse"
+                
+                UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+            }
             Helper.delay(self.currentSituation!.delay){
                 let triggeredId = self.currentSituation?.subs[0].id
                 print(triggeredId)
