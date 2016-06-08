@@ -8,13 +8,14 @@
 
 import UIKit
 
-class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
+class FirstUseViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     var pageViewController : UIPageViewController?
     var pageVideos : Array<String> = ["ecran1", "ecran2", "ecran3", "ecran4"]
     var pageTexts : [String] = ["Bienvenue en Antarctique. Ici se situe la base française Dumont d’Urville.", "Chaque année, des scientifiques viennent y mener leurs recherches.  Voici l’équipe T66.", "Ces hommes sont coupés du monde. Presque à l’état de survie, ils bravent le froid pour accomplir leur mission.", "Ils vont avoir besoin d’aide pour faire face aux défis de la nature."]
     var currentIndex : Int = 0
     var controllers : [VideoViewController] = []
+//    var pageControl : UIPageControl?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,13 @@ class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
         addChildViewController(pageViewController!)
         view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
+        
+        
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = nunatakBlackAlpha
+        pageControl.currentPageIndicatorTintColor = nunatakBlack
+        pageControl.backgroundColor = backgroundDotsColor
+        pageControl.frame = CGRectMake(0, 200, self.view.frame.width, 20)
         
     }
 
@@ -80,6 +88,7 @@ class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
         }
         currentIndex = index
         
+        
         return self.controllers[index]
         
 //        let pageContentViewController = VideoViewController()
@@ -97,5 +106,4 @@ class FirstUseViewController: UIViewController, UIPageViewControllerDataSource {
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
-    
 }

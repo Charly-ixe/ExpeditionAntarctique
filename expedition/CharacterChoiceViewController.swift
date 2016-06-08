@@ -30,6 +30,12 @@ class CharacterChoiceViewController: UIViewController, UIPageViewControllerDataS
         view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
         
+        let pageControl = UIPageControl.appearance()
+        pageControl.pageIndicatorTintColor = nunatakBlackAlpha
+        pageControl.currentPageIndicatorTintColor = nunatakBlack
+        pageControl.backgroundColor = backgroundDotsColor2
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

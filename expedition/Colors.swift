@@ -26,3 +26,6 @@ let skyBlue3 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.8)
 let skyBlue4 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.7)
 let skyBlue5 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.6)
 let skyBlue6 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.5)
+
+let backgroundDotsColor = UIColor(red: 214/255, green: 231/255, blue: 255/255, alpha: 1)
+let backgroundDotsColor2 = UIColor(red: 223/255, green: 235/255, blue: 255/255, alpha: 1)

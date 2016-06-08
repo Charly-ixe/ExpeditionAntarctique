@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = nunatakBlack
         pageControl.backgroundColor = .None
         
+        
         return true
     }
 

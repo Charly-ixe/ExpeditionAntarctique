@@ -19,12 +19,13 @@ class StuffTabViewController: UIViewController {
         
         // Customize Views
         
-        stuffToResupplyView.layer.shadowColor = brashWhite.CGColor
-        stuffToResupplyView.layer.shadowOffset = CGSizeZero
-        stuffBottomLeftView.layer.shadowColor = brashWhite.CGColor
-        stuffBottomLeftView.layer.shadowOffset = CGSizeZero
-        stuffBottomRightView.layer.shadowColor = brashWhite.CGColor
-        stuffBottomRightView.layer.shadowOffset = CGSizeZero
+//        stuffToResupplyView.layer.shadowColor = brashWhite.CGColor
+//        stuffToResupplyView.layer.shadowOffset = CGSizeZero
+//        stuffBottomLeftView.layer.shadowColor = brashWhite.CGColor
+//        stuffBottomLeftView.layer.shadowOffset = CGSizeZero
+//        stuffBottomRightView.layer.shadowColor = brashWhite.CGColor
+//        stuffBottomRightView.layer.shadowOffset = CGSizeZero
+        
     }
     
     override func didReceiveMemoryWarning() {

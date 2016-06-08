@@ -46,7 +46,7 @@ class VideoViewController: UIViewController {
         let textView = UITextView()
         
         if videoFile == "ecran4" {
-            textView.frame = CGRectMake(20, 500, self.view.frame.width - 40, 80)
+            textView.frame = CGRectMake(20, self.view.frame.height - 170, self.view.frame.width - 40, 80)
             
             let button = UIButton(type: .Custom)
             button.frame = CGRectMake(70, self.view.frame.height - 100, self.view.frame.width - 140, 45)
@@ -57,7 +57,7 @@ class VideoViewController: UIViewController {
             self.view.addSubview(button)
         }
         else {
-            textView.frame = CGRectMake(20, self.view.frame.height - 150, self.view.frame.width - 40, 80)
+            textView.frame = CGRectMake(20, self.view.frame.height - 150, self.view.frame.width - 40, 150)
         }
         
         textView.textColor = nunatakBlack
