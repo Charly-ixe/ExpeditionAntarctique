@@ -49,6 +49,10 @@
 		6B53C3F91D0820A200394C2F /* calme.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3F61D0820A200394C2F /* calme.mp4 */; };
 		6B53C3FA1D0820A200394C2F /* ensoleille.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3F71D0820A200394C2F /* ensoleille.mp4 */; };
 		6B53C3FB1D0820A200394C2F /* tempete.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3F81D0820A200394C2F /* tempete.mp4 */; };
+		6B53C4001D083F1500394C2F /* Humidity.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FC1D083F1500394C2F /* Humidity.mp4 */; };
+		6B53C4011D083F1500394C2F /* Pressure.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FD1D083F1500394C2F /* Pressure.mp4 */; };
+		6B53C4021D083F1500394C2F /* Temperature.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FE1D083F1500394C2F /* Temperature.mp4 */; };
+		6B53C4031D083F1500394C2F /* Wind.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FF1D083F1500394C2F /* Wind.mp4 */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
 		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
@@ -149,6 +153,10 @@
 		6B53C3F61D0820A200394C2F /* calme.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = calme.mp4; sourceTree = "<group>"; };
 		6B53C3F71D0820A200394C2F /* ensoleille.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ensoleille.mp4; sourceTree = "<group>"; };
 		6B53C3F81D0820A200394C2F /* tempete.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tempete.mp4; sourceTree = "<group>"; };
+		6B53C3FC1D083F1500394C2F /* Humidity.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Humidity.mp4; sourceTree = "<group>"; };
+		6B53C3FD1D083F1500394C2F /* Pressure.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pressure.mp4; sourceTree = "<group>"; };
+		6B53C3FE1D083F1500394C2F /* Temperature.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Temperature.mp4; sourceTree = "<group>"; };
+		6B53C3FF1D083F1500394C2F /* Wind.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wind.mp4; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
@@ -277,6 +285,10 @@
 				690771A21CFD16B1000B6B43 /* Situation.swift */,
 				694175721CFF4B9700DC54E7 /* TabBarController.swift */,
 				6B3670DF1CC7A6FD00C29629 /* ThirdViewController.swift */,
+				6B53C3FC1D083F1500394C2F /* Humidity.mp4 */,
+				6B53C3FD1D083F1500394C2F /* Pressure.mp4 */,
+				6B53C3FE1D083F1500394C2F /* Temperature.mp4 */,
+				6B53C3FF1D083F1500394C2F /* Wind.mp4 */,
 				6B53C3F61D0820A200394C2F /* calme.mp4 */,
 				6B53C3F71D0820A200394C2F /* ensoleille.mp4 */,
 				6B53C3F81D0820A200394C2F /* tempete.mp4 */,
@@ -439,6 +451,7 @@
 				6BB4478B1D05A1EE008E92F6 /* FirstUseStoryboard.storyboard in Resources */,
 				6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */,
 				6B3670BC1CC77A1400C29629 /* LaunchScreen.storyboard in Resources */,
+				6B53C4001D083F1500394C2F /* Humidity.mp4 in Resources */,
 				6BB447871D0572EC008E92F6 /* lent.mp4 in Resources */,
 				694175711CFF2FA300DC54E7 /* typing.gif in Resources */,
 				6BB447971D05AB69008E92F6 /* ecran2.mp4 in Resources */,
@@ -448,7 +461,10 @@
 				6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */,
 				6B3670B71CC77A1400C29629 /* Main.storyboard in Resources */,
 				6BB447881D0572EC008E92F6 /* normal.mp4 in Resources */,
+				6B53C4031D083F1500394C2F /* Wind.mp4 in Resources */,
+				6B53C4011D083F1500394C2F /* Pressure.mp4 in Resources */,
 				6B53C3FB1D0820A200394C2F /* tempete.mp4 in Resources */,
+				6B53C4021D083F1500394C2F /* Temperature.mp4 in Resources */,
 				6B53C3FA1D0820A200394C2F /* ensoleille.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

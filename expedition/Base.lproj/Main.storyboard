@@ -351,9 +351,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icones-meteo2-50" translatesAutoresizingMaskIntoConstraints="NO" id="pGj-Um-qt9">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pGj-Um-qt9">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="130"/>
-                                        <color key="backgroundColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIR." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ps-t1-MK5">
                                         <rect key="frame" x="365" y="81" width="24" height="17"/>
@@ -361,8 +360,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-24°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxg-iI-Gor">
-                                        <rect key="frame" x="294" y="26" width="98" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="-26°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxg-iI-Gor">
+                                        <rect key="frame" x="294" y="26" width="98" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="7GB-VN-Kqh"/>
                                         </constraints>
@@ -605,7 +604,7 @@
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEW-mB-QTs" id="OcW-D9-ODD">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -613,7 +612,7 @@
                                         <rect key="frame" x="0.0" y="72" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cJZ-7q-3yi" id="frq-Mo-BrA">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -746,7 +745,7 @@
                             <view contentMode="scaleToFill" restorationIdentifier="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="BuH-bV-sDq">
                                 <rect key="frame" x="24" y="32" width="552" height="130"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-2" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-Sq-YG2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Owt-Sq-YG2">
                                         <rect key="frame" x="0.0" y="0.0" width="552" height="130"/>
                                     </imageView>
                                 </subviews>
@@ -1004,13 +1003,13 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="FAIM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-wS-zgg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAIM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-wS-zgg">
                                 <rect key="frame" x="34" y="178" width="29" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SOIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04P-nT-g7e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOIF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04P-nT-g7e">
                                 <rect key="frame" x="34" y="232" width="28" height="16"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1028,7 +1027,7 @@
                                 <color key="textColor" red="0.039215686270000001" green="0.090196078430000007" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="hungerGauge" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-5n-rXy" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                            <view contentMode="scaleToFill" restorationIdentifier="hungerGauge" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-5n-rXy" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
                                 <rect key="frame" x="34" y="198" width="532" height="4"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OnK-bj-biq">
@@ -1052,7 +1051,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" restorationIdentifier="droughtGauge" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-KN-Lpg" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
+                            <view contentMode="scaleToFill" restorationIdentifier="droughtGauge" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-KN-Lpg" customClass="DrawGauge" customModule="expedition" customModuleProvider="target">
                                 <rect key="frame" x="34" y="252" width="532" height="4"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1278,13 +1277,11 @@
         <image name="Map-off" width="22" height="22"/>
         <image name="Materiel" width="375" height="388"/>
         <image name="Message-off" width="22" height="22"/>
-        <image name="bg" width="750" height="1334"/>
-        <image name="icones-meteo2-50" width="788" height="788"/>
+        <image name="bg" width="751" height="1334"/>
         <image name="portraits" width="88" height="88"/>
         <image name="portraits2" width="88" height="88"/>
         <image name="portraits3" width="88" height="88"/>
         <image name="stats-1" width="2000" height="1125"/>
-        <image name="stats-2" width="2000" height="1124"/>
         <image name="stats-3" width="2000" height="1124"/>
         <image name="stats-4" width="2000" height="1124"/>
     </resources>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class ThirdViewController: UIViewController {
     
@@ -26,6 +28,7 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var stuffTabButton: UIButton!
     @IBOutlet weak var selectedTabCursor: UIView!
     @IBOutlet weak var tabCursorLeadingConstraint: NSLayoutConstraint!
+    var player: AVPlayer?
     
     
     weak var currentViewController: UIViewController?
@@ -68,7 +71,25 @@ class ThirdViewController: UIViewController {
         self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
         weatherTabButton.selected = true
         
+        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("tempete", withExtension: "mp4")!
         
+        player = AVPlayer(URL: videoURL)
+        player?.actionAtItemEnd = .None
+        player?.muted = true
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        //        playerLayer.zPosition = -1
+        
+        playerLayer.frame = CGRectMake(0, 0, currentWeatherView.frame.width / 3 - 20, currentWeatherImageView.frame.height)
+        
+        currentWeatherImageView.layer.addSublayer(playerLayer)
+        player?.play()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(self.loopVideo),
+                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         object: player?.currentItem)
         
     }
     
@@ -106,6 +127,11 @@ class ThirdViewController: UIViewController {
                                     oldViewController.removeFromParentViewController()
                                     newViewController.didMoveToParentViewController(self)
         })
+    }
+    
+    func loopVideo() {
+        player?.seekToTime(kCMTimeZero)
+        player?.play()
     }
     
 //    func getContainer() -> UIView {
