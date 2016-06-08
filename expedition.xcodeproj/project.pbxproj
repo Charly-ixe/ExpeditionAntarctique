@@ -53,6 +53,7 @@
 		6B53C4011D083F1500394C2F /* Pressure.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FD1D083F1500394C2F /* Pressure.mp4 */; };
 		6B53C4021D083F1500394C2F /* Temperature.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FE1D083F1500394C2F /* Temperature.mp4 */; };
 		6B53C4031D083F1500394C2F /* Wind.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FF1D083F1500394C2F /* Wind.mp4 */; };
+		6B53C4051D0849EA00394C2F /* ambiance calme boucle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C4041D0849EA00394C2F /* ambiance calme boucle.wav */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
 		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
@@ -157,6 +158,7 @@
 		6B53C3FD1D083F1500394C2F /* Pressure.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pressure.mp4; sourceTree = "<group>"; };
 		6B53C3FE1D083F1500394C2F /* Temperature.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Temperature.mp4; sourceTree = "<group>"; };
 		6B53C3FF1D083F1500394C2F /* Wind.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wind.mp4; sourceTree = "<group>"; };
+		6B53C4041D0849EA00394C2F /* ambiance calme boucle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ambiance calme boucle.wav"; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				694175741D00552200DC54E7 /* Diorama.swift */,
 				690771A41CFD16C4000B6B43 /* Subsituation.swift */,
 				6B3670B31CC77A1400C29629 /* SecondViewController.swift */,
+				6B53C4041D0849EA00394C2F /* ambiance calme boucle.wav */,
 				6B53C3F41D07329C00394C2F /* ecran1.mp4 */,
 				6BB447921D05AB69008E92F6 /* ecran2.mp4 */,
 				6BB447931D05AB69008E92F6 /* ecran3.mp4 */,
@@ -444,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BB447991D05AB69008E92F6 /* ecran4.mp4 in Resources */,
+				6B53C4051D0849EA00394C2F /* ambiance calme boucle.wav in Resources */,
 				6B53C3F91D0820A200394C2F /* calme.mp4 in Resources */,
 				6BB4479A1D05AB69008E92F6 /* splash.mp4 in Resources */,
 				6BB447981D05AB69008E92F6 /* ecran3.mp4 in Resources */,

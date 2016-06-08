@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SecondViewController: UIViewController, UIPageViewControllerDataSource, UIScrollViewDelegate, UIPageViewControllerDelegate
 {
@@ -24,10 +25,25 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     @IBOutlet weak var wrapperScrollView: UIScrollView!
     var diorama_height_start: CGFloat?
     var diorama_height_final: CGFloat?
+    var player: AVAudioPlayer?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let url = NSBundle.mainBundle().URLForResource("ambiance calme boucle", withExtension: "wav")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOfURL: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+        
+        player!.numberOfLoops = -1
         
         wrapperScrollView.contentSize = CGSize(width: wrapperScrollView.frame.width, height: wrapperScrollView.frame.height * 2)
         
@@ -233,4 +249,5 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             }
         }
     }
+    
 }
