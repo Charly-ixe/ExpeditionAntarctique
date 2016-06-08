@@ -17,6 +17,8 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     var pageViewControllerTop: CGFloat?
     var pageViewControllerHeight: CGFloat?
     
+    var titles: [UIView] = []
+    
     var controllers: [MessagesController] = []
     
     @IBOutlet weak var wrapperScrollView: UIScrollView!
@@ -51,6 +53,36 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         pageViewController!.didMoveToParentViewController(self)
         
         dio = Diorama(frame: CGRectMake(0, 0, wrapperScrollView.frame.width, diorama_height_start!))
+        
+        for i in 0...3 {
+            let wrapper = UIView()
+            let title = UIImageView(image: UIImage(named: "day" + String(i + 1)))
+            wrapper.addSubview(title)
+            title.contentMode = UIViewContentMode.ScaleAspectFill
+            self.titles.append(wrapper)
+            self.view.addSubview(wrapper)
+        }
+        
+        var cpt = 0
+        
+        let dayPadding: CGFloat = 40
+        for title in titles {
+            var height: CGFloat = 40
+            for sub in title.subviews {
+                if let v = sub as? UIImageView {
+                    
+                    let imageSize = v.image?.size
+                    sub.frame = CGRectMake(dayPadding + self.view.frame.width * CGFloat(cpt), 40, self.view.frame.width - dayPadding * 2, ((self.view.frame.width - dayPadding * 2 ) * imageSize!.height) / imageSize!.width)
+                    height += ((self.view.frame.width - dayPadding * 2 ) * imageSize!.height) / imageSize!.width
+                }
+            }
+            
+            title.frame = CGRectMake(0, 0, self.view.frame.width, height)
+            
+
+            cpt += 1
+            print(title.frame)
+        }
         
         wrapperScrollView.addSubview(dio!)
         wrapperScrollView.bringSubviewToFront(pageViewController!.view)
@@ -168,6 +200,12 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         
         let newY = top * percentage / 420
         
+        
+        for title in self.titles {
+            let newX = CGFloat(currentDay) * self.view.frame.width * (-1)
+            title.frame = CGRectMake(newX, 0 - wrapperScrollView.contentOffset.y, title.frame.width, title.frame.height)
+        }
+        
         if percentage >= 0 && percentage <= 100
         {
             self.dio!.frame = CGRectMake(0, newY, wrapperScrollView.frame.width, self.dio!.frame.height)
@@ -176,12 +214,11 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             
             for layer in self.dio!.layers {
                 
+                var newX: CGFloat = CGFloat(currentDay) * wrapperScrollView.frame.width * (-1)
                 let commonVariation =  percentage * top / 100
                 
                 let layerVariation = CGFloat(dio!.layers.count + 1 - layer.index) / 9
-                var slide = layer.frame.width * wrapperScrollView.frame.width / (7 * wrapperScrollView.frame.width)
                 
-                var newX: CGFloat = CGFloat(currentDay) * wrapperScrollView.frame.width * (-1)
                 if scrollView.contentOffset.x != 0 {
                     if scrollView.contentOffset.x == wrapperScrollView.frame.width {
 //                        newX = -newX

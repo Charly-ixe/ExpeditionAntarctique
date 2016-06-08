@@ -65,6 +65,8 @@ class Diorama: UIView {
             skyBlue6.CGColor
         ]
         sky.layer.addSublayer(layer)
+        
+        
     }
     
     class Layer: UIImageView {
