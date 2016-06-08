@@ -61,10 +61,17 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         
         let bottomConstraint = NSLayoutConstraint(item: pageViewController!.view, attribute: .Bottom, relatedBy: .Equal, toItem: wrapperScrollView, attribute: .Bottom, multiplier: 1, constant: 0)
         view.addConstraint(bottomConstraint)
-        
-        wrapperScrollView.backgroundColor = UIColor(red:0.97, green:0.98, blue:1.00, alpha:1.0)
-        
+                
         pageViewController?.delegate = self
+        
+        wrapperScrollView.backgroundColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
+        pageViewController?.view.backgroundColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
+        dio?.backgroundColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
+        
+        
+        pageViewController?.view.layer.masksToBounds = false
+        pageViewController?.view.clipsToBounds = false
+        
         
         for v in pageViewController!.view.subviews {
             if let w = v as? UIScrollView {
@@ -143,6 +150,9 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         {
             self.controllers.append(UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("Messages") as! MessagesController)
             self.controllers.last?.day = index
+            self.controllers.last?.view.backgroundColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
+            self.controllers.last?.view.clipsToBounds = false
+            self.controllers.last?.view.layer.masksToBounds = false
         }
         currentIndex = index
         

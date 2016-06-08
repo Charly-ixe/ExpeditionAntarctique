@@ -33,11 +33,13 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.dataSource = self
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        self.tableView.backgroundColor = UIColor.clearColor()
-                        
+        self.tableView.backgroundColor = UIColor(red:0.94, green:0.97, blue:1.00, alpha:1.0)
         self.setMessages()
         
         setMessageToDisplay(self.messages[0]["id"] as! String)
+        
+        self.tableView.layer.masksToBounds = false
+        self.tableView.clipsToBounds = false
         
     }
     
