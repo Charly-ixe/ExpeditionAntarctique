@@ -318,41 +318,6 @@
                       "id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29"
                       },
                       {
-                      "name": "Et pire que tout…",
-                      "type": "txt",
-                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
-                      "child_id": "e6fae739-ebda-42f5-93f3-5eeee317ba05",
-                      "id": "81436192-e043-4a51-acfd-11e79ff71fda"
-                      },
-                      {
-                      "name": "Stephane a mangé le dernier citron.",
-                      "type": "txt",
-                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
-                      "child_id": "5b56a353-c71c-4130-9cad-549cd7039849",
-                      "id": "7a9eed97-9879-425c-a16f-bc0023eea955"
-                      },
-                      {
-                      "name": "Hahaha pardon 😶",
-                      "type": "txt",
-                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
-                      "child_id": "fd70ce78-ca3c-4435-869b-d98122e53487",
-                      "id": "3c4c5b68-b73d-4c44-a05e-d5b94c09189f"
-                      },
-                      {
-                      "name": "C’est pas vraiment drôle.",
-                      "type": "txt",
-                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
-                      "child_id": "cd5496ba-1506-453e-a75a-379fb719f4da",
-                      "id": "dfb3d8f9-6947-4575-a0cc-9e8e77e5a347"
-                      },
-                      {
-                      "name": "En vrai c’est plutôt catastrophique",
-                      "type": "txt",
-                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
-                      "child_id": "82c51640-af08-4df7-a0b6-8bd3d0bdebd1",
-                      "id": "c387990c-0ecb-4758-b9b3-2e94bbfe66b9"
-                      },
-                      {
                       "name": "Vous pouvez pas aller chercher le convoi ?",
                       "type": "choice",
                       "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
@@ -812,31 +777,6 @@
              "content": "Parce qu’on est ravitaillé qu’une fois tous les 6 mois",
              "received": "true",
              "id": "7192eb37-99ae-4450-9f85-f6936f58e04c"
-             },
-             {
-             "content": "Et pire que tout…",
-             "received": "true",
-             "id": "e6fae739-ebda-42f5-93f3-5eeee317ba05"
-             },
-             {
-             "content": "Stephane a mangé le dernier citron.",
-             "received": "true",
-             "id": "5b56a353-c71c-4130-9cad-549cd7039849"
-             },
-             {
-             "content": "Hahaha pardon 😶",
-             "received": "true",
-             "id": "fd70ce78-ca3c-4435-869b-d98122e53487"
-             },
-             {
-             "content": "C’est pas vraiment drôle.",
-             "received": "true",
-             "id": "cd5496ba-1506-453e-a75a-379fb719f4da"
-             },
-             {
-             "content": "En vrai c’est plutôt catastrophique",
-             "received": "true",
-             "id": "82c51640-af08-4df7-a0b6-8bd3d0bdebd1"
              },
              {
              "content": "Si justement, mais on se demandait avec Valentine et Stephane  si la météo était assez clémente",
@@ -1508,6 +1448,36 @@
                         "triggered_id": "91c54847-9adc-420c-add9-3203c9a50aa9",
                         "trigger_id": "6287a7c1-d2be-47e6-963c-c944a722ac9c",
                         "id": "7b4fa77a-a984-40f7-9f48-4007abdaf366"
+                        },
+                        {
+                        "triggered_id": "ab4ccb90-f45f-452e-bcd4-180e3aead014",
+                        "trigger_id": "7c798649-167d-4b8a-bfa9-b84884a4a7ba",
+                        "id": "7a38e704-14df-486d-b544-fc5b46e8caac"
+                        },
+                        {
+                        "triggered_id": "a82c65c1-6c6e-4d99-968c-76763d2dee1b",
+                        "trigger_id": "ab4ccb90-f45f-452e-bcd4-180e3aead014",
+                        "id": "6e2d665a-5ec4-4ac5-91db-066e73a2cec4"
+                        },
+                        {
+                        "triggered_id": "723a990f-5089-4460-a3e9-74a59705c2d1",
+                        "trigger_id": "a82c65c1-6c6e-4d99-968c-76763d2dee1b",
+                        "id": "f40e44ea-cbe9-477a-93a8-a76a297efccf"
+                        },
+                        {
+                        "triggered_id": "3ab240af-2cc5-4751-b855-1bdb607fdbcf",
+                        "trigger_id": "723a990f-5089-4460-a3e9-74a59705c2d1",
+                        "id": "e1c60c1f-219a-4790-874c-e0c6798fc2b1"
+                        },
+                        {
+                        "triggered_id": "d708a26e-a6c5-4d74-b35c-6b4633f6201d",
+                        "trigger_id": "3ab240af-2cc5-4751-b855-1bdb607fdbcf",
+                        "id": "50208077-ad81-4a27-9a01-98410cc4f849"
+                        },
+                        {
+                        "triggered_id": "df4c4c13-32b8-407a-aa6e-17b3b04b3b58",
+                        "trigger_id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29",
+                        "id": "22e1cc09-e5e4-44e0-a39d-583513d2064b"
                         }
                         ],
     "trigger_sub_answer": [
