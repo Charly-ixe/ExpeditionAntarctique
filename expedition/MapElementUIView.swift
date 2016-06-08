@@ -13,14 +13,15 @@ class MapElementUIView: UIView {
     var name : String
     var elementDescription : String
     var img : String
+    var type : String
     var btn : UIButton?
     
-    init(frame : CGRect, name: String, eltDescription: String, img: String) {
+    init(frame : CGRect, name: String, eltDescription: String, img: String, type: String) {
         self.elementFrame = frame
         self.name = name
         self.elementDescription = eltDescription
         self.img = img
-        
+        self.type = type
         
         let placeImg = UIImageView(image: UIImage(named: self.img))
         placeImg.frame = CGRectMake(0, 0, self.elementFrame.width, self.elementFrame.height)

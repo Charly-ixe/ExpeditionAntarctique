@@ -23,9 +23,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="mEj-tZ-5KN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </imageView>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-Zi-Sew" customClass="PassTouchesScrollView" customModule="expedition" customModuleProvider="target">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-Zi-Sew" customClass="PassTouchesScrollView" customModule="expedition" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xUa-AU-yUf" appends="YES" id="gOY-Zc-dt6"/>
+                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-oX-czT">
                                 <rect key="frame" x="20" y="30" width="560" height="130"/>
@@ -230,6 +233,7 @@
                         <outlet property="showMovementView" destination="RqN-jB-a3Y" id="HQd-Y0-EFs"/>
                         <outlet property="speedDataLabel" destination="G5e-w2-r21" id="m2m-GR-1C4"/>
                         <outlet property="speedLabel" destination="ctv-OC-YX2" id="Lru-cb-MDP"/>
+                        <outlet property="tapMapGesture" destination="xUa-AU-yUf" id="5ZQ-RJ-j21"/>
                         <outlet property="titleLabel" destination="Mpe-4s-OPg" id="7DM-XG-adn"/>
                         <outlet property="titleView" destination="RxX-op-Oqe" id="rJf-2R-gt5"/>
                         <outlet property="titleViewBottomConstraint" destination="A5O-K2-QIB" id="IUv-u4-K2k"/>
@@ -241,6 +245,11 @@
                 <tapGestureRecognizer id="UYT-E6-Dbq">
                     <connections>
                         <action selector="tappedTitleView:" destination="9pv-A4-QxB" id="Vn0-4w-3Dz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="xUa-AU-yUf">
+                    <connections>
+                        <action selector="tappedMap:" destination="9pv-A4-QxB" id="qjN-t5-3cX"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1216,85 +1225,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfh-v3-YXY">
-                                <rect key="frame" x="24" y="32" width="552" height="130"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Materiel" translatesAutoresizingMaskIntoConstraints="NO" id="xv0-he-Zoi">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="bsl-0E-gox"/>
+                                    <constraint firstAttribute="height" constant="600" id="2gz-ZN-gDb"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fW-xD-7qH">
-                                <rect key="frame" x="24" y="170" width="272" height="418"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6h4-Ct-ppw">
-                                <rect key="frame" x="304" y="170" width="272" height="418"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.shadowOpacity" value="0.1"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2gz-ZN-gDb"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6h4-Ct-ppw" firstAttribute="width" secondItem="zfh-v3-YXY" secondAttribute="width" multiplier="1:2" id="3oN-RP-MP1"/>
-                            <constraint firstItem="aeu-ph-psI" firstAttribute="top" secondItem="6h4-Ct-ppw" secondAttribute="bottom" constant="12" id="3yr-w1-PKe"/>
-                            <constraint firstItem="zfh-v3-YXY" firstAttribute="leading" secondItem="1MO-3e-0sY" secondAttribute="leadingMargin" constant="4" id="9dB-qC-Dxj"/>
-                            <constraint firstItem="aeu-ph-psI" firstAttribute="top" secondItem="7fW-xD-7qH" secondAttribute="bottom" constant="12" id="F06-si-Lgq"/>
-                            <constraint firstItem="6h4-Ct-ppw" firstAttribute="top" secondItem="zfh-v3-YXY" secondAttribute="bottom" constant="8" id="KHN-wN-nfx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zfh-v3-YXY" secondAttribute="trailing" constant="4" id="KTS-Zq-Oka"/>
-                            <constraint firstItem="7fW-xD-7qH" firstAttribute="width" secondItem="6h4-Ct-ppw" secondAttribute="width" id="P5P-gJ-oFQ"/>
-                            <constraint firstItem="6h4-Ct-ppw" firstAttribute="leading" secondItem="1MO-3e-0sY" secondAttribute="leadingMargin" constant="284" id="SWY-pK-3Du"/>
-                            <constraint firstItem="6h4-Ct-ppw" firstAttribute="leading" secondItem="7fW-xD-7qH" secondAttribute="trailing" constant="8" id="XsH-uo-8p1"/>
-                            <constraint firstItem="7fW-xD-7qH" firstAttribute="leading" secondItem="1MO-3e-0sY" secondAttribute="leadingMargin" constant="4" id="fxJ-mM-tTY"/>
-                            <constraint firstItem="zfh-v3-YXY" firstAttribute="top" secondItem="naT-yz-KTb" secondAttribute="bottom" constant="12" id="gGu-ik-Hfe"/>
-                            <constraint firstItem="6h4-Ct-ppw" firstAttribute="leading" secondItem="7fW-xD-7qH" secondAttribute="trailing" constant="4" id="jCs-Kt-aWj"/>
-                            <constraint firstItem="6h4-Ct-ppw" firstAttribute="leading" secondItem="7fW-xD-7qH" secondAttribute="trailing" constant="8" id="mdk-sm-h9l"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="zfh-v3-YXY" secondAttribute="leading" constant="-20" id="qDY-cb-rwN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7fW-xD-7qH" secondAttribute="trailing" constant="284" id="tsa-eL-LbH"/>
-                            <constraint firstItem="7fW-xD-7qH" firstAttribute="top" secondItem="zfh-v3-YXY" secondAttribute="bottom" constant="8" id="x0Q-X0-eWN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6h4-Ct-ppw" secondAttribute="trailing" constant="4" id="yxY-G2-QZx"/>
+                            <constraint firstItem="xv0-he-Zoi" firstAttribute="leading" secondItem="1MO-3e-0sY" secondAttribute="leadingMargin" constant="-20" id="ENI-TA-kth"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xv0-he-Zoi" secondAttribute="trailing" constant="-20" id="Ub4-QC-2QS"/>
+                            <constraint firstItem="aeu-ph-psI" firstAttribute="top" secondItem="xv0-he-Zoi" secondAttribute="bottom" id="ZgA-6v-Zm3"/>
+                            <constraint firstItem="xv0-he-Zoi" firstAttribute="top" secondItem="naT-yz-KTb" secondAttribute="bottom" id="aay-nr-1pG"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="qDY-cb-rwN"/>
-                                <exclude reference="tsa-eL-LbH"/>
-                                <exclude reference="3oN-RP-MP1"/>
-                                <exclude reference="SWY-pK-3Du"/>
-                                <exclude reference="XsH-uo-8p1"/>
-                                <exclude reference="jCs-Kt-aWj"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="stuffBottomLeftView" destination="7fW-xD-7qH" id="bsZ-np-T82"/>
-                        <outlet property="stuffBottomRightView" destination="6h4-Ct-ppw" id="jQc-ah-OgW"/>
-                        <outlet property="stuffToResupplyView" destination="zfh-v3-YXY" id="04Y-Et-Atq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrv-UH-dP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1326,6 +1276,7 @@
         <image name="Close" width="22" height="22"/>
         <image name="Info-off" width="22" height="22"/>
         <image name="Map-off" width="22" height="22"/>
+        <image name="Materiel" width="375" height="388"/>
         <image name="Message-off" width="22" height="22"/>
         <image name="bg" width="750" height="1334"/>
         <image name="icones-meteo2-50" width="788" height="788"/>
