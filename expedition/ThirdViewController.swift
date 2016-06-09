@@ -71,9 +71,9 @@ class ThirdViewController: UIViewController {
         self.addSubview(self.currentViewController!.view, toView: self.dataTabsContainer)
         weatherTabButton.selected = true
         
-        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("tempete", withExtension: "mp4")!
-        
-        player = AVPlayer(URL: videoURL)
+//        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("tempete", withExtension: "mp4")!
+//        
+//        player = AVPlayer(URL: videoURL)
         player?.actionAtItemEnd = .None
         player?.muted = true
         
@@ -81,7 +81,7 @@ class ThirdViewController: UIViewController {
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         //        playerLayer.zPosition = -1
         
-        playerLayer.frame = CGRectMake(0, 0, currentWeatherView.frame.width / 3 - 20, currentWeatherImageView.frame.height)
+        playerLayer.frame = CGRectMake(0, 0, currentWeatherView.frame.width / 2, currentWeatherImageView.frame.height)
         
         currentWeatherImageView.layer.addSublayer(playerLayer)
         player?.play()
@@ -92,6 +92,23 @@ class ThirdViewController: UIViewController {
                                                          object: player?.currentItem)
         
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        if ModelController.Model.currentSituation!.id == "f975cfdc-661c-4ec4-a095-cd08115fcc30" {
+            let videoURL: NSURL = NSBundle.mainBundle().URLForResource("tempete", withExtension: "mp4")!
+            player = AVPlayer(URL: videoURL)
+        }
+        if ModelController.Model.currentSituation!.id == "409c2854-7048-47b7-bb53-f034b5590697" {
+            let videoURL: NSURL = NSBundle.mainBundle().URLForResource("calme", withExtension: "mp4")!
+            player = AVPlayer(URL: videoURL)
+        }
+        if ModelController.Model.currentSituation!.id == "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7" {
+            let videoURL: NSURL = NSBundle.mainBundle().URLForResource("ensoleille", withExtension: "mp4")!
+            player = AVPlayer(URL: videoURL)
+        }
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

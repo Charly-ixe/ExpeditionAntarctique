@@ -52,7 +52,7 @@
                                             <constraint firstAttribute="height" constant="52" id="vmn-Yk-FWs"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KM/H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLp-Ou-vZt">
@@ -81,7 +81,7 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCONNU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFO-2w-EMi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INCONNUE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFO-2w-EMi">
                                         <rect key="frame" x="98" y="105" width="92" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="92" id="mNK-Ql-KEm"/>
@@ -653,7 +653,7 @@
                             <view contentMode="scaleToFill" restorationIdentifier="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="okl-US-O6t">
                                 <rect key="frame" x="24" y="383" width="272" height="205"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-4" translatesAutoresizingMaskIntoConstraints="NO" id="UPA-pO-Mzo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPA-pO-Mzo">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="205"/>
                                     </imageView>
                                 </subviews>
@@ -681,7 +681,7 @@
                             <view contentMode="scaleToFill" restorationIdentifier="pressure" translatesAutoresizingMaskIntoConstraints="NO" id="dy2-jW-2SJ">
                                 <rect key="frame" x="24" y="170" width="272" height="205"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-1" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-G2-Xvx">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wlP-G2-Xvx">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="205"/>
                                     </imageView>
                                 </subviews>
@@ -717,7 +717,7 @@
                             <view contentMode="scaleToFill" restorationIdentifier="wind" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-5q-tTk">
                                 <rect key="frame" x="304" y="170" width="272" height="418"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stats-3" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-Y9-bGu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-Y9-bGu">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="418"/>
                                     </imageView>
                                 </subviews>
@@ -1281,8 +1281,5 @@
         <image name="portraits" width="88" height="88"/>
         <image name="portraits2" width="88" height="88"/>
         <image name="portraits3" width="88" height="88"/>
-        <image name="stats-1" width="2000" height="1125"/>
-        <image name="stats-3" width="2000" height="1124"/>
-        <image name="stats-4" width="2000" height="1124"/>
     </resources>
 </document>
