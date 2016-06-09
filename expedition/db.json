@@ -19,42 +19,42 @@
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "f975cfdc-661c-4ec4-a095-cd08115fcc30",
-                   "delay": 20
+                   "delay": 15
                    },
                    {
                    "name": "Deuxième situation",
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "409c2854-7048-47b7-bb53-f034b5590697",
-                   "delay": 20
+                   "delay": 15
                    },
                    {
                    "name": "Troisième situation",
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "9126c225-7b7b-41b5-a195-6a54d2c20421",
-                   "delay": 20
+                   "delay": 15
                    },
                    {
                    "name": "Troisième acte - scène",
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "63ef6055-4e36-4c8f-a10d-4166f59cd2d9",
-                   "delay": 8
+                   "delay": 5
                    },
                    {
                    "name": "Quatrième acte",
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7",
-                   "delay": 20
+                   "delay": 15
                    },
                    {
                    "name": "Quatrième acte - Scène 2",
                    "place": "97215f3a-59f7-41cd-a4a2-96d408a0e233",
                    "parent_scenario": "4f057ab7-b49b-4eb4-ad90-fa5995f6465e",
                    "id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
-                   "delay": 8
+                   "delay": 5
                    }
                    ],
     "subsituations": [
@@ -155,13 +155,6 @@
                       "parent_id": "f975cfdc-661c-4ec4-a095-cd08115fcc30",
                       "child_id": "574f6ab1-9ec4-440b-a43f-c1bd97d8da3f",
                       "id": "60c7f16e-c5cf-4e97-9db3-ed45b3766e44"
-                      },
-                      {
-                      "name": "Je regrette déjà cette expédition",
-                      "type": "txt",
-                      "parent_id": "f975cfdc-661c-4ec4-a095-cd08115fcc30",
-                      "child_id": "f794c513-7e1b-476b-8204-9d90dcf4653e",
-                      "id": "1e35f66c-1ebd-4ac0-b024-0a13985dc40f"
                       },
                       {
                       "name": "Je vais crever dans tout ce blanc sans avoir fait de découverte scientifique",
@@ -465,7 +458,7 @@
                       "id": "959e0c2a-b685-46ae-8546-7b341ac2ae85"
                       },
                       {
-                      "name": "Vous auriez du aller à l’avant poste Adélie",
+                      "name": "Vous auriez du aller à l’avant poste Charcot",
                       "type": "choice",
                       "parent_id": "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7",
                       "child_id": "fdd4728d-1c42-4179-ab0d-b95bfd778125",
@@ -556,13 +549,6 @@
                       "id": "d5dece1b-4fa9-46ab-8b7e-7b346af7be78"
                       },
                       {
-                      "name": "OH",
-                      "type": "txt",
-                      "parent_id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
-                      "child_id": "e3d5d999-ca43-4449-a595-a8461c2ac89c",
-                      "id": "b26e580b-d908-49f7-9f35-61dfd25fbd4f"
-                      },
-                      {
                       "name": "Mais attends",
                       "type": "txt",
                       "parent_id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
@@ -577,25 +563,11 @@
                       "id": "e751616a-6e20-4dc4-8c4a-6715cea8eb26"
                       },
                       {
-                      "name": "C’est invraisemblable !",
-                      "type": "txt",
-                      "parent_id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
-                      "child_id": "de483458-d10f-4631-a33d-6fd68c4b3563",
-                      "id": "db1577e2-dbed-402d-a4f4-4e424ff7e19f"
-                      },
-                      {
                       "name": "On dirait qu’il y a de la fumée",
                       "type": "txt",
                       "parent_id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
                       "child_id": "863098b9-490d-48fe-be02-9147771c6397",
                       "id": "601f53a4-1da2-483e-986f-99cfc86e4fc1"
-                      },
-                      {
-                      "name": "À l’est, vraiment tout tout près de la base Concordia",
-                      "type": "txt",
-                      "parent_id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
-                      "child_id": "6cb4069a-d06e-462d-97d0-51b60ed063e2",
-                      "id": "55145e4a-3b47-41fc-bb7e-c04735a4a3eb"
                       },
                       {
                       "name": "Je sais pas ce qu’on va faire",
@@ -610,6 +582,20 @@
                       "parent_id": "4a587d31-cf1f-48d7-a7fd-32ed6b4ad73e",
                       "child_id": "d8046e32-a625-404a-9026-e50df14e1cf5",
                       "id": "91c54847-9adc-420c-add9-3203c9a50aa9"
+                      },
+                      {
+                      "name": "Ok, je me mets en route",
+                      "type": "txt",
+                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
+                      "child_id": "539c1cc7-c29b-42d8-8418-5be17c19b501",
+                      "id": "68429584-1357-4670-964b-1e06e344f3d3"
+                      },
+                      {
+                      "name": "Je te dis dès que j’ai du nouveau !",
+                      "type": "txt",
+                      "parent_id": "409c2854-7048-47b7-bb53-f034b5590697",
+                      "child_id": "ed6e2544-4b4c-4aa3-991a-5beebdd81f77",
+                      "id": "f97d3ee5-1121-4999-8bc8-ea6bc13656c7"
                       }
                       ],
     "text": [
@@ -672,11 +658,6 @@
              "content": "On voit rien à plus de 5 mètres",
              "received": "true",
              "id": "574f6ab1-9ec4-440b-a43f-c1bd97d8da3f"
-             },
-             {
-             "content": "Je regrette déjà cette expédition",
-             "received": "true",
-             "id": "f794c513-7e1b-476b-8204-9d90dcf4653e"
              },
              {
              "content": "Je vais crever dans tout ce blanc sans avoir fait de découverte scientifique",
@@ -744,7 +725,7 @@
              "id": "bdcde554-35d5-41a9-a8f5-4d2fa03c61ad"
              },
              {
-             "content": "C’est un peu grâce à toi si je m’en suis sorti",
+             "content": "Insert content here",
              "received": "true",
              "id": "7e1ef2b7-e913-410d-9674-97cd2b8eb81a"
              },
@@ -924,11 +905,6 @@
              "id": "09062d9e-cc02-4907-b2d8-05dd866ebb85"
              },
              {
-             "content": "OH",
-             "received": "true",
-             "id": "e3d5d999-ca43-4449-a595-a8461c2ac89c"
-             },
-             {
              "content": "Mais attends",
              "received": "true",
              "id": "0993e2ec-a05a-4070-ad53-21b05229cf1b"
@@ -939,19 +915,9 @@
              "id": "56d620e7-e3fc-430f-b23d-d9a1dfeb192c"
              },
              {
-             "content": "C’est invraisemblable !",
-             "received": "true",
-             "id": "de483458-d10f-4631-a33d-6fd68c4b3563"
-             },
-             {
              "content": "On dirait qu’il y a de la fumée",
              "received": "true",
              "id": "863098b9-490d-48fe-be02-9147771c6397"
-             },
-             {
-             "content": "À l’est, vraiment tout tout près de la base Concordia",
-             "received": "true",
-             "id": "6cb4069a-d06e-462d-97d0-51b60ed063e2"
              },
              {
              "content": "Je sais pas ce qu’on va faire",
@@ -962,6 +928,16 @@
              "content": "Je sais pas ce qu’il faut faire",
              "received": "true",
              "id": "d8046e32-a625-404a-9026-e50df14e1cf5"
+             },
+             {
+             "content": "Ok, je me mets en route",
+             "received": "true",
+             "id": "539c1cc7-c29b-42d8-8418-5be17c19b501"
+             },
+             {
+             "content": "Je te dis dès que j’ai du nouveau !",
+             "received": "true",
+             "id": "ed6e2544-4b4c-4aa3-991a-5beebdd81f77"
              }
              ],
     "choice": [
@@ -995,12 +971,12 @@
                ],
     "answer": [
                {
-               "content": "Non !",
+               "content": "Qu’est ce qu’il t’arrive ? 😟",
                "parent_id": "6184e2bf-1302-4211-b3a9-e4129a1c884b",
                "id": "b2a4e062-f702-4d40-b4a7-6fc8f178b221"
                },
                {
-               "content": "Oui 💁",
+               "content": "Je vais bien merci de demander ! 🙄",
                "parent_id": "6184e2bf-1302-4211-b3a9-e4129a1c884b",
                "id": "92c51252-cf5b-4827-b958-0b9b9c79ae8d"
                },
@@ -1070,7 +1046,7 @@
                "id": "87e11b0b-80ca-4a43-b6be-efb09c882f98"
                },
                {
-               "content": "Vous auriez du aller à l’avant poste Adélie",
+               "content": "Vous auriez du aller à l’avant poste Charcot",
                "parent_id": "fdd4728d-1c42-4179-ab0d-b95bfd778125",
                "id": "f8959c6c-b642-4491-98be-ed54848eafce"
                },
@@ -1180,16 +1156,6 @@
                         "id": "7713d503-404c-413f-a44a-e8e40e1f7297"
                         },
                         {
-                        "triggered_id": "1e35f66c-1ebd-4ac0-b024-0a13985dc40f",
-                        "trigger_id": "60c7f16e-c5cf-4e97-9db3-ed45b3766e44",
-                        "id": "eaf2ebb1-09f5-445c-90d0-7f05c5fc096c"
-                        },
-                        {
-                        "triggered_id": "e39e60a2-5788-4d32-b0dd-220b19a4dbcc",
-                        "trigger_id": "1e35f66c-1ebd-4ac0-b024-0a13985dc40f",
-                        "id": "ec97d7fe-7df5-4366-ab2b-74a8dc8621df"
-                        },
-                        {
                         "triggered_id": "ce898492-47a1-44d7-851b-a7cbb21b72c0",
                         "trigger_id": "e39e60a2-5788-4d32-b0dd-220b19a4dbcc",
                         "id": "9e5e8a83-054c-421f-a1a2-e5bac1e94d58"
@@ -1278,6 +1244,11 @@
                         "triggered_id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29",
                         "trigger_id": "c4083383-4660-4932-aec3-028c3adc87c6",
                         "id": "7735f1a2-e9b0-4971-bb7d-7a3901a0d778"
+                        },
+                        {
+                        "triggered_id": "df4c4c13-32b8-407a-aa6e-17b3b04b3b58",
+                        "trigger_id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29",
+                        "id": "cdd35871-db66-4bcb-9b84-1515ed66bf56"
                         },
                         {
                         "triggered_id": "7a9eed97-9879-425c-a16f-bc0023eea955",
@@ -1405,41 +1376,6 @@
                         "id": "8c8f1ca6-f474-476c-a78d-9a1c59c69456"
                         },
                         {
-                        "triggered_id": "b26e580b-d908-49f7-9f35-61dfd25fbd4f",
-                        "trigger_id": "d5dece1b-4fa9-46ab-8b7e-7b346af7be78",
-                        "id": "a338d616-5eae-4b45-802f-009c845c024b"
-                        },
-                        {
-                        "triggered_id": "64d8c071-5918-4493-844d-4d4d5cb3fb04",
-                        "trigger_id": "b26e580b-d908-49f7-9f35-61dfd25fbd4f",
-                        "id": "6daae03d-90c2-4619-ae01-687463d5abbb"
-                        },
-                        {
-                        "triggered_id": "e751616a-6e20-4dc4-8c4a-6715cea8eb26",
-                        "trigger_id": "64d8c071-5918-4493-844d-4d4d5cb3fb04",
-                        "id": "593ebebc-97c1-4930-ad2d-7f26ac7d57db"
-                        },
-                        {
-                        "triggered_id": "db1577e2-dbed-402d-a4f4-4e424ff7e19f",
-                        "trigger_id": "e751616a-6e20-4dc4-8c4a-6715cea8eb26",
-                        "id": "d763ac35-a0c6-44ba-8aca-8c7e7c0a7d0b"
-                        },
-                        {
-                        "triggered_id": "601f53a4-1da2-483e-986f-99cfc86e4fc1",
-                        "trigger_id": "db1577e2-dbed-402d-a4f4-4e424ff7e19f",
-                        "id": "5e08dbf9-a624-4b08-94b5-5a443ef36133"
-                        },
-                        {
-                        "triggered_id": "55145e4a-3b47-41fc-bb7e-c04735a4a3eb",
-                        "trigger_id": "601f53a4-1da2-483e-986f-99cfc86e4fc1",
-                        "id": "01db22bb-2776-4981-b7b7-ae338445d3a3"
-                        },
-                        {
-                        "triggered_id": "6287a7c1-d2be-47e6-963c-c944a722ac9c",
-                        "trigger_id": "55145e4a-3b47-41fc-bb7e-c04735a4a3eb",
-                        "id": "d839515f-7101-4490-a455-074a85a5894c"
-                        },
-                        {
                         "triggered_id": "91c54847-9adc-420c-add9-3203c9a50aa9",
                         "trigger_id": "6287a7c1-d2be-47e6-963c-c944a722ac9c",
                         "id": "7b4fa77a-a984-40f7-9f48-4007abdaf366"
@@ -1473,6 +1409,36 @@
                         "triggered_id": "df4c4c13-32b8-407a-aa6e-17b3b04b3b58",
                         "trigger_id": "1d0e0726-264d-4543-a1dc-7a6d62c7ba29",
                         "id": "22e1cc09-e5e4-44e0-a39d-583513d2064b"
+                        },
+                        {
+                        "triggered_id": "e39e60a2-5788-4d32-b0dd-220b19a4dbcc",
+                        "trigger_id": "60c7f16e-c5cf-4e97-9db3-ed45b3766e44",
+                        "id": "87c3cdfc-c39f-4912-b9e4-4d5ab1ead4cb"
+                        },
+                        {
+                        "triggered_id": "f97d3ee5-1121-4999-8bc8-ea6bc13656c7",
+                        "trigger_id": "68429584-1357-4670-964b-1e06e344f3d3",
+                        "id": "23db329f-af6e-47d0-b94f-c685be11ec7a"
+                        },
+                        {
+                        "triggered_id": "64d8c071-5918-4493-844d-4d4d5cb3fb04",
+                        "trigger_id": "d5dece1b-4fa9-46ab-8b7e-7b346af7be78",
+                        "id": "aff94742-bfb9-4503-9180-5ebc9fe423fc"
+                        },
+                        {
+                        "triggered_id": "e751616a-6e20-4dc4-8c4a-6715cea8eb26",
+                        "trigger_id": "64d8c071-5918-4493-844d-4d4d5cb3fb04",
+                        "id": "aff94742-bfb9-4503-9180-5ebc9fe423fc"
+                        },
+                        {
+                        "triggered_id": "601f53a4-1da2-483e-986f-99cfc86e4fc1",
+                        "trigger_id": "e751616a-6e20-4dc4-8c4a-6715cea8eb26",
+                        "id": "5befa1bf-264c-4d21-84ee-7da15546446a"
+                        },
+                        {
+                        "triggered_id": "6287a7c1-d2be-47e6-963c-c944a722ac9c",
+                        "trigger_id": "601f53a4-1da2-483e-986f-99cfc86e4fc1",
+                        "id": "ded8f0f9-c7f8-46fc-abdd-8712dd834750"
                         }
                         ],
     "trigger_sub_answer": [
@@ -1560,6 +1526,16 @@
                            "sub_id": "87781788-08c3-4aa9-a869-51271346f002",
                            "answer_id": "775d53fc-0386-4767-8abe-94e0eb0f817f",
                            "id": "daae551a-89ec-463e-82fd-b46844337405"
+                           },
+                           {
+                           "sub_id": "68429584-1357-4670-964b-1e06e344f3d3",
+                           "answer_id": "d3ff0e0c-9b03-44f1-94bf-0c7b71fa2292",
+                           "id": "78e3f5e7-9a10-45ef-a178-0b3f86c3f6b9"
+                           },
+                           {
+                           "sub_id": "68429584-1357-4670-964b-1e06e344f3d3",
+                           "answer_id": "606df644-2ec7-41c4-8fd2-e45fe80805b6",
+                           "id": "d299d01f-8d66-4a89-9bec-3befa45a401d"
                            }
                            ]
 }

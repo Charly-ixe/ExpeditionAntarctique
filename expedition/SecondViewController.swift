@@ -275,7 +275,6 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         
         if percentage >= 0 && percentage <= 100
         {
-            print(currentDay)
             var cpt = 0
             for day in days {
                 let newWidth = dayWOrigin! - (dayWOrigin! * 0.2 * percentage/100)
@@ -286,8 +285,6 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
                         newX = newX - (scrollView.contentOffset.x - scrollView.frame.width)
                     }
                 }
-                
-                print(newX)
                 
                 let finaleDayY = self.view.frame.height + diorama_height_final! - day.frame.height * 1.5
                 day.frame = CGRectMake(newX, dayYOrigin! - ((finaleDayY - dayYOrigin!)/1000 * percentage), newWidth, day.frame.height)
