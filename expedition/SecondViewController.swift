@@ -85,7 +85,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             let labelBackground = UIView()
             let label = UILabel()
             label.text = "JOUR " + String(i + 1)
-            label.font = UIFont(name: "Avenir-Medium", size: 20)
+            label.font = UIFont(name: "Avenir-Medium", size: 14)
             label.textColor = UIColor.whiteColor()
             labelBackground.addSubview(label)
 //            dayWrapper.addSubview(labelBackground)
@@ -128,7 +128,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             dayXOrigin = bgX
             dayWOrigin = bgWidth
             labBg.frame = CGRectMake(dayXOrigin! + self.view.frame.width * CGFloat(cpt), dayYOrigin!, bgWidth, bgHeight)
-            labBg.backgroundColor = subtitleCoral
+            labBg.backgroundColor = nunatakBlack
             
             let labelSize = labBg.subviews[0].sizeThatFits(CGSize(width: bgWidth, height: bgHeight))
             
@@ -309,8 +309,6 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             self.dio!.sky.frame = CGRectMake(0, wrapperScrollView.contentOffset.y - newY, wrapperScrollView.frame.width, self.dio!.sky.frame.height)
             
             for layer in self.dio!.layers {
-                
-                subtitleCoral.CGColor
                 
                 var newX: CGFloat = CGFloat(currentDay) * wrapperScrollView.frame.width * (-1)
                 let commonVariation =  percentage * top / 100
