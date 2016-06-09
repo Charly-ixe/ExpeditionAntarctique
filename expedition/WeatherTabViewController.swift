@@ -60,20 +60,20 @@ class WeatherTabViewController: UIViewController {
 //        temperatureView.addSubview(graphTemp)
         
         // Tap Gestures
-        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("Temperature", withExtension: "mp4")!
-        
-        player = AVPlayer(URL: videoURL)
-        player?.actionAtItemEnd = .None
-        player?.muted = true
-        
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
-        //        playerLayer.zPosition = -1
-        
-        playerLayer.frame = CGRectMake(-100, 0, temperatureView.frame.width, temperatureView.frame.height)
-        
-        temperatureView.layer.addSublayer(playerLayer)
-        player?.play()
+//        let videoURL: NSURL = NSBundle.mainBundle().URLForResource("Temperature", withExtension: "mp4")!
+//        
+//        player = AVPlayer(URL: videoURL)
+//        player?.actionAtItemEnd = .None
+//        player?.muted = true
+//        
+//        let playerLayer = AVPlayerLayer(player: player)
+//        playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
+//        //        playerLayer.zPosition = -1
+//        
+//        playerLayer.frame = CGRectMake(-100, 0, temperatureView.frame.width, temperatureView.frame.height)
+//        
+//        temperatureView.layer.addSublayer(playerLayer)
+//        player?.play()
         
         print(temperatureView.frame)
         print(pressureView.frame)

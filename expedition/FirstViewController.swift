@@ -60,7 +60,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 //        scrollView.delaysContentTouches = false
 //        imageView.userInteractionEnabled = true
         
-        let elt = MapElementUIView(frame: CGRectMake(1240, 695, 120, 120), name: "Dumont d'Urville", eltDescription: "Entre nous, on l’appelle notre Havre de Paix. Ici, on est toujours en sécurité, tous les scientifiques français hivernent dans cette base. Et autant te dire qu’à Noël, il y a une sacré ambiance !", img: "base", type: "Base")
+        let elt = MapElementUIView(frame: CGRectMake(938, 659, 120, 120), name: "Dumont d'Urville", eltDescription: "Entre nous, on l’appelle notre Havre de Paix. Ici, on est toujours en sécurité, tous les scientifiques français hivernent dans cette base. Et autant te dire qu’à Noël, il y a une sacré ambiance !", img: "base", type: "Base")
         mapElements.append(elt)
         let elt2 = MapElementUIView(frame: CGRectMake(761, 803, 120, 120), name: "Avant-poste", eltDescription: "Un avant-poste", img: "house", type: "Avant-Poste")
         mapElements.append(elt2)
