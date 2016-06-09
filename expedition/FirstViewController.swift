@@ -40,7 +40,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     var player: AVPlayer?
     var currentElement : MapElementUIView!
     var character : MapElementUIView!
-    
+    var haloObj : UIImageView?
     @IBOutlet var tapMapGesture: UITapGestureRecognizer!
     override func viewDidLoad() {
         
@@ -50,7 +50,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         scrollView.addSubview(imageView)
         scrollView.contentSize = imageView.bounds.size
         
-        scrollView.minimumZoomScale = 0.6
+        scrollView.minimumZoomScale = 0.3
         scrollView.maximumZoomScale = 0.8
         
         scrollView.userInteractionEnabled = true
@@ -60,11 +60,11 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
 //        scrollView.delaysContentTouches = false
 //        imageView.userInteractionEnabled = true
         
-        let elt = MapElementUIView(frame: CGRectMake(1240, 695, 120, 120), name: "Dumont", eltDescription: "Base Française", img: "base", type: "Base")
+        let elt = MapElementUIView(frame: CGRectMake(938, 659, 120, 120), name: "Dumont d'Urville", eltDescription: "Entre nous, on l’appelle notre Havre de Paix. Ici, on est toujours en sécurité, tous les scientifiques français hivernent dans cette base. Et autant te dire qu’à Noël, il y a une sacré ambiance !", img: "base", type: "Base")
         mapElements.append(elt)
         let elt2 = MapElementUIView(frame: CGRectMake(761, 803, 120, 120), name: "Avant-poste", eltDescription: "Un avant-poste", img: "house", type: "Avant-Poste")
         mapElements.append(elt2)
-        let elt3 = MapElementUIView(frame: CGRectMake(986, 1011, 120, 120), name: "Avant-poste", eltDescription: "Un avant-poste", img: "house", type: "Avant-Poste")
+        let elt3 = MapElementUIView(frame: CGRectMake(986, 1011, 120, 120), name: "Mc Murdo", eltDescription: "Station située sur la dépendance de Ross, territoire revendiqué par la Nouvelle-Zélande. Construite en 1956, s'appelait initialement Naval Air Facility McMurdo, du nom d'Archibald McMurdo dont le site fut découvert par l'explorateur anglais Robert Falcon Scott.", img: "house", type: "Avant-Poste")
         mapElements.append(elt3)
         let elt4 = MapElementUIView(frame: CGRectMake(1233, 1011, 120, 120), name: "Glacier", eltDescription: "Un glacier", img: "glacier", type: "Glacier")
         mapElements.append(elt4)
@@ -72,9 +72,9 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         mapElements.append(elt5)
         let elt6 = MapElementUIView(frame: CGRectMake(228, 659, 120, 120), name: "Base", eltDescription: "Une base", img: "base", type: "Base")
         mapElements.append(elt6)
-        let elt7 = MapElementUIView(frame: CGRectMake(662, 1167, 120, 120), name: "Avant-poste", eltDescription: "Un avant-poste", img: "house", type: "Avant-Poste")
+        let elt7 = MapElementUIView(frame: CGRectMake(662, 1167, 120, 120), name: "Charcot", eltDescription: "Ancienne base scientifique française portant le nom du commandant explorateur Jean-Baptiste Charcot. Elle est désafectée destinée à l'étude de la glaciologie depuis 1959. Un corps principal de 24 m2  est constitué de sections demi-cylindriques de tôles assemblées bout à bout. Cette forme est prévue pour résister au mieux à la pression de neige accumulée dessus.", img: "house", type: "Avant-Poste")
         mapElements.append(elt7)
-        let elt8 = MapElementUIView(frame: CGRectMake(520, 1215, 120, 120), name: "Base", eltDescription: "Une base", img: "base", type: "Base")
+        let elt8 = MapElementUIView(frame: CGRectMake(520, 1215, 120, 120), name: "Concordia", eltDescription: "Station de recherche franco-italienne permanente installée au Dôme C, sur le Plateau Antarctique. Concordia est une des trois stations à l'intérieur du continent Antarctique à fonctionner toute l'année. Y est étudié astronomie, glaciologie, et chimie de l’atmosphère. Elle peut accueillir une quinzaine de personnes, contre une soixantaine l'été.", img: "base", type: "Base")
         mapElements.append(elt8)
         let elt9 = MapElementUIView(frame: CGRectMake(1564, 804, 120, 120), name: "Avant-poste", eltDescription: "Un avant-poste", img: "house", type: "Avant-Poste")
         mapElements.append(elt9)
@@ -95,7 +95,11 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         let elt17 = MapElementUIView(frame: CGRectMake(402, 2176, 120, 120), name: "Glacier", eltDescription: "Un glacier", img: "glacier", type: "Glacier")
         mapElements.append(elt17)
         
-        character = MapElementUIView(frame: CGRectMake(878, 790, 120, 120), name: "Guillaume", eltDescription: "Guillaume", img: "Smile", type: "Character")
+        character = MapElementUIView(frame: CGRectMake(1184, 793, 120, 120), name: "Guillaume", eltDescription: "Guillaume", img: "Smile", type: "Character")
+        
+        haloObj = UIImageView()
+        haloObj!.image = UIImage.gifWithName("localisation")
+        imageView.addSubview(haloObj!)
         
         
         for element in mapElements {
@@ -105,7 +109,7 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
         }
         
         imageView.addSubview(character)
-        scrollView.contentOffset = CGPoint(x: (character.frame.origin.x - (self.view.frame.width / 2)) + character.frame.width / 2, y: (character.frame.origin.y - (self.view.frame.height / 2)) + character.frame.height / 2)
+//        scrollView.contentOffset = CGPoint(x: (character.frame.origin.x - (self.view.frame.width / 2)) + character.frame.width / 2, y: (character.frame.origin.y - (self.view.frame.height / 2)) + character.frame.height / 2)
         
         currentMoveView.layer.shadowColor = brashWhite.CGColor
         currentMoveView.layer.shadowOffset = CGSizeZero
@@ -164,7 +168,23 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     }
     
     override func viewWillAppear(animated: Bool) {
+        if ModelController.Model.currentSituation!.id == "f975cfdc-661c-4ec4-a095-cd08115fcc30" {
+            character.frame = CGRectMake(1184, 793, 120, 120)
+            
+        }
+        if ModelController.Model.currentSituation!.id == "409c2854-7048-47b7-bb53-f034b5590697" {
+            character.frame = CGRectMake(965, 687, 120, 120)
+            haloObj!.frame = CGRectMake(800, 1260, 120, 120)
+        }
+        if ModelController.Model.currentSituation!.id == "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7" {
+            character.frame = CGRectMake(965, 1025, 120, 120)
+        }
         scrollView.setZoomScale(0.8, animated: true)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        scrollView.contentOffset = CGPoint(x: character.frame.origin.x - self.view.frame.width, y: character.frame.origin.y - (self.view.frame.height / 2 + 100))
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -227,6 +247,9 @@ class FirstViewController: UIViewController, UIScrollViewDelegate, UIGestureReco
     @IBAction func tappedTitleView(sender: UITapGestureRecognizer) {
         let placeDetails = storyboard?.instantiateViewControllerWithIdentifier("PlaceViewController") as! PlaceViewController
         placeDetails.transitioningDelegate = self
+        placeDetails.titleLabel.text = currentElement.name
+        placeDetails.typeLabel.text = currentElement.type
+        placeDetails.descriptionTextView.text = currentElement.elementDescription
         presentViewController(placeDetails, animated: true, completion: nil)
     }
 

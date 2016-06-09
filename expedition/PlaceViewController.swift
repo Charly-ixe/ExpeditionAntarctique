@@ -17,7 +17,7 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
     var pageImages : Array<String> = ["photo_avant_poste.jpg", "photo_zodiac.jpg", "photo_pingouin.jpg"]
     var currentIndex : Int = 0
     var titleView : UIView?
-    var typeLabel : UILabel?
+    var typeLabel : UILabel = UILabel()
     var titleLabel : UILabel = UILabel()
     var descriptionTextView : UITextView = UITextView()
     var descriptionLabel : UILabel?
@@ -66,7 +66,7 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         
         distanceDataLabel = UILabel()
         distanceDataLabel!.frame = CGRectMake(24, 100, 80, 18)
-        distanceDataLabel!.text = "À 23KM"
+        distanceDataLabel!.text = "À 350KM"
         distanceDataLabel!.font = UIFont(name: "AvenirNext-Medium", size: 16)
         distanceDataLabel!.textColor = nunatakBlack
         scrollViewDescription?.addSubview(distanceDataLabel!)
@@ -92,16 +92,16 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         descriptionLabel!.textColor = nunatakBlackAlpha
         scrollViewDescription?.addSubview(descriptionLabel!)
         
-        descriptionTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus condimentum semper. Cras elementum hendrerit viverra. Nulla sed lacus quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas sit amet elit sapien. Maecenas mauris lacus, commodo quis est eget, euismod elementum leo. Quisque consequat dignissim dui sit amet tincidunt. Duis eget magna consectetur, molestie mauris quis, sodales nulla. Duis sit amet lectus nunc. Maecenas pulvinar lacus ut nibh cursus, at tempus est rhoncus. Praesent vehicula molestie velit ut mattis. Maecenas tristique interdum justo. Nullam auctor elit eu elit posuere efficitur. Sed at volutpat massa. Fusce tincidunt pharetra ullamcorper. Nulla a ipsum lectus."
+//        descriptionTextView.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus condimentum semper. Cras elementum hendrerit viverra. Nulla sed lacus quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas sit amet elit sapien. Maecenas mauris lacus, commodo quis est eget, euismod elementum leo. Quisque consequat dignissim dui sit amet tincidunt. Duis eget magna consectetur, molestie mauris quis, sodales nulla. Duis sit amet lectus nunc. Maecenas pulvinar lacus ut nibh cursus, at tempus est rhoncus. Praesent vehicula molestie velit ut mattis. Maecenas tristique interdum justo. Nullam auctor elit eu elit posuere efficitur. Sed at volutpat massa. Fusce tincidunt pharetra ullamcorper. Nulla a ipsum lectus."
         
         descriptionTextView.font = UIFont(name: "AvenirNext-Medium", size: 16)
         descriptionTextView.textColor = nunatakBlack
-        descriptionTextView.frame = CGRectMake(24, 180, self.view.frame.width - 40, 500)
+        descriptionTextView.frame = CGRectMake(24, 180, self.view.frame.width - 40, 300)
         descriptionTextView.alpha = 0
         scrollViewDescription!.addSubview(descriptionTextView)
         
         let footer = DrawFooter()
-        footer.frame = CGRectMake(0, 640, self.view.frame.width + 4, 300)
+        footer.frame = CGRectMake(0, 400, self.view.frame.width + 4, 300)
         footer.backgroundColor = UIColor.whiteColor()
         scrollViewDescription?.addSubview(footer)
         
@@ -117,7 +117,7 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         firstStuffView!.frame = CGRectMake((footer.frame.width / 4) - 32, 170, 64, 64)
         firstStuffView!.layer.cornerRadius = firstStuffView!.frame.size.width / 2
         firstStuffView!.backgroundColor = UIColor.whiteColor()
-        let firstStuffImageView = UIImageView(image: UIImage(named: "Fuel-1"))
+        let firstStuffImageView = UIImageView(image: UIImage(named: "Food-1"))
         firstStuffView!.addSubview(firstStuffImageView)
         
         
@@ -125,7 +125,7 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         secondStuffView!.frame = CGRectMake((footer.frame.width / 2) - 32, 170, 64, 64)
         secondStuffView!.layer.cornerRadius = secondStuffView!.frame.size.width / 2
         secondStuffView!.backgroundColor = nunatakBlack
-        let secondStuffImageView = UIImageView(image: UIImage(named: "Water-1"))
+        let secondStuffImageView = UIImageView(image: UIImage(named: "Pill-1"))
         secondStuffView!.addSubview(secondStuffImageView)
         thirdStuffView = UIView()
         thirdStuffView!.frame = CGRectMake(((footer.frame.width / 4) * 3) - 32, 170, 64, 64)
@@ -137,7 +137,7 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         footer.addSubview(thirdStuffView!)
         
 
-        scrollViewDescription!.contentSize = CGSize(width: self.view.frame.width, height: 640 + footer.frame.height)
+        scrollViewDescription!.contentSize = CGSize(width: self.view.frame.width, height: 390 + footer.frame.height)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
         titleView = UIVisualEffectView(effect: blurEffect)
@@ -147,17 +147,16 @@ class PlaceViewController: UIViewController, UIPageViewControllerDataSource, UIS
         titleView!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.scrollView.addSubview(titleView!)
         
-        typeLabel = UILabel()
-        titleView!.addSubview(typeLabel!)
-        typeLabel!.frame = CGRectMake(0, 20, titleView!.bounds.width, 14)
-        typeLabel!.text = "BASE"
-        typeLabel!.font = UIFont(name: "AvenirNext-DemiBold", size: 12)
-        typeLabel!.textColor = nunatakBlackAlpha
-        typeLabel!.textAlignment = .Center
+        titleView!.addSubview(typeLabel)
+        typeLabel.frame = CGRectMake(0, 20, titleView!.bounds.width, 14)
+        typeLabel.text = "BASE"
+        typeLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 12)
+        typeLabel.textColor = nunatakBlackAlpha
+        typeLabel.textAlignment = .Center
         
         
         titleLabel.frame = CGRectMake(0, 45, titleView!.frame.width, 34)
-        titleLabel.text = "Dumont d'Urville"
+//        titleLabel.text = "Dumont d'Urville"
         titleLabel.font = UIFont(name: "AvenirNext-Regular", size: 32)
         titleLabel.textColor = nunatakBlack
         titleLabel.textAlignment = .Center
