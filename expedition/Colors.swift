@@ -19,6 +19,8 @@ let gaugeGreen = UIColor(red:75/255, green:242/255, blue:195/255, alpha:1.0)
 let gaugeYellow = UIColor(red:242/255, green:202/255, blue:75/255, alpha:1.0)
 let gaugeRed = UIColor(red:242/255, green:75/255, blue:75/255, alpha:1.0)
 
+let subtitleCoral = UIColor(red: 249/255, green: 165/255, blue: 165/255, alpha: 1.0)
+
 
 let skyBlue = UIColor(red:119/255, green:133/255, blue:253/255, alpha:1.0)
 let skyBlue2 = UIColor(red:119/255, green:133/255, blue:253/255, alpha:0.9)

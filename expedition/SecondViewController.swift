@@ -19,6 +19,10 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     var pageViewControllerHeight: CGFloat?
     
     var titles: [UIView] = []
+    var days: [UIView] = []
+    var dayYOrigin: CGFloat?
+    var dayXOrigin: CGFloat?
+    var dayWOrigin: CGFloat?
     
     var controllers: [MessagesController] = []
     
@@ -77,11 +81,21 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
             title.contentMode = UIViewContentMode.ScaleAspectFill
             self.titles.append(wrapper)
             self.view.addSubview(wrapper)
+            
+            let labelBackground = UIView()
+            let label = UILabel()
+            label.text = "JOUR " + String(i + 1)
+            label.font = UIFont(name: "Avenir-Medium", size: 20)
+            label.textColor = UIColor.whiteColor()
+            labelBackground.addSubview(label)
+//            dayWrapper.addSubview(labelBackground)
+            self.view.addSubview(labelBackground)
+            days.append(labelBackground)
         }
         
         var cpt = 0
         
-        let dayPadding: CGFloat = 40
+        let dayPadding: CGFloat = 20
         for title in titles {
             var height: CGFloat = 40
             for sub in title.subviews {
@@ -90,14 +104,51 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
                     let imageSize = v.image?.size
                     sub.frame = CGRectMake(dayPadding + self.view.frame.width * CGFloat(cpt), 40, self.view.frame.width - dayPadding * 2, ((self.view.frame.width - dayPadding * 2 ) * imageSize!.height) / imageSize!.width)
                     height += ((self.view.frame.width - dayPadding * 2 ) * imageSize!.height) / imageSize!.width
+                    
                 }
             }
             
             title.frame = CGRectMake(0, 0, self.view.frame.width, height)
             
-
+//            self.days[cpt].frame = CGRectMake(0,0, self.view.frame.width, height + 20)
+            
+            let labBg = self.days[cpt]
+            
+            labBg.layer.shadowColor = UIColor(red:0.14, green:0.35, blue:0.73, alpha:1.0).CGColor
+            labBg.layer.shadowOffset = CGSize(width: 0, height: 0)
+            labBg.layer.shadowOpacity = 0.1
+            labBg.layer.shadowRadius = 5
+            labBg.clipsToBounds = false
+            labBg.layer.masksToBounds = false
+            
+            let bgHeight = height/4
+            let bgWidth = self.view.frame.width * 0.4
+            let bgX = self.view.frame.width / 2 - bgWidth / 2
+            dayYOrigin = height - (bgHeight*0.7)
+            dayXOrigin = bgX
+            dayWOrigin = bgWidth
+            labBg.frame = CGRectMake(dayXOrigin! + self.view.frame.width * CGFloat(cpt), dayYOrigin!, bgWidth, bgHeight)
+            labBg.backgroundColor = subtitleCoral
+            
+            let labelSize = labBg.subviews[0].sizeThatFits(CGSize(width: bgWidth, height: bgHeight))
+            
+            if let lab = labBg.subviews[0] as? UILabel {
+                
+                lab.bounds.size = labelSize
+                
+                let halfTextViewWidth = bgWidth / 2.0
+                let targetX = halfTextViewWidth
+                let halfTextViewHeight = bgHeight / 2.0
+                lab.center.x = targetX
+                lab.center.y = halfTextViewHeight
+                
+                lab.textAlignment = .Center
+                
+            }
+            
+            
+            
             cpt += 1
-            print(title.frame)
         }
         
         wrapperScrollView.addSubview(dio!)
@@ -209,7 +260,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
 
-        let top = wrapperScrollView.frame.height * 1 + diorama_height_final!
+        let top = wrapperScrollView.frame.height + diorama_height_final!
         let scroll = top - wrapperScrollView.contentOffset.y
         
         let percentage = 100 - (scroll * 100 / top)
@@ -224,11 +275,45 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
         
         if percentage >= 0 && percentage <= 100
         {
+            print(currentDay)
+            var cpt = 0
+            for day in days {
+                let newWidth = dayWOrigin! - (dayWOrigin! * 0.2 * percentage/100)
+                let localX = dayXOrigin! + (dayWOrigin! / 2) - (newWidth / 2)
+                var newX = localX + CGFloat(cpt - currentDay) * self.view.frame.width * (1)
+                if scrollView.contentOffset.x != 0 {
+                    if scrollView.contentOffset.x != scrollView.frame.width {
+                        newX = newX - (scrollView.contentOffset.x - scrollView.frame.width)
+                    }
+                }
+                
+                print(newX)
+                
+                let finaleDayY = self.view.frame.height + diorama_height_final! - day.frame.height * 1.5
+                day.frame = CGRectMake(newX, dayYOrigin! - ((finaleDayY - dayYOrigin!)/1000 * percentage), newWidth, day.frame.height)
+                
+                if let lab = day.subviews[0] as? UILabel {
+                    
+                    let halfTextViewWidth = day.frame.width / 2.0
+                    let targetX = halfTextViewWidth
+                    let halfTextViewHeight = day.frame.height / 2.0
+                    lab.center.x = targetX
+                    lab.center.y = halfTextViewHeight
+                    
+                    lab.textAlignment = .Center
+                    
+                }
+                
+                cpt += 1
+            }
+            
             self.dio!.frame = CGRectMake(0, newY, wrapperScrollView.frame.width, self.dio!.frame.height)
             
             self.dio!.sky.frame = CGRectMake(0, wrapperScrollView.contentOffset.y - newY, wrapperScrollView.frame.width, self.dio!.sky.frame.height)
             
             for layer in self.dio!.layers {
+                
+                subtitleCoral.CGColor
                 
                 var newX: CGFloat = CGFloat(currentDay) * wrapperScrollView.frame.width * (-1)
                 let commonVariation =  percentage * top / 100
@@ -236,10 +321,7 @@ class SecondViewController: UIViewController, UIPageViewControllerDataSource, UI
                 let layerVariation = CGFloat(dio!.layers.count + 1 - layer.index) / 9
                 
                 if scrollView.contentOffset.x != 0 {
-                    if scrollView.contentOffset.x == wrapperScrollView.frame.width {
-//                        newX = -newX
-                    }
-                    else {
+                    if scrollView.contentOffset.x != wrapperScrollView.frame.width {
                         newX = newX - (scrollView.contentOffset.x - wrapperScrollView.frame.width)
                     }
                 }

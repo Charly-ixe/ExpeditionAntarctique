@@ -188,14 +188,15 @@ class MessagesController: UIViewController, UITableViewDelegate, UITableViewData
                     t = Double(content.characters.count) / 25
                     
                     // TESTING
-//                    t = 0
+                    t = 0.5
+                    t = 0
                     
                 }
                 
                 
-                var timeout: Double = 1
+                var timeout: Double = 0.5
                 // TESTING
-//                timeout = 0
+                timeout = 0
                 
                 Helper.delay(timeout) {
                     if toDisplay["type"] as? String != "choice"

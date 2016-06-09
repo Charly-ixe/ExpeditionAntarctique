@@ -156,7 +156,6 @@ class ModelController {
 
             filtered = self.triggers.triggers_sub_answer!.filter { $0.valueForKey("answer_id") as? String == id }
             
-            print(filtered)
             if filtered.count > 0
             {
                 let triggeredId = filtered[0].valueForKey("sub_id") as? String
@@ -179,7 +178,6 @@ class ModelController {
         }
         
         if currentSituation!.id == "9126c225-7b7b-41b5-a195-6a54d2c20421" {
-            print("tweak 1")
             let situation = self.situations.filter { $0.id == "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" }.first
             self.currentSituation = situation
             
@@ -196,14 +194,12 @@ class ModelController {
             }
             Helper.delay(self.currentSituation!.delay){
                 let triggeredId = self.currentSituation?.subs[0].id
-                print(triggeredId)
                 idEvent.emit(triggeredId!)
                 return
             }
             return
         }
         else if currentSituation!.id == "63ef6055-4e36-4c8f-a10d-4166f59cd2d9" {
-            print("tweak 2")
             let situation = self.situations.filter { $0.id == "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7" }.first
             self.currentSituation = situation
             self.days.append([])
@@ -229,8 +225,6 @@ class ModelController {
                 {
                     let situation = filtersituation[0]
                     
-                    print(currentSituation?.id)
-                    
                     if differentSituation
                     {
                         var newDay = false
@@ -244,7 +238,6 @@ class ModelController {
                         Helper.delay(self.currentSituation!.delay){
                             let triggeredId = self.currentSituation?.subs[0].id
                             if newDay {
-                                print("hey adele i was wondering its a new day")
                                 newDayEvent.emit(self.days.count - 1)
                             }
                             idEvent.emit(triggeredId!)
