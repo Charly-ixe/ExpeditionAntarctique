@@ -82,6 +82,28 @@ class WeatherTabViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        if ModelController.Model.currentSituation!.id == "f975cfdc-661c-4ec4-a095-cd08115fcc30" {
+            tempGraphImageView.image = UIImage(named: "temp-tempete")
+            windGraphImageView.image = UIImage(named: "wind-tempete")
+            pressureGraphImageView.image = UIImage(named: "pressure-tempete")
+            humidityGraphImageView.image = UIImage(named: "hum-tempete")
+        }
+        if ModelController.Model.currentSituation!.id == "409c2854-7048-47b7-bb53-f034b5590697" {
+            tempGraphImageView.image = UIImage(named: "temp-moyen")
+            windGraphImageView.image = UIImage(named: "wind-moyen")
+            pressureGraphImageView.image = UIImage(named: "pressure-moyen")
+            humidityGraphImageView.image = UIImage(named: "hum-moyen")
+            
+        }
+        if ModelController.Model.currentSituation!.id == "8c5e5112-afe6-4ecf-a2ff-e371ab4ccec7" {
+            tempGraphImageView.image = UIImage(named: "temp-calme")
+            windGraphImageView.image = UIImage(named: "wind-calme")
+            pressureGraphImageView.image = UIImage(named: "pressure-calme")
+            humidityGraphImageView.image = UIImage(named: "hum-calme")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

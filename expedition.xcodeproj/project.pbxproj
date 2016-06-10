@@ -54,6 +54,7 @@
 		6B53C4021D083F1500394C2F /* Temperature.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FE1D083F1500394C2F /* Temperature.mp4 */; };
 		6B53C4031D083F1500394C2F /* Wind.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C3FF1D083F1500394C2F /* Wind.mp4 */; };
 		6B53C4051D0849EA00394C2F /* ambiance calme boucle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B53C4041D0849EA00394C2F /* ambiance calme boucle.wav */; };
+		6B60611E1D095013008B6D73 /* localisation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6B60611D1D095013008B6D73 /* localisation.gif */; };
 		6B73937D1CF9ED3200EEF4F3 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */; };
 		6B73937F1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */; };
 		6BB447851D0572EC008E92F6 /* arret-jour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BB447801D0572EC008E92F6 /* arret-jour.mp4 */; };
@@ -159,6 +160,7 @@
 		6B53C3FE1D083F1500394C2F /* Temperature.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Temperature.mp4; sourceTree = "<group>"; };
 		6B53C3FF1D083F1500394C2F /* Wind.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wind.mp4; sourceTree = "<group>"; };
 		6B53C4041D0849EA00394C2F /* ambiance calme boucle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "ambiance calme boucle.wav"; sourceTree = "<group>"; };
+		6B60611D1D095013008B6D73 /* localisation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = localisation.gif; sourceTree = "<group>"; };
 		6B73937C1CF9ED3200EEF4F3 /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 		6B73937E1CF9F45300EEF4F3 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		6BB447801D0572EC008E92F6 /* arret-jour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "arret-jour.mp4"; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				6B3670B51CC77A1400C29629 /* Main.storyboard */,
 				6BB4478C1D05A398008E92F6 /* FirstUse */,
 				694175701CFF2FA300DC54E7 /* typing.gif */,
+				6B60611D1D095013008B6D73 /* localisation.gif */,
 				6B3670B81CC77A1400C29629 /* Assets.xcassets */,
 				6B3670BA1CC77A1400C29629 /* LaunchScreen.storyboard */,
 				6B3670BD1CC77A1400C29629 /* Info.plist */,
@@ -456,6 +459,7 @@
 				6BB447861D0572EC008E92F6 /* arret-nuit.mp4 in Resources */,
 				6B3670BC1CC77A1400C29629 /* LaunchScreen.storyboard in Resources */,
 				6B53C4001D083F1500394C2F /* Humidity.mp4 in Resources */,
+				6B60611E1D095013008B6D73 /* localisation.gif in Resources */,
 				6BB447871D0572EC008E92F6 /* lent.mp4 in Resources */,
 				694175711CFF2FA300DC54E7 /* typing.gif in Resources */,
 				6BB447971D05AB69008E92F6 /* ecran2.mp4 in Resources */,
